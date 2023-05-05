@@ -1,0 +1,58 @@
+{
+	"200": {
+		"description": "200 Ok",
+		"data": {
+			"status": true,
+			"message": "BVN resolved",
+			"data": {
+				"title": "Mr",
+				"first_name": "JOHN",
+				"middle_name": "MUKITE",
+				"last_name": "NAMEME",
+				"name_on_card": "MUKITE NAMEME",
+				"marital_status": "Married",
+				"dob": "17-Jun-80",
+				"formatted_dob": "1980-06-17",
+				"mobile": "08091111111",
+				"mobile2": "08090000000",
+				"registration_date": "24-Dec-16",
+				"formatted_registration_date": "2016-12-24",
+				"bvn": "00000000000",
+				"gender": "Male",
+				"lga_of_origin": "Ilesa West",
+				"state_of_origin": "Osun State",
+				"residential_address": "126 Joel Ogunnaike St Ikeja GRA, Lagos",
+				"lga_of_residence": "Ikeja",
+				"nationality": "Nigeria",
+				"email": "MUKITE@EXAMPLE.COM",
+				"is_blacklisted": false,
+				"enrollment_bank": {
+					"name": "First Bank of Nigeria",
+					"code": "011",
+					"enrollment_branch": "IKEJA BRANCH"
+				},
+				"level_of_account": "Level 2 - Medium Level Accounts",
+				"nin": "",
+				"base_64_image": "Base_64_Encoded_Image=="
+			},
+			"meta": {
+				"calls_this_month": 12,
+				"free_calls_left": 0
+			}
+		}
+	},
+	"400": {
+		"description": "400 Bad Request",
+		"data": {
+			"status": false,
+			"message": "Unable to resolve BVN"
+		}
+	},
+	"500": {
+		"description": "500 Timeout",
+		"data": {
+			"status": false,
+			"message": "BVN service unavailable"
+		}
+	}
+}

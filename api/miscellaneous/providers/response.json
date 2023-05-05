@@ -1,0 +1,27 @@
+{
+	"200": {
+		"description": "200 Ok",
+		"data": {
+			"status": true,
+			"message": "NUBAN Providers successfully retrieved",
+			"data": [
+				{
+					"name": "Wema Bank",
+					"slug": "wema-bank",
+					"code": "035",
+					"longcode": "035150103",
+					"gateway": null,
+					"pay_with_bank": false,
+					"active": true,
+					"is_deleted": null,
+					"country": "Nigeria",
+					"currency": "NGN",
+					"type": "nuban",
+					"id": 20,
+					"createdAt": "2016-07-14T10:04:29.000Z",
+					"updatedAt": "2021-02-09T17:49:59.000Z"
+				}
+			]
+		}
+	}
+}

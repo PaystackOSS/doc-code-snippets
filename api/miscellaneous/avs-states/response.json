@@ -1,0 +1,21 @@
+{
+	"200": {
+		"description": "200 Ok",
+		"data": {
+			"status": true,
+			"message": "States retrieved",
+			"data": [
+				{
+					"name": "Alberta",
+					"slug": "alberta",
+					"abbreviation": "AB"
+				},
+				{
+					"name": "British Columbia",
+					"slug": "british-columbia",
+					"abbreviation": "BC"
+				}
+			]
+		}
+	}
+}

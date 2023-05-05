@@ -1,0 +1,9 @@
+{
+	"200": {
+		"description": "200 Ok",
+		"data": {
+			"status": true,
+			"message": "We are checking the status of your transfer. We will send you a notification once it is confirmed"
+		}
+	}
+}

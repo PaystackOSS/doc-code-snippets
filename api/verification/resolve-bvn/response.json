@@ -1,0 +1,20 @@
+{
+	"200": {
+		"description": "200 Ok",
+		"data": {
+			"status": true,
+			"message": "BVN resolved",
+			"data": {
+				"first_name": "WES",
+				"last_name": "GIBSONS",
+				"dob": "14-OCT-96",
+				"mobile": "09022092102",
+				"bvn": "21212917741"
+			},
+			"meta": {
+				"calls_this_month": 1,
+				"free_calls_left": 9
+			}
+		}
+	}
+}

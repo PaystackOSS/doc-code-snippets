@@ -1,0 +1,22 @@
+{
+	"200": {
+		"description": "200 Ok",
+		"data": {
+			"status": true,
+			"message": "Message Status Retrieved",
+			"data": {
+				"delivered": true
+			}
+		}
+	},
+	"400": {
+		"description": "404 Not Found",
+		"data": {
+			"status": false,
+			"message": "The push notification ID provided is invalid",
+			"data": {
+				"code": "INVALID_PUSH_ID"
+			}
+		}
+	}
+}

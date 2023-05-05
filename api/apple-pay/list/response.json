@@ -1,0 +1,12 @@
+{
+	"200": {
+		"description": "200 Ok",
+		"data": {
+			"status": true,
+			"message": "Apple Pay registered domains retrieved",
+			"data": {
+				"domainNames": ["example.com"]
+			}
+		}
+	}
+}

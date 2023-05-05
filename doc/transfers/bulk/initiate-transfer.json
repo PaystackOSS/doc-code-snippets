@@ -1,0 +1,30 @@
+{
+  "status": true,
+  "message": "3 transfers queued.",
+  "data": [
+    {
+      "reference": "588YtfftReF355894J",
+      "recipient": "RCP_2tn9clt23s7qr28",
+      "amount": 20000,
+      "transfer_code": "TRF_ful4rvpbiuaph4fo",
+      "currency": "NGN",
+      "status": "received"
+    },
+    {
+      "reference": "YunoTReF35e0r4J",
+      "recipient": "RCP_1a25w1h3n0xctjg",
+      "amount": 30000,
+      "transfer_code": "TRF_0lztrf3rox1rpbw1",
+      "currency": "NGN",
+      "status": "received"
+    },
+    {
+      "reference": "nm7kjk9gb-l5i4lr9wq3",
+      "recipient": "RCP_aps2aibr69caua7",
+      "amount": 40000,
+      "transfer_code": "TRF_hsk59k6loek7vlut",
+      "currency": "NGN",
+      "status": "received"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+	"200": {
+		"description": "200 Ok",
+		"data": {
+			"status": true,
+			"message": "Domain successfully unregistered on Apple Pay"
+		}
+	}
+}

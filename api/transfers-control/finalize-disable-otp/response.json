@@ -1,0 +1,9 @@
+{
+	"200": {
+		"description": "200 Ok",
+		"data": {
+			"status": true,
+			"message": "OTP requirement for transfers has been disabled"
+		}
+	}
+}
