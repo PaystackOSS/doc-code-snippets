@@ -1,0 +1,7 @@
+# order matters as this is how it would be displayed on the documentation
+# the only exception to this is for the JSON. JSON will be automatically parsed as a response
+languages:   
+  - sh
+  - js
+  - php
+  - json
