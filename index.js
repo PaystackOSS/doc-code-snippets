@@ -62,7 +62,6 @@ function writeToFile(config, directory) {
   const filename = ancestor[ancestor.length - 1] + ".js"
   const parent = "dist/" + ancestor.slice(0, ancestor.length - 1).join("/")
 
-  // create parent folder
   try {
     if (!fs.existsSync(parent)) {
       fs.mkdirSync(parent, { recursive: true });
@@ -72,8 +71,7 @@ function writeToFile(config, directory) {
   }
 
   const content = readFiles(config, directory)
-
-  // create and write to file 
+  
   try {
     fs.writeFileSync(path.join(parent, filename), content);
   } catch (err) {
@@ -83,7 +81,7 @@ function writeToFile(config, directory) {
 
 function buildSnippets() {
   createBaseFolder()
-  const docFiles = getAllFiles("doc/transfers", [])
+  const docFiles = getAllFiles("doc", [])
 
   docFiles.forEach(({ config, directory }) => {
     writeToFile(config, directory)
