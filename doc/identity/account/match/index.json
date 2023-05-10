@@ -1,0 +1,14 @@
+{
+    "status": true,
+    "message": "BVN boolean match successful",
+    "data": {
+        "is_match": true,
+        "account_name": "Nairobi Yobo",
+        "account_number": "0001234567",
+        "bvn": "12345678901"
+    },
+    "meta": {
+        "calls_this_month": 1,
+        "free_calls_left": 9
+    }
+  }
