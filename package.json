@@ -1,0 +1,26 @@
+{
+  "name": "doc-snippets",
+  "version": "0.0.1",
+  "description": "Code samples for Paystack Documentation",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "build": "node ./index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PaystackOSS/doc-snippets.git"
+  },
+  "author": "Damilola Odujoko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PaystackOSS/doc-snippets/issues"
+  },
+  "homepage": "https://github.com/PaystackOSS/doc-snippets#readme",
+  "devDependencies": {
+    "js-yaml": "^4.1.0"
+  }
+}

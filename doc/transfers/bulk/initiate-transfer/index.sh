@@ -24,4 +24,4 @@ curl https://api.paystack.co/transfer/bulk
     }
   ]
 }'
--X POST`
+-X POST
