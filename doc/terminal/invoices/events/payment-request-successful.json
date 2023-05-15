@@ -1,0 +1,45 @@
+{
+  "event":"paymentrequest.success",
+  "data":{
+    "id":1089700,
+    "domain":"live",
+    "amount":5000,
+    "currency":"NGN",
+    "due_date":null,
+    "has_invoice":true,
+    "invoice_number":4,
+    "description":"Invoice for Damilola",
+    "pdf_url":"https://api.paystack.co/files/invoices/463433/cititfeehb4bycv3o6j2mc0i7.pdf",
+    "line_items":[
+      {
+        "name":"Pancake & Sausage",
+        "amount":2000,
+        "quantity":1
+      },
+      {
+        "name":"Chicken Salad",
+        "amount":3000,
+        "quantity":1
+      }
+    ],
+    "tax":[
+      
+    ],
+    "request_code":"PRQ_79unvlqvixs3tu1",
+    "status":"success",
+    "paid":true,
+    "paid_at":"2021-10-20T10:02:00.000Z",
+    "metadata":null,
+    "notifications":[
+      {
+        "sent_at":"2021-10-20T09:53:13.467Z",
+        "channel":"email"
+      }
+    ],
+    "offline_reference":"4634338037229",
+    "customer":57611230,
+    "created_at":"2021-10-20T09:53:10.000Z",
+    "discount":null,
+    "split_code":null
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "status": true,
+  "message": "Payment request created",
+  "data": {
+    "id": 8344724,
+    "integration": 463433,
+    "domain": "test",
+    "amount": 40000,
+    "currency": "NGN",
+    "due_date": null,
+    "has_invoice": false,
+    "invoice_number": null,
+    "description": "2-for-1 promo",
+    "line_items": [],
+    "tax": [],
+    "request_code": "PRQ_xkid8oip8r2gt2y",
+    "status": "pending",
+    "paid": false,
+    "metadata": null,
+    "notifications": [],
+    "offline_reference": "4634338344724",
+    "customer": 60604714,
+    "created_at": "2021-11-09T10:47:22.467Z",
+    "discount": null,
+    "split_code": null
+  }
+}
