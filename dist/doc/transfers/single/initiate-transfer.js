@@ -1,4 +1,4 @@
-const bash = `curl https://api.paystack.co/transfer
+const sh = `curl https://api.paystack.co/transfer
 -H "Authorization: Bearer YOUR_SECRET_KEY"
 -H "Content-Type: application/json"
 -d '{ "source": "balance", 
@@ -7,7 +7,8 @@ const bash = `curl https://api.paystack.co/transfer
       "recipient": "RCP_t0ya41mp35flk40", 
       "reason": "Holiday Flexing" 
     }'
--X POST`
+-X POST
+`
 
 const js = `const https = require('https')
 
@@ -78,7 +79,8 @@ const php = `<?php
   //execute post
   $result = curl_exec($ch);
   echo $result;
-?>`
+?>
+`
 
 const json = `{
   "status": true,
@@ -100,4 +102,4 @@ const json = `{
   }
 }`
 
-export { bash, js, php, json }
+export {sh, js, php, json}

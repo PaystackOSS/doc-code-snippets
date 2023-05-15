@@ -1,4 +1,4 @@
-const bash = `curl https://api.paystack.co/transferrecipient
+const sh = `curl https://api.paystack.co/transferrecipient
 -H "Authorization: Bearer YOUR_SECRET_KEY"
 -H "Content-Type: application/json"
 -d '{ "type": "nuban", 
@@ -105,4 +105,4 @@ const json = `{
   }
 }`
 
-export { bash, js, php, json }
+export {sh, js, php, json}

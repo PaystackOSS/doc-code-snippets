@@ -1,4 +1,4 @@
-const json = `{
+{
   "status": true,
   "message": "Transfer requires OTP to continue",
   "data": {
@@ -16,6 +16,4 @@ const json = `{
     "createdAt": "2021-04-07T12:41:57.763Z",
     "updatedAt": "2021-04-07T12:41:57.763Z"
   }
-}`
-
-export { json }
+}

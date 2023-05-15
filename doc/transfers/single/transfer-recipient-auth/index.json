@@ -1,0 +1,26 @@
+{
+  "status": true,
+  "message": "Transfer recipient created successfully",
+  "data": {
+    "active": true,
+    "createdAt": "2022-02-21T11:35:59.302Z",
+    "currency": "NGN",
+    "domain": "test",
+    "email": "revs@ore.com",
+    "id": 25747878,
+    "integration": 463433,
+    "name": "Revs Ore",
+    "recipient_code": "RCP_wql6bj95bll7m6h",
+    "type": "authorization",
+    "updatedAt": "2022-02-21T11:35:59.302Z",
+    "is_deleted": false,
+    "isDeleted": false,
+    "details": {
+      "authorization_code": "AUTH_ncx8hews93",
+      "account_number": null,
+      "account_name": null,
+      "bank_code": "057",
+      "bank_name": "Zenith Bank"
+    }
+  }
+}
