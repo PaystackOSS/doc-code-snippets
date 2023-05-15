@@ -47,13 +47,13 @@ function readFiles(config, directory) {
   languages.forEach((language) => {
     try {
       const data = fs.readFileSync(path.join(directory, `index.${language}`), 'utf8');
-      content = content + "\n\n" + `const ${language} = \`${data}\``
+      content = content + `const ${language} = \`${data}\`` + "\n\n"
     } catch (err) {
       console.error(err);
     }
   })
 
-  content = content + "\n\n" + `export {${languages.join(", ")}}`
+  content = content + `export {${languages.join(", ")}}`
   return content
 }
 

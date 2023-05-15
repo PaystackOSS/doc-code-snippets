@@ -1,4 +1,4 @@
-const bash = `curl https://api.paystack.co/bank/resolve?account_number=0001234567&bank_code=058
+const sh = `curl https://api.paystack.co/bank/resolve?account_number=0001234567&bank_code=058
 -H "Authorization: Bearer YOUR_SECRET_KEY"
 -X GET`
 
@@ -27,7 +27,6 @@ https.request(options, res => {
 }).on('error', error => {
   console.error(error)
 })`
-
 
 const php = `<?php
 
@@ -69,4 +68,4 @@ const json = `{
   }
 }`
 
-export { bash, js, php, json }
+export {sh, js, php, json}

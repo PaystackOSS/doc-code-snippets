@@ -1,5 +1,3 @@
-
-
 const sh = `curl https://api.paystack.co/transfer/bulk
 -H "Authorization: Bearer YOUR_SECRET_KEY"
 -H "Content-Type: application/json"

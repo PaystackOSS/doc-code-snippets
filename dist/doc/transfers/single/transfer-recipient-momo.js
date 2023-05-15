@@ -1,20 +1,28 @@
-const bash = `curl https://api.paystack.co/transfer/finalize_transfer
+const sh = `curl https://api.paystack.co/transferrecipient
 -H "Authorization: Bearer YOUR_SECRET_KEY"
 -H "Content-Type: application/json"
--d '{ "transfer_code": "TRF_vsyqdmlzble3uii", "otp": "928783" }'
+-d '{ "type": "mobile_money", 
+      "name": "Abina Nana", 
+      "account_number": "0551234987", 
+      "bank_code": "MTN", 
+      "currency": "GHS"
+    }'
 -X POST`
 
 const js = `const https = require('https')
 
 const params = JSON.stringify({
-  "transfer_code": "TRF_vsyqdmlzble3uii", 
-  "otp": "928783"
+  "type":"mobile_money",
+  "name" : "Abina Nana",
+  "account_number": "0551234987",
+  "bank_code": "MTN",
+  "currency": "GHS"
 })
 
 const options = {
   hostname: 'api.paystack.co',
   port: 443,
-  path: '/transfer/finalize_transfer',
+  path: '/transferrecipient',
   method: 'POST',
   headers: {
     Authorization: 'Bearer SECRET_KEY',
@@ -40,11 +48,14 @@ req.write(params)
 req.end()`
 
 const php = `<?php
-  $url = "https://api.paystack.co/transfer/finalize_transfer";
+  $url = "https://api.paystack.co/transferrecipient";
 
   $fields = [
-    "transfer_code" => "TRF_vsyqdmlzble3uii", 
-    "otp" => "928783"
+    'type' => "mobile_money",
+    'name' => "Abina Nana",
+    'account_number' => "0551234987",
+    'bank_code' => "MTN",
+    'currency' => "GHS"
   ];
 
   $fields_string = http_build_query($fields);
@@ -71,22 +82,28 @@ const php = `<?php
 
 const json = `{
   "status": true,
-  "message": "Transfer has been queued",
+  "message": "Transfer recipient created successfully",
   "data": {
-    "reference": "on5hyz9poe",
-    "integration": 428626,
+    "active": true,
+    "createdAt": "2022-02-21T12:57:02.156Z",
+    "currency": "GHS",
     "domain": "test",
-    "amount": 3794800,
-    "currency": "NGN",
-    "source": "balance",
-    "reason": "Holiday Flexing",
-    "recipient": 6788170,
-    "status": "success",
-    "transfer_code": "TRF_vsyqdmlzble3uii",
-    "id": 23070321,
-    "createdAt": "2020-05-13T14:22:49.687Z",
-    "updatedAt": "2020-05-13T14:22:49.687Z"
+    "id": 25753454,
+    "integration": 519035,
+    "name": "Abina Nana",
+    "recipient_code": "RCP_u2tnoyjjvh95pzm",
+    "type": "mobile_money",
+    "updatedAt": "2022-02-21T12:57:02.156Z",
+    "is_deleted": false,
+    "isDeleted": false,
+    "details": {
+      "authorization_code": null,
+      "account_number": "0551234987",
+      "account_name": null,
+      "bank_code": "MTN",
+      "bank_name": "MTN"
+    }
   }
 }`
 
-export { bash, js, php, json }
+export {sh, js, php, json}

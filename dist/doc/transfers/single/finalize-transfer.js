@@ -1,26 +1,21 @@
-const bash = `curl https://api.paystack.co/transferrecipient
+const sh = `curl https://api.paystack.co/transfer/finalize_transfer
 -H "Authorization: Bearer YOUR_SECRET_KEY"
 -H "Content-Type: application/json"
--d '{ "type": "authorization", 
-      "name": "Revs Ore", 
-      "email": "revs@ore.com", 
-      "authorization_code": "AUTH_ncx8hews93"
-    }'
--X POST`
+-d '{ "transfer_code": "TRF_vsyqdmlzble3uii", "otp": "928783" }'
+-X POST
+`
 
 const js = `const https = require('https')
 
 const params = JSON.stringify({
-  "type":"authorization",
-  "name" : "Revs Ore",
-  "email": "revs@ore.com",
-  "authorization_code": "AUTH_ncx8hews93"
+  "transfer_code": "TRF_vsyqdmlzble3uii", 
+  "otp": "928783"
 })
 
 const options = {
   hostname: 'api.paystack.co',
   port: 443,
-  path: '/transferrecipient',
+  path: '/transfer/finalize_transfer',
   method: 'POST',
   headers: {
     Authorization: 'Bearer SECRET_KEY',
@@ -46,13 +41,11 @@ req.write(params)
 req.end()`
 
 const php = `<?php
-  $url = "https://api.paystack.co/transferrecipient";
+  $url = "https://api.paystack.co/transfer/finalize_transfer";
 
   $fields = [
-    'type' => "authorization",
-    'name' => "Revs Ore",
-    'email' => "revs@ore.com",
-    'authorization_code' => "AUTH_ncx8hews93"
+    "transfer_code" => "TRF_vsyqdmlzble3uii", 
+    "otp" => "928783"
   ];
 
   $fields_string = http_build_query($fields);
@@ -75,33 +68,27 @@ const php = `<?php
   //execute post
   $result = curl_exec($ch);
   echo $result;
-?>`
+?>
+`
 
 const json = `{
   "status": true,
-  "message": "Transfer recipient created successfully",
+  "message": "Transfer has been queued",
   "data": {
-    "active": true,
-    "createdAt": "2022-02-21T11:35:59.302Z",
-    "currency": "NGN",
+    "reference": "on5hyz9poe",
+    "integration": 428626,
     "domain": "test",
-    "email": "revs@ore.com",
-    "id": 25747878,
-    "integration": 463433,
-    "name": "Revs Ore",
-    "recipient_code": "RCP_wql6bj95bll7m6h",
-    "type": "authorization",
-    "updatedAt": "2022-02-21T11:35:59.302Z",
-    "is_deleted": false,
-    "isDeleted": false,
-    "details": {
-      "authorization_code": "AUTH_ncx8hews93",
-      "account_number": null,
-      "account_name": null,
-      "bank_code": "057",
-      "bank_name": "Zenith Bank"
-    }
+    "amount": 3794800,
+    "currency": "NGN",
+    "source": "balance",
+    "reason": "Holiday Flexing",
+    "recipient": 6788170,
+    "status": "success",
+    "transfer_code": "TRF_vsyqdmlzble3uii",
+    "id": 23070321,
+    "createdAt": "2020-05-13T14:22:49.687Z",
+    "updatedAt": "2020-05-13T14:22:49.687Z"
   }
 }`
 
-export { bash, js, php, json }
+export {sh, js, php, json}

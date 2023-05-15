@@ -1,22 +1,20 @@
-const bash = `curl https://api.paystack.co/transferrecipient
+const sh = `curl https://api.paystack.co/transferrecipient
 -H "Authorization: Bearer YOUR_SECRET_KEY"
 -H "Content-Type: application/json"
--d '{ "type": "mobile_money", 
-      "name": "Abina Nana", 
-      "account_number": "0551234987", 
-      "bank_code": "MTN", 
-      "currency": "GHS"
+-d '{ "type": "authorization", 
+      "name": "Revs Ore", 
+      "email": "revs@ore.com", 
+      "authorization_code": "AUTH_ncx8hews93"
     }'
 -X POST`
 
 const js = `const https = require('https')
 
 const params = JSON.stringify({
-  "type":"mobile_money",
-  "name" : "Abina Nana",
-  "account_number": "0551234987",
-  "bank_code": "MTN",
-  "currency": "GHS"
+  "type":"authorization",
+  "name" : "Revs Ore",
+  "email": "revs@ore.com",
+  "authorization_code": "AUTH_ncx8hews93"
 })
 
 const options = {
@@ -51,11 +49,10 @@ const php = `<?php
   $url = "https://api.paystack.co/transferrecipient";
 
   $fields = [
-    'type' => "mobile_money",
-    'name' => "Abina Nana",
-    'account_number' => "0551234987",
-    'bank_code' => "MTN",
-    'currency' => "GHS"
+    'type' => "authorization",
+    'name' => "Revs Ore",
+    'email' => "revs@ore.com",
+    'authorization_code' => "AUTH_ncx8hews93"
   ];
 
   $fields_string = http_build_query($fields);
@@ -85,25 +82,26 @@ const json = `{
   "message": "Transfer recipient created successfully",
   "data": {
     "active": true,
-    "createdAt": "2022-02-21T12:57:02.156Z",
-    "currency": "GHS",
+    "createdAt": "2022-02-21T11:35:59.302Z",
+    "currency": "NGN",
     "domain": "test",
-    "id": 25753454,
-    "integration": 519035,
-    "name": "Abina Nana",
-    "recipient_code": "RCP_u2tnoyjjvh95pzm",
-    "type": "mobile_money",
-    "updatedAt": "2022-02-21T12:57:02.156Z",
+    "email": "revs@ore.com",
+    "id": 25747878,
+    "integration": 463433,
+    "name": "Revs Ore",
+    "recipient_code": "RCP_wql6bj95bll7m6h",
+    "type": "authorization",
+    "updatedAt": "2022-02-21T11:35:59.302Z",
     "is_deleted": false,
     "isDeleted": false,
     "details": {
-      "authorization_code": null,
-      "account_number": "0551234987",
+      "authorization_code": "AUTH_ncx8hews93",
+      "account_number": null,
       "account_name": null,
-      "bank_code": "MTN",
-      "bank_name": "MTN"
+      "bank_code": "057",
+      "bank_name": "Zenith Bank"
     }
   }
 }`
 
-export { bash, js, php, json }
+export {sh, js, php, json}
