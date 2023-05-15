@@ -1,25 +1,26 @@
-const bash = `curl https://api.paystack.co/paymentrequest
+const sh = `curl https://api.paystack.co/customer
 -H "Authorization: Bearer YOUR_SECRET_KEY"
 -H "Content-Type: application/json"
--d '{ 
-      "customer": "CUS_gv2e6wdd0os1rd4",
-      "amount": 40000,
-      "description": "2-for-1 promo"
+-d '{ "email": "zero@sum.com"
+      "first_name": "Zero",
+      "last_name": "Sum",
+      "phone": "+2348123456789"
     }'
 -X POST`
 
 const js = `const https = require('https')
 
 const params = JSON.stringify({
-  "customer": "CUS_gv2e6wdd0os1rd4",
-  "amount": 40000,
-  "description": "2-for-1 promo"
+  "email": "zero@sum.com",
+  "first_name": "Zero",
+  "last_name": "Sum",
+  "phone": "+2348123456789"
 })
 
 const options = {
   hostname: 'api.paystack.co',
   port: 443,
-  path: '/paymentrequest',
+  path: '/customer',
   method: 'POST',
   headers: {
     Authorization: 'Bearer SECRET_KEY',
@@ -45,12 +46,13 @@ req.write(params)
 req.end()`
 
 const php = `<?php
-  $url = "https://api.paystack.co/paymentrequest";
+  $url = "https://api.paystack.co/customer";
 
   $fields = [
-    "customer" => "CUS_gv2e6wdd0os1rd4",
-    "amount" => "40000",
-    "description" => "2-for-1 promo"
+    "email" => "zero@sum.com",
+    "first_name": "Zero",
+    "last_name": "Sum"
+    "phone": "+2348123456789"
   ];
 
   $fields_string = http_build_query($fields);
@@ -77,30 +79,25 @@ const php = `<?php
 
 const json = `{
   "status": true,
-  "message": "Payment request created",
+  "message": "Customer created",
   "data": {
-    "id": 8344724,
-    "integration": 463433,
+    "transactions": [],
+    "subscriptions": [],
+    "authorizations": [],
+    "email": "zero@sum.com",
+    "first_name": "Zero",
+    "last_name": "Sum",
+    "phone": "+2348123456789",
+    "integration": 100032,
     "domain": "test",
-    "amount": 40000,
-    "currency": "NGN",
-    "due_date": null,
-    "has_invoice": false,
-    "invoice_number": null,
-    "description": "2-for-1 promo",
-    "line_items": [],
-    "tax": [],
-    "request_code": "PRQ_xkid8oip8r2gt2y",
-    "status": "pending",
-    "paid": false,
-    "metadata": null,
-    "notifications": [],
-    "offline_reference": "4634338344724",
-    "customer": 60604714,
-    "created_at": "2021-11-09T10:47:22.467Z",
-    "discount": null,
-    "split_code": null
+    "customer_code": "CUS_xnxdt6s1zg1f4nx",
+    "risk_action": "default",
+    "id": 1173,
+    "identified": false,
+    "identifications":null,
+    "createdAt": "2021-03-29T20:03:09.584Z",
+    "updatedAt": "2021-03-29T20:03:09.584Z"
   }
 }`
 
-export { bash, js, php, json }
+export {sh, js, php, json}

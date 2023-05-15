@@ -1,0 +1,58 @@
+{
+  "event":"charge.success",
+  "data":{
+    "id":1259864309,
+    "domain":"live",
+    "status":"success",
+    "reference":"pos_wtwyrj7n6x",
+    "amount":"5000",
+    "message":"Payment Made",
+    "gateway_response":"Approved or completed successfully",
+    "paid_at":"2021-11-04T16:32:33.000Z",
+    "created_at":"2021-11-04T16:32:04.000Z",
+    "channel":"pos",
+    "currency":"NGN",
+    "ip_address":"35.178.254.191, 172.70.162.115",
+    "metadata":0,
+    "log":null,
+    "fees":null,
+    "fees_split":null,
+    "authorization":{
+      "exp_month":null,
+      "exp_year":null,
+      "account_name":null,
+      "receiver_bank_account_number":null,
+      "receiver_bank":null
+    },
+    "customer":{
+      "id":180059003,
+      "first_name":null,
+      "last_name":null,
+      "email":"pos_e3iesb-eh@email.com",
+      "customer_code":"CUS_xztjqwng1kzwdbt",
+      "phone":null,
+      "metadata":null,
+      "risk_action":"default",
+      "international_format_phone":null
+    },
+    "plan":{
+      
+    },
+    "subaccount":{
+      
+    },
+    "split":{
+      
+    },
+    "order_id":null,
+    "paidAt":"2021-11-04T16:32:33.000Z",
+    "requested_amount":"200",
+    "pos_transaction_data":null,
+    "source":{
+      "type":"offline",
+      "source":"pos",
+      "entry_point":"pos_initialize",
+      "identifier":"2232WE17"
+    }
+  }
+}
