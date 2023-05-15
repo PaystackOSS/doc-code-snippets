@@ -56,7 +56,7 @@ Widget build(BuildContext context) {
   );
 }`
 
-const kts = `class MainActivity : AppCompatActivity() {
+const kt = `class MainActivity : AppCompatActivity() {
 
   private val authorizationUrl: String
       get() = "https://checkout.paystack.com/ok62i2sdld514e4"
@@ -121,4 +121,4 @@ class CheckoutViewController: UIViewController, WKNavigationDelegate {
   }
 }`
 
-export {js, dart, kts, swift}
+export {js, dart, kt, swift}
