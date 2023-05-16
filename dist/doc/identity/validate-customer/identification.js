@@ -1,30 +1,33 @@
-const bash = `curl https://api.paystack.co/bvn/match
+const sh = `curl https://api.paystack.co/customer/{customer_code}/identification
 -H "Authorization: Bearer YOUR_SECRET_KEY"
 -H "Content-Type: application/json"
--d '{ "bvn": "xxxxxxxxxxx", 
-      "account_number": "0001234567", 
-     "bank_code": "058", 
-     "first_name": "Jane", 
-     "last_name": "Doe",
-     "middle_name": "Loren"
-    }'
+-d '{ 
+	"country": "NG",
+	"type": "bank_account",
+	"account_number": "0123456789",
+	"bvn": "200123456677",
+	"bank_code": "007",
+	"first_name": "Asta",
+	"last_name": "Lavista"
+}'
 -X POST`
 
 const js = `const https = require('https')
 
-const params = JSON.stringify({
-  bvn: "xxxxxxxxxxx",
-  account_number: "0001234567",
-  bank_code: "058",
-  first_name: "Jane",
-  last_name: "Doe",
-  middle_name: "Loren"
+const params = JSON.stringify({ 
+	"country": "NG",
+	"type": "bank_account",
+	"account_number": "0123456789",
+	"bvn": "200123456677",
+	"bank_code": "007",
+	"first_name": "Asta",
+	"last_name": "Lavista"
 })
 
 const options = {
   hostname: 'api.paystack.co',
   port: 443,
-  path: '/bvn/match',
+  path: '/customer/{customer_code}/identification',
   method: 'POST',
   headers: {
     Authorization: 'Bearer SECRET_KEY',
@@ -50,18 +53,20 @@ req.write(params)
 req.end()`
 
 const php = `<?php
-  $url = "https://api.paystack.co/bvn/match";
+  $url = "https://api.paystack.co/customer/{customer_code}/identification";
+
   $fields = [
-    'bvn' => "xxxxxxxxxxx",
-    'account_number' => '0001234567',
-    'bank_code' => '058',
-    'first_name' => "Jane",
-    'last_name' => 'Doe',
-    'middle_name' => 'Loren'
+    "country": "NG",
+	"type": "bank_account",
+	"account_number": "0123456789",
+	"bvn": "200123456677",
+	"bank_code": "007",
+	"first_name": "Asta",
+	"last_name": "Lavista"
   ];
-  
+
   $fields_string = http_build_query($fields);
-  
+
   //open connection
   $ch = curl_init();
   
@@ -84,19 +89,7 @@ const php = `<?php
 
 const json = `{
   "status": true,
-  "message": "BVN lookup successful",
-  "data": {
-    "bvn": "xxxxxxxxxxx",
-    "is_blacklisted": false,
-    "account_number": true,
-    "first_name": true,
-    "middle_name": false,
-    "last_name": true
-  },
-  "meta": {
-    "calls_this_month": 1,
-    "free_calls_left": 9
-  }
+  "message": "Customer Identification in progress"
 }`
 
-export { bash, js, php, json }
+export {sh, js, php, json}
