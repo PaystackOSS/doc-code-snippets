@@ -1,0 +1,13 @@
+{
+  "event": "customeridentification.success",
+  "data": {
+    "customer_id": "9387490384",
+    "customer_code": "CUS_xnxdt6s1zg1f4nx",
+    "email": "bojack@horsinaround.com",
+    "identification": {
+      "country": "NG",
+      "type": "bvn",
+      "value": "200*****677"
+    }
+  }
+}

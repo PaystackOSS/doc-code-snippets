@@ -1,0 +1,15 @@
+{
+  "event": "customeridentification.success",
+  "data": {
+    "customer_id": "9387490384",
+    "customer_code": "CUS_xnxdt6s1zg1f4nx",
+    "email": "bojack@horsinaround.com",
+    "identification": {
+      "country": "NG",
+      "type": "bank_account",
+      "bvn": "200*****677",
+      "account_number": "012****789",
+      "bank_code": "007"
+    }
+  }
+}

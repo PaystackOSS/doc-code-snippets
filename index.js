@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path')
 const yaml = require('js-yaml');
+const { get } = require('http');
 
 function createBaseFolder() {
   const folderName = 'dist';
@@ -34,17 +35,44 @@ function getAllFiles(parentDir, directoryContent) {
   return directoryContent
 }
 
-function readFiles(config, directory) {
-  let languages = []
+function getEventFileContent(directory) {
+  const files = fs.readdirSync(directory);
+  let exportVariables = []
   let content = ""
+
+  files.forEach((file) => {
+    if(path.extname(file) === ".json") {
+      try {
+        const filename = file.split(".")[0].replace(/-/g, "_")
+        const data = fs.readFileSync(path.join(directory, file), 'utf8');
+        content = content + `const ${filename} = \`${data}\`` + "\n\n"
+        exportVariables.push(filename)
+      } catch (err) {
+        console.error(err);
+      }
+    }
+  })
+
+  content = content + `export {${exportVariables.join(", ")}}`
+
+  return content
+}
+
+function readFiles(config, directory) {
+  let content = ""
+  let allConfig = []
   
   try {
-    languages = yaml.load(fs.readFileSync(path.join(directory, config), 'utf8')).languages
+    allConfig = yaml.load(fs.readFileSync(path.join(directory, config), 'utf8'))
   } catch (e) {
     console.log(e);
   }
 
-  languages.forEach((language) => {
+  if(allConfig.type && allConfig.type === "event") {
+    return getEventFileContent(directory)
+  }
+  
+  allConfig.languages.forEach((language) => {
     try {
       const data = fs.readFileSync(path.join(directory, `index.${language}`), 'utf8');
       content = content + `const ${language} = \`${data}\`` + "\n\n"
@@ -53,7 +81,7 @@ function readFiles(config, directory) {
     }
   })
 
-  content = content + `export {${languages.join(", ")}}`
+  content = content + `export {${allConfig.languages.join(", ")}}`
   return content
 }
 
