@@ -86,7 +86,7 @@ const payment_request_pending = `{
   }
 }`
 
-const payment_request_successful = `{
+const payment_request_success = `{
   "event":"paymentrequest.success",
   "data":{
     "id":1089700,
@@ -191,4 +191,4 @@ const transaction_successful = `{
   }
 }`
 
-export {payment_request_failed, payment_request_pending, payment_request_successful, transaction_successful}
+export {payment_request_failed, payment_request_pending, payment_request_success, transaction_successful}

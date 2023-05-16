@@ -1,19 +1,3 @@
-// FIXME: Figure events out
-
-const customer_id_success = `{
-  "event": "customeridentification.success",
-  "data": {
-    "customer_id": "9387490384",
-    "customer_code": "CUS_xnxdt6s1zg1f4nx",
-    "email": "bojack@horsinaround.com",
-    "identification": {
-      "country": "NG",
-      "type": "bvn",
-      "value": "200*****677"
-    }
-  }
-}`
-
 const customer_id_failed = `{
   "event":"customeridentification.failed",
   "data":{
@@ -31,11 +15,25 @@ const customer_id_failed = `{
   }
 }`
 
+const customer_id_success = `{
+  "event": "customeridentification.success",
+  "data": {
+    "customer_id": "9387490384",
+    "customer_code": "CUS_xnxdt6s1zg1f4nx",
+    "email": "bojack@horsinaround.com",
+    "identification": {
+      "country": "NG",
+      "type": "bvn",
+      "value": "200*****677"
+    }
+  }
+}`
+
 const dva_assign_failed = `{
   "event":"dedicatedaccount.assign.failed",
   "data":{
-    "customer":{
-      "id":000110,
+    "customer": {
+      "id": 100110,
       "first_name":"John",
       "last_name":"Doe",
       "email":"johndoe@test.com",
@@ -56,7 +54,7 @@ const dva_assign_success = `{
   "event":"dedicatedaccount.assign.success",
   "data":{
     "customer":{
-      "id":000110,
+      "id": 100110,
       "first_name":"John",
       "last_name":"Doe",
       "email":"johndoe@test.com",
@@ -82,8 +80,8 @@ const dva_assign_success = `{
       "created_at":"2022-06-21T17:12:40.000Z",
       "updated_at":"2022-08-12T14:02:51.000Z",
       "assignment":{
-        "integration":000123,
-        "assignee_id":000110,
+        "integration":100123,
+        "assignee_id":100110,
         "assignee_type":"Customer",
         "expired":false,
         "account_type":"PAY-WITH-TRANSFER-RECURRING",
@@ -97,4 +95,4 @@ const dva_assign_success = `{
   }
 }`
 
-export { customer_id_failed, customer_id_success, dva_assign_failed, dva_assign_success }
+export {customer_id_failed, customer_id_success, dva_assign_failed, dva_assign_success}
