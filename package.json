@@ -1,26 +1,31 @@
 {
-  "name": "doc-snippets",
-  "version": "0.0.1",
-  "description": "Code samples for Paystack Documentation",
-  "main": "index.js",
-  "directories": {
-    "doc": "doc"
-  },
-  "scripts": {
-    "build": "node ./index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/PaystackOSS/doc-snippets.git"
-  },
-  "author": "Damilola Odujoko",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/PaystackOSS/doc-snippets/issues"
-  },
-  "homepage": "https://github.com/PaystackOSS/doc-snippets#readme",
-  "devDependencies": {
-    "js-yaml": "^4.1.0"
-  }
+	"name": "doc-snippets",
+	"version": "0.0.1",
+	"description": "Code samples for Paystack Documentation",
+	"main": "index.js",
+	"directories": {
+		"doc": "doc"
+	},
+	"scripts": {
+		"build": "node ./index.js",
+    "format:js": "npx prettier --check .",
+		"lint:js": "npx eslint --ext .js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/PaystackOSS/doc-snippets.git"
+	},
+	"author": "Damilola Odujoko",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/PaystackOSS/doc-snippets/issues"
+	},
+	"homepage": "https://github.com/PaystackOSS/doc-snippets#readme",
+	"devDependencies": {
+		"eslint": "^8.40.0",
+		"eslint-config-prettier": "^8.8.0",
+		"js-yaml": "^4.1.0",
+		"prettier": "2.8.8"
+	}
 }
