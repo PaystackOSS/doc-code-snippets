@@ -1,4 +1,4 @@
-const bash = `curl https://api.paystack.co/decision/bin/539983
+const sh = `curl https://api.paystack.co/decision/bin/539983
 -H "Authorization: Bearer YOUR_SECRET_KEY"
 -X GET`
 
@@ -26,7 +26,8 @@ https.request(options, res => {
   })
 }).on('error', error => {
   console.error(error)
-})`
+})
+`
 
 const php = `<?php
   
@@ -56,7 +57,8 @@ const php = `<?php
   } else {
     echo $response;
   }
-?>`
+?>
+`
 
 const json = `{
   "status": true,
@@ -73,4 +75,4 @@ const json = `{
   }
 }`
 
-export { bash, js, php, json }
+export {sh, js, php, json}

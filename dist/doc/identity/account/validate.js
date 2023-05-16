@@ -1,29 +1,33 @@
-const bash = `curl https://api.paystack.co/customer/{customer_code}/identification
+const sh = `curl https://api.paystack.co/bank/validate
 -H "Authorization: Bearer YOUR_SECRET_KEY"
 -H "Content-Type: application/json"
 -d '{ 
-      "country": "NG",
-      "type": "bvn",
-      "value": "200123456677",
-      "first_name": "Asta",
-      "last_name": "Lavista"
-}'
+      "bank_code": "632005",
+      "country_code": "ZA",
+      "account_number": "0123456789",
+      "account_name": "Ann Bron",
+      "account_type": "personal",
+      "document_type": "identityNumber",
+      "document_number": "1234567890123"
+    }'
 -X POST`
 
 const js = `const https = require('https')
 
 const params = JSON.stringify({
-	"country": "NG",
-  "type": "bvn",
-  "value": "200123456677",
-  "first_name": "Asta",
-  "last_name": "Lavista"
+  "bank_code": "632005",
+  "country_code": "ZA",
+  "account_number": "0123456789",
+  "account_name": "Ann Bron",
+  "account_type": "personal",
+  "document_type": "identityNumber",
+  "document_number": "1234567890123"
 })
 
 const options = {
   hostname: 'api.paystack.co',
   port: 443,
-  path: '/customer/{customer_code}/identification',
+  path: '/bank/validate',
   method: 'POST',
   headers: {
     Authorization: 'Bearer SECRET_KEY',
@@ -49,18 +53,19 @@ req.write(params)
 req.end()`
 
 const php = `<?php
-  $url = "https://api.paystack.co/customer/{customer_code}/identification";
-
+  $url = "https://api.paystack.co/bank/validate";
   $fields = [
-    "country": "NG",
-    "type": "bvn",
-    "value": "200123456677",
-    "first_name": "Asta",
-    "last_name": "Lavista"
+    'bank_code' => "632005",
+    'country_code' => 'ZA',
+    'account_number' => '0123456789',
+    'account_name' => 'Jane Ann',
+    'account_type' => 'personal',
+    'document_type' => 'identityNumber',
+    'document_number' => '1234567890123'
   ];
-
+  
   $fields_string = http_build_query($fields);
-
+  
   //open connection
   $ch = curl_init();
   
@@ -80,14 +85,14 @@ const php = `<?php
   $result = curl_exec($ch);
   echo $result;
 ?>`
+
 const json = `{
-    "status": true,
-    "message": "Customer Identification in progress"
-  }`
+  "status": true,
+  "message": "Personal Account Verification attempted",
+  "data": {
+    "verified": true,
+    "verificationMessage": "Account is verified successfully"
+  }
+}`
 
-const json_400 = `{
-    "status": false,
-    "message": "Invalid BVN"
-  }`
-
-export { bash, js, php, json, json_400 }
+export {sh, js, php, json}

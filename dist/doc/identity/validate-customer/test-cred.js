@@ -6,7 +6,6 @@ const json = `{
 	"bank_code": "007",
 	"first_name": "Uchenna",
 	"last_name": "Okoro"
-}
-`
+}`
 
-export { json }
+export {json}
