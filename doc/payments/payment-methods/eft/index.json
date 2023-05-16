@@ -1,0 +1,9 @@
+{
+  "status": true,
+  "message": "Charge attempted",
+  "data": {
+    "reference": "18c0ywb63zutno0",
+    "status": "open_url",
+    "url": "https://crayon.paystack.co/eft/EFT_OZOW/121502"
+  }
+}
