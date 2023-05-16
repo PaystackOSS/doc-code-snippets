@@ -1,3 +1,5 @@
+// FIXME: Figure events out
+
 const customer_id_success = `{
   "event": "customeridentification.success",
   "data": {

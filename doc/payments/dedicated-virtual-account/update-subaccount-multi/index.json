@@ -1,0 +1,20 @@
+{
+  "status": true,
+  "message": "Subaccount assigned",
+  "data": {
+    "id": 22495,
+    "account_name": "KAROKART/YINKA ADE",
+    "account_number": "0033322211",
+    "assigned": 1,
+    "currency": "NGN",
+    "metadata": null,
+    "active": 1,
+    "last_assignment_id": 525,
+    "createdAt": "2020-03-20T11:03:43.000Z",
+    "updatedAt": "2020-03-20T11:03:43.000Z",
+    "assignment_id": 525,
+    "split_config": {
+      "split_code":"SPL_e7jnRLtzla"
+    }
+  }
+}
