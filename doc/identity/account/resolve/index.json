@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
     "status": true,
     "message": "Account number resolved",
     "data": {
@@ -7,13 +6,4 @@
       "account_name": "Doe Jane Loren",
       "bank_id": 9
     }
-=======
-  "status": true,
-  "message": "Account number resolved",
-  "data": {
-    "account_number": "0001234567",
-    "account_name": "Doe Jane Loren",
-    "bank_id": 9
-  }
->>>>>>> 25d620922afea9dee8f1de430e39ec1fca44c746
 }

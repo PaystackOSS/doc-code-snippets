@@ -26,8 +26,4 @@
   } else {
     echo $response;
   }
-<<<<<<< HEAD
-
-=======
->>>>>>> 25d620922afea9dee8f1de430e39ec1fca44c746
 ?>
