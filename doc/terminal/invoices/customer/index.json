@@ -1,0 +1,22 @@
+{
+  "status": true,
+  "message": "Customer created",
+  "data": {
+    "transactions": [],
+    "subscriptions": [],
+    "authorizations": [],
+    "email": "zero@sum.com",
+    "first_name": "Zero",
+    "last_name": "Sum",
+    "phone": "+2348123456789",
+    "integration": 100032,
+    "domain": "test",
+    "customer_code": "CUS_xnxdt6s1zg1f4nx",
+    "risk_action": "default",
+    "id": 1173,
+    "identified": false,
+    "identifications":null,
+    "createdAt": "2021-03-29T20:03:09.584Z",
+    "updatedAt": "2021-03-29T20:03:09.584Z"
+  }
+}

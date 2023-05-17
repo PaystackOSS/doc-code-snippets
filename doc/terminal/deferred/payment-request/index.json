@@ -1,0 +1,36 @@
+{
+  "status": true,
+  "message": "Payment request created",
+  "data": {
+    "id": 6304434,
+    "integration": 463433,
+    "domain": "live",
+    "amount": 5000,
+    "currency": "NGN",
+    "due_date": "2021-05-18T00:00:00.000Z",
+    "has_invoice": true,
+    "invoice_number": 4,
+    "description": "Invoice for Damilola",
+    "line_items": [
+      {
+        "name": "Pancakes and sausage",
+        "amount": "2000",
+        "quantity": 1
+      },
+      {
+        "name": "Chicken Salad",
+        "amount": "3000",
+        "quantity": 1
+      }
+    ],
+    "tax": [],
+    "request_code": "PRQ_kwahak3i05nt1ds",
+    "status": "pending",
+    "paid": false,
+    "metadata": null,
+    "notifications": [],
+    "offline_reference": "4634336304434",
+    "customer": 28958104,
+    "created_at": "2021-05-17T14:48:53.269Z"
+  }
+}

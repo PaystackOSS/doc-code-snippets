@@ -1,0 +1,54 @@
+{
+  "status": true,
+  "message": "Banks retrieved",
+  "data": [
+    {
+      "name": "AirtelTigo",
+      "slug": "atl-mobile-money",
+      "code": "ATL",
+      "longcode": "",
+      "gateway": null,
+      "pay_with_bank": false,
+      "active": true,
+      "is_deleted": null,
+      "country": "Ghana",
+      "currency": "GHS",
+      "type": "mobile_money",
+      "id": 29,
+      "createdAt": "2018-03-29T12:54:59.000Z",
+      "updatedAt": "2020-01-24T10:01:06.000Z"
+    },
+    {
+      "name": "MTN",
+      "slug": "mtn-mobile-money",
+      "code": "MTN",
+      "longcode": "",
+      "gateway": null,
+      "pay_with_bank": false,
+      "active": true,
+      "is_deleted": null,
+      "country": "Ghana",
+      "currency": "GHS",
+      "type": "mobile_money",
+      "id": 28,
+      "createdAt": "2018-03-29T12:54:59.000Z",
+      "updatedAt": "2019-10-22T11:04:46.000Z"
+    },
+    {
+      "name": "Vodafone",
+      "slug": "vod-mobile-money",
+      "code": "VOD",
+      "longcode": "",
+      "gateway": null,
+      "pay_with_bank": false,
+      "active": true,
+      "is_deleted": null,
+      "country": "Ghana",
+      "currency": "GHS",
+      "type": "mobile_money",
+      "id": 66,
+      "createdAt": "2018-03-29T12:54:59.000Z",
+      "updatedAt": "2019-10-22T11:05:08.000Z"
+    }
+  ]
+}

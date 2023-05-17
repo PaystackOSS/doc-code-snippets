@@ -1,0 +1,25 @@
+{
+  "status": true,
+  "message": "Transfer recipient created successfully",
+  "data": {
+    "active": true,
+    "createdAt": "2022-02-21T12:57:02.156Z",
+    "currency": "GHS",
+    "domain": "test",
+    "id": 25753454,
+    "integration": 519035,
+    "name": "Abina Nana",
+    "recipient_code": "RCP_u2tnoyjjvh95pzm",
+    "type": "mobile_money",
+    "updatedAt": "2022-02-21T12:57:02.156Z",
+    "is_deleted": false,
+    "isDeleted": false,
+    "details": {
+      "authorization_code": null,
+      "account_number": "0551234987",
+      "account_name": null,
+      "bank_code": "MTN",
+      "bank_name": "MTN"
+    }
+  }
+}

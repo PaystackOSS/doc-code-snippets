@@ -1,0 +1,10 @@
+{
+  "status": true,
+  "message": "Please, redirect your customer to the authorization url provided",
+  "data": {
+    "authorization_url": "https://checkout.paystack.com/resume/0744ub5o065nwyz",
+    "reference": "jvx2o36ghlvrgtt",
+    "access_code": "0744ub5o065nwyz",
+    "paused": true
+  }
+}

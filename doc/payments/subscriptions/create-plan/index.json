@@ -1,0 +1,21 @@
+{
+  "status": true,
+  "message": "Plan created",
+  "data": {
+    "name": "Monthly Retainer",
+    "interval": "monthly",
+    "amount": 500000,
+    "integration": 428626,
+    "domain": "test",
+    "currency": "NGN",
+    "plan_code": "PLN_u4cqud8vabi89hx",
+    "invoice_limit": 0,
+    "send_invoices": true,
+    "send_sms": true,
+    "hosted_page": false,
+    "migrate": false,
+    "id": 49122,
+    "createdAt": "2020-05-22T12:36:12.333Z",
+    "updatedAt": "2020-05-22T12:36:12.333Z"
+  }
+}

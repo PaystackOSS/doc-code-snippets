@@ -1,0 +1,10 @@
+{
+  "status": true,
+  "message": "Charge attempted",
+  "data": {
+    "reference": "48rx32f1womvcr4",
+    "status": "pay_offline",
+    "qr_code": "0002010216421527000104176552045499530356654031005802NG5920Babafemi enterprises6005Lagos62230519PSTK_104176000926|16304713a",
+    "url": "https://files.paystack.co/qr/visa/104176/Babafemi_enterprises_visaqr_1544025482956.png"
+  }
+}
