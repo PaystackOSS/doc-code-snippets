@@ -1,0 +1,18 @@
+{
+  "event": "refund.processing",
+  "data": {
+    "status": "processing",
+    "transaction_reference": "tvunjbbd_412829_4b18075d_c7had",
+    "refund_reference": null,
+    "amount": "10000",
+    "currency": "NGN",
+    "processor": "instant-transfer",
+    "customer": {
+      "first_name": "Drew",
+      "last_name": "Berry",
+      "email": "demo@email.com"
+    },
+    "integration": 412829,
+    "domain": "live"
+  }
+}
