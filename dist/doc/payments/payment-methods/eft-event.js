@@ -1,0 +1,52 @@
+const json = `{
+  "event": "charge.success",
+  "data": {
+    "id": 59214,
+    "domain": "live",
+    "status": "success",
+    "reference": "gf4n3ykzj6a7u89",
+    "amount": 100,
+    "message": "madePayment",
+    "gateway_response": "Approved",
+    "paid_at": "2018-11-15T06:10:54.000Z",
+    "created_at": "2018-11-15T06:10:32.000Z",
+    "channel": "mobile_money",
+    "currency": "GHS",
+    "ip_address": "18.130.236.148, 141.101.99.73",
+    "metadata": "",
+    "log": null,
+    "fees": 153,
+    "fees_split": null,
+    "authorization": {
+      "authorization_code": "AUTH_0aqm8ddx6s",
+      "bin": "055XXX",
+      "last4": "X149",
+      "exp_month": "12",
+      "exp_year": "9999",
+      "channel": "mobile_money",
+      "card_type": "",
+      "bank": "MTN Mobile Money",
+      "country_code": "GH",
+      "brand": "Mtn mobile money",
+      "reusable": false,
+      "signature": null,
+      "account_name": "BoJack Horseman"
+    },
+    "customer": {
+      "id": 16678,
+      "first_name": "Babafemi",
+      "last_name": "Aluko",
+      "email": "customer@email.com",
+      "customer_code": "CUS_2jk1i8ezoam49br",
+      "phone": "",
+      "metadata": null,
+      "risk_action": "allow"
+    },
+    "plan": {},
+    "subaccount": {},
+    "subaccount_group": {},
+    "paidAt": "2018-11-15T06:10:54.000Z"
+  }
+}`
+
+export {json}

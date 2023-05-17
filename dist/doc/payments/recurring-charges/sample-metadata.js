@@ -1,0 +1,10 @@
+const json = `{
+  "authorization_code" : "AUTH_ibegucp8kk",
+  "email" : "dami@2fa.com",
+  "amount" : 3000,
+  "metadata": {
+    "cancel_action": "https://yourcancelurl.com"
+  }
+}`
+
+export {json}
