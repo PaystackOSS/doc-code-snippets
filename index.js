@@ -85,10 +85,26 @@ function readFiles(config, directory) {
   return content
 }
 
-function writeToFile(config, directory) {
+function writeApiResponse(source, destination) {
+  const responseFilename = "response.json"
+  let content = ""
+  try {
+    content = fs.readFileSync(path.join(source, responseFilename), 'utf8');
+  } catch (err) {
+    console.error(err);
+  }
+
+  try {
+    fs.writeFileSync(path.join(destination, responseFilename), content);
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+function writeToFile(config, directory, tag) {
   const ancestor = directory.split("/")
-  const filename = ancestor[ancestor.length - 1] + ".js"
-  const parent = "dist/" + ancestor.slice(0, ancestor.length - 1).join("/")
+  const filename = tag === "api" ? "requests.js" : ancestor[ancestor.length - 1] + ".js"
+  const parent = tag === "api" ? "dist/" + ancestor.join("/") : "dist/" + ancestor.slice(0, ancestor.length - 1).join("/")
 
   try {
     if (!fs.existsSync(parent)) {
@@ -99,6 +115,10 @@ function writeToFile(config, directory) {
   }
 
   const content = readFiles(config, directory)
+
+  if(tag === "api") {
+    writeApiResponse(directory, parent)
+  }
   
   try {
     fs.writeFileSync(path.join(parent, filename), content);
@@ -110,9 +130,14 @@ function writeToFile(config, directory) {
 function buildSnippets() {
   createBaseFolder()
   const docFiles = getAllFiles("doc", [])
+  const apiFiles = getAllFiles("api", [])
 
   docFiles.forEach(({ config, directory }) => {
-    writeToFile(config, directory)
+    writeToFile(config, directory, "doc")
+  })
+
+  apiFiles.forEach(({ config, directory }) => {
+    writeToFile(config, directory, "api")
   })
 }
 
