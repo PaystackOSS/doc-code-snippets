@@ -1,11 +1,11 @@
-const bash = `curl https://api.paystack.co/apple-pay/domain
--H "Authorization: Bearer YOUR_SECRET_KEY"
--H "Content-Type: application/json"
--d '{ "domainName": "example.com" }'
+const sh = `#!/bin/bash
+curl https://api.paystack.co/apple-pay/domain \
+-H "Authorization: Bearer YOUR_SECRET_KEY" \
+-H "Content-Type: application/json" \
+-d '{ "domainName": "example.com" }' \
 -X DELETE`
 
-const js= `const https = require('follow-redirects').https;
-const fs = require('fs');
+const js = `const https = require('https')
 
 const params = JSON.stringify({
   "domainName": "example.com"
@@ -18,8 +18,7 @@ const options = {
   'headers': {
     'authorization': 'Bearer SEECRET_KEY',
     'content-type': 'application/json'
-  },
-  'maxRedirects': 20
+  }
 };
 
 const req = https.request(options, function (res) {
@@ -59,15 +58,13 @@ curl_setopt_array($curl, array(
   CURLOPT_POSTFIELDS => array("domainName" => "example.com"),
   CURLOPT_HTTPHEADER => array(
     "authorization: Bearer SEECRET_KEY",
-    "content-type: application/json",
-    "Cookie: __cfduid=df6355b0f005797cd79527d1a6da37c131598191689"
+    "content-type: application/json"
   ),
 ));
 
 $response = curl_exec($curl);
 
 curl_close($curl);
-echo $response;
-`
+echo $response;`
 
-export { js, php, bash }
+export {sh, js, php}
