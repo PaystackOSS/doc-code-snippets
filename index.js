@@ -132,8 +132,6 @@ function buildSnippets() {
   const docFiles = getAllFiles("doc", [])
   const apiFiles = getAllFiles("api", [])
 
-  console.log("API: ", apiFiles)
-
   docFiles.forEach(({ config, directory }) => {
     writeToFile(config, directory, "doc")
   })
