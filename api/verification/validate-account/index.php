@@ -1,15 +1,17 @@
 <?php
-  $url = "https://api.paystack.co/transaction/charge_authorization";
-
+  $url = "https://api.paystack.co/bank/validate";
   $fields = [
-    'authorization_code' => "AUTH_12abc345de",
-    'email' => "mail@mail.com",
-    'amount' => "300000",
-    'split_code' => "SPL_UO2vBzEqHW" 
+    'bank_code' => "632005",
+    'country_code' => 'ZA',
+    'account_number' => '0123456789',
+    'account_name' => 'Jane Ann',
+    'account_type' => 'personal',
+    'document_type' => 'identityNumber',
+    'document_number' => '1234567890123'
   ];
-
+  
   $fields_string = http_build_query($fields);
-
+  
   //open connection
   $ch = curl_init();
   

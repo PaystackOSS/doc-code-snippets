@@ -1,6 +1,7 @@
-const bash = `curl https://api.paystack.co/bank/validate
--H "Authorization: Bearer YOUR_SECRET_KEY"
--H "Content-Type: application/json"
+const sh = `#!/bin/sh
+curl https://api.paystack.co/bank/validate \
+-H "Authorization: Bearer YOUR_SECRET_KEY" \
+-H "Content-Type: application/json" \
 -d '{ 
       "bank_code": "632005",
       "country_code": "ZA",
@@ -9,7 +10,7 @@ const bash = `curl https://api.paystack.co/bank/validate
       "account_type": "personal",
       "document_type": "identityNumber",
       "document_number": "1234567890123"
-    }'
+    }'\
 -X POST`
 
 const js = `const https = require('https')
@@ -86,4 +87,4 @@ const php = `<?php
   echo $result;
 ?>`
 
-export { bash, js, php }
+export {sh, js, php}

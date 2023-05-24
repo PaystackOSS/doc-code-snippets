@@ -1,0 +1,24 @@
+{
+	"200": {
+		"description": "200 Ok",
+		"data": {
+			"status": true,
+			"message": "Personal Account Verification attempted",
+			"data": {
+				"verified": true,
+				"verificationMessage": "Account is verified successfully"
+			}
+		}
+	},
+	"400": {
+		"description": "400 Bad Request",
+		"data": {
+			"status": false,
+			"message": "Personal Account Verification attempted",
+			"data": {
+				"verified": false,
+				"verificationMessage": "The provided bank account number is invalid"
+			}
+		}
+	}
+}

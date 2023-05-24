@@ -47,7 +47,7 @@ const php = `<?php
   $url = "https://api.paystack.co/transaction/charge_authorization";
 
   $fields = [
-    'authorization_code' => "AUTH_pmx3mgawyd"
+    'authorization_code' => "AUTH_pmx3mgawyd",
     'email' => "mail@mail.com",
     'amount' => "300000"
   ];

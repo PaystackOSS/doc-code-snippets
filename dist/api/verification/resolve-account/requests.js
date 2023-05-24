@@ -1,13 +1,15 @@
-const bash = `curl https://api.paystack.co/bank/resolve?account_number=0022728151&bank_code=063
--H "Authorization: Bearer YOUR_SECRET_KEY"
--X GET`
+const sh = `#!/bin/sh
+curl "https://api.paystack.co/bank/resolve?account_number=0022728151&bank_code=063" \
+  -H "Authorization: Bearer YOUR_SECRET_KEY" \
+  -X GET
+`
 
 const js = `const https = require('https')
 
 const options = {
   hostname: 'api.paystack.co',
   port: 443,
-  path: '/bank/resolve?account_number=0022728151&bank_code=063",
+  path: '/bank/resolve?account_number=0022728151&bank_code=063',
   method: 'GET',
   headers: {
     Authorization: 'Bearer SECRET_KEY'
@@ -57,4 +59,4 @@ const php = `<?php
   }
 ?>`
 
-export { bash, js, php }
+export {sh, js, php}

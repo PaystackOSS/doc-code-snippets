@@ -1,17 +1,14 @@
-const bash = `curl https://api.paystack.co/bank/resolve_bvn/:bvn
--H "Authorization: Bearer YOUR_SECRET_KEY"
--X GET`
+const sh = `#!/bin/sh
+curl https://api.paystack.co/decision/bin/539983 \
+  -X GET`
 
 const js = `const https = require('https')
 
 const options = {
   hostname: 'api.paystack.co',
   port: 443,
-  path: '/bank/resolve_bvn/:bvn',
-  method: 'GET',
-  headers: {
-    Authorization: 'Bearer SECRET_KEY'
-  }
+  path: '/decision/bin/539983',
+  method: 'GET'
 }
 
 https.request(options, res => {
@@ -32,17 +29,13 @@ const php = `<?php
   $curl = curl_init();
   
   curl_setopt_array($curl, array(
-    CURLOPT_URL => "https://api.paystack.co/bank/resolve_bvn/:bvn",
+    CURLOPT_URL => "https://api.paystack.co/decision/bin/539983",
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => "",
     CURLOPT_MAXREDIRS => 10,
     CURLOPT_TIMEOUT => 30,
     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-    CURLOPT_CUSTOMREQUEST => "GET",
-    CURLOPT_HTTPHEADER => array(
-      "Authorization: Bearer SECRET_KEY",
-      "Cache-Control: no-cache",
-    ),
+    CURLOPT_CUSTOMREQUEST => "GET"
   ));
   
   $response = curl_exec($curl);
@@ -57,4 +50,4 @@ const php = `<?php
   }
 ?>`
 
-export { bash, js, php }
+export {sh, js, php}

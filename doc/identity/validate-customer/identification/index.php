@@ -2,13 +2,13 @@
   $url = "https://api.paystack.co/customer/{customer_code}/identification";
 
   $fields = [
-    "country": "NG",
-	"type": "bank_account",
-	"account_number": "0123456789",
-	"bvn": "200123456677",
-	"bank_code": "007",
-	"first_name": "Asta",
-	"last_name": "Lavista"
+    "country" => "NG",
+    "type" => "bank_account",
+    "account_number" => "0123456789",
+    "bvn" => "200123456677",
+    "bank_code" => "007",
+    "first_name" => "Asta",
+    "last_name" => "Lavista"
   ];
 
   $fields_string = http_build_query($fields);
