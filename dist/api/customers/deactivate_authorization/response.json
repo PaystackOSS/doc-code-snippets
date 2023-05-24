@@ -1,0 +1,16 @@
+{
+	"200": {
+		"description": "200 Ok",
+		"data": {
+			"status": true,
+			"message": "Authorization has been deactivated"
+		}
+	},
+	"404": {
+		"description": "404 Not Found",
+		"data": {
+			"status": false,
+			"message": "Authorization code not found."
+		}
+	}
+}

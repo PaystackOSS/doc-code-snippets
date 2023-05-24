@@ -1,35 +1,20 @@
-const bash = `curl https://api.paystack.co/customer/{customer_code}/identification
--H "Authorization: Bearer YOUR_SECRET_KEY"
--H "Content-Type: application/json"
--d '{
-  "country": "NG",
-  "type": "bank_account",
-  "account_number": "0123456789",
-  "bvn": "20012345677",
-  "bank_code": "007",
-  "first_name": "Asta",
-  "last_name": "Lavista"
-
-}'
+const sh = `#!/bin/sh
+curl https://api.paystack.co/customer/deactivate_authorization \
+-H "Authorization: Bearer YOUR_SECRET_KEY" \
+-H "Content-Type: application/json"  \
+-d '{ "authorization_code": "AUTH_72btv547" }' \
 -X POST`
 
 const js = `const https = require('https')
 
 const params = JSON.stringify({
-  "country": "NG",
-  "type": "bank_account",
-  "account_number": "0123456789",
-  "bvn": "20012345677",
-  "bank_code": "007",
-  "first_name": "Asta",
-  "last_name": "Lavista"
-
+  "authorization_code": "AUTH_72btv547"
 })
 
 const options = {
   hostname: 'api.paystack.co',
   port: 443,
-  path: '/customer/{customer_code}/identification',
+  path: '/customer/deactivate_authorization',
   method: 'POST',
   headers: {
     Authorization: 'Bearer SECRET_KEY',
@@ -55,17 +40,10 @@ req.write(params)
 req.end()`
 
 const php = `<?php
-  $url = "https://api.paystack.co/customer/{customer_code}/identification";
+  $url = "https://api.paystack.co/customer/deactivate_authorization";
 
   $fields = [
-    "country": "NG",
-    "type": "bank_account",
-    "account_number": "0123456789",
-    "bvn": "20012345677",
-    "bank_code": "007",
-    "first_name": "Asta",
-    "last_name": "Lavista"
-
+    "authorization_code" => "AUTH_72btv547"
   ];
 
   $fields_string = http_build_query($fields);
@@ -90,4 +68,4 @@ const php = `<?php
   echo $result;
 ?>`
 
-export { bash, js, php }
+export {sh, js, php}
