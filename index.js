@@ -1,7 +1,6 @@
 const fs = require('fs');
 const path = require('path')
 const yaml = require('js-yaml');
-const { get } = require('http');
 
 function createBaseFolder() {
   const folderName = 'dist';
@@ -58,21 +57,10 @@ function getEventFileContent(directory) {
   return content
 }
 
-function readFiles(config, directory) {
+function readFiles(languages, directory) {
   let content = ""
-  let allConfig = []
   
-  try {
-    allConfig = yaml.load(fs.readFileSync(path.join(directory, config), 'utf8'))
-  } catch (e) {
-    console.log(e);
-  }
-
-  if(allConfig.type && allConfig.type === "event") {
-    return getEventFileContent(directory)
-  }
-  
-  allConfig.languages.forEach((language) => {
+  languages.forEach((language) => {
     try {
       const data = fs.readFileSync(path.join(directory, `index.${language}`), 'utf8');
       content = content + `const ${language} = \`${data}\`` + "\n\n"
@@ -81,8 +69,20 @@ function readFiles(config, directory) {
     }
   })
 
-  content = content + `export {${allConfig.languages.join(", ")}}`
+  content = content + `export {${languages.join(", ")}}`
   return content
+}
+
+function parseConfig(config, directory) {
+  let allConfig = []
+
+  try {
+    allConfig = yaml.load(fs.readFileSync(path.join(directory, config), 'utf8'))
+  } catch (e) {
+    console.log(e);
+  }
+
+  return allConfig
 }
 
 function writeApiResponse(source, destination) {
@@ -101,25 +101,48 @@ function writeApiResponse(source, destination) {
   }
 }
 
-function writeToFile(config, directory, tag) {
-  const ancestor = directory.split("/")
-  const filename = tag === "api" ? "requests.js" : ancestor[ancestor.length - 1] + ".js"
-  const parent = tag === "api" ? "dist/" + ancestor.join("/") : "dist/" + ancestor.slice(0, ancestor.length - 1).join("/")
-
+function makeDirectory(path) {
   try {
-    if (!fs.existsSync(parent)) {
-      fs.mkdirSync(parent, { recursive: true });
+    if (!fs.existsSync(path)) {
+      fs.mkdirSync(path, { recursive: true });
     }
   } catch (err) {
     console.error(err);
   }
+}
 
-  const content = readFiles(config, directory)
+function writeToFile(config, directory, tag) {
+  const ancestor = directory.split("/")
+  const allConfig = parseConfig(config, directory)
+  let content = ""
+  let filename = ""
+  let parent = ""
 
-  if(tag === "api") {
-    writeApiResponse(directory, parent)
+  if(tag === "doc") {
+    filename = ancestor[ancestor.length - 1] + ".js"
+    parent = "dist/" + ancestor.slice(0, ancestor.length - 1).join("/")
+    makeDirectory(parent)
+
+    content = allConfig.type && allConfig.type === "event" 
+      ? getEventFileContent(directory)
+      : readFiles(allConfig.languages, directory)
+
+  } else if(tag === "api") {
+    filename = allConfig.type === "standalone" ? ancestor[ancestor.length - 1] + ".js" : "requests.js"
+    parent = allConfig.type === "standalone" ? "dist/" + ancestor.slice(0, ancestor.length - 1).join("/") : "dist/" + ancestor.join("/")
+    
+    makeDirectory(parent)
+    
+    if (!allConfig.type) {
+      writeApiResponse(directory, parent)
+    }
+
+    content = readFiles(allConfig.languages, directory)
+
+  } else {
+    return
   }
-  
+
   try {
     fs.writeFileSync(path.join(parent, filename), content);
   } catch (err) {
