@@ -1,20 +1,21 @@
-const bash = `curl https://api.paystack.co/charge/submit_phone
--H "Authorization: Bearer YOUR_SECRET_KEY"
--H "Content-Type: application/json"
--d '{ "phone": "08012345678", "reference": "5bwib5v6anhe9xa" }'
--X POST`
+const sh = `#!/bin/sh
+curl https://api.paystack.co/charge/submit_pin \
+  -H "Authorization: Bearer YOUR_SECRET_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{ "pin": "1234", "reference": "5bwib5v6anhe9xa" }' \
+  -X POST`
 
 const js = `const https = require('https')
 
 const params = JSON.stringify({
-  "phone": "08012345678",
+  "pin": "1234",
   "reference": "5bwib5v6anhe9xa"
 })
 
 const options = {
   hostname: 'api.paystack.co',
   port: 443,
-  path: '/charge/submit_phone',
+  path: '/charge/submit_pin',
   method: 'POST',
   headers: {
     Authorization: 'Bearer SECRET_KEY',
@@ -40,10 +41,10 @@ req.write(params)
 req.end()`
 
 const php = `<?php
-  $url = "https://api.paystack.co/charge/submit_phone";
+  $url = "https://api.paystack.co/charge/submit_pin";
 
   $fields = [
-    'phone' => "08012345678",
+    'pin' => "1234",
     'reference' => "5bwib5v6anhe9xa"
   ];
 
@@ -69,4 +70,4 @@ const php = `<?php
   echo $result;
 ?>`
 
-export { bash, js, php }
+export {sh, js, php}

@@ -1,0 +1,152 @@
+{
+	"200": {
+		"description": "200 Ok",
+		"data": {
+			"status": true,
+			"message": "Charge attempted",
+			"data": {
+				"amount": 200,
+				"currency": "NGN",
+				"transaction_date": "2017-05-24T05:56:12.000Z",
+				"status": "success",
+				"reference": "zuvbpizfcf2fs7y",
+				"domain": "test",
+				"metadata": {
+					"custom_fields": [
+						{
+							"display_name": "Merchant name",
+							"variable_name": "merchant_name",
+							"value": "Van Damme"
+						},
+						{
+							"display_name": "Paid Via",
+							"variable_name": "paid_via",
+							"value": "API call"
+						}
+					]
+				},
+				"gateway_response": "Successful",
+				"message": null,
+				"channel": "card",
+				"ip_address": "54.154.89.28, 162.158.38.82, 172.31.38.35",
+				"log": null,
+				"fees": 3,
+				"authorization": {
+					"authorization_code": "AUTH_6tmt288t0o",
+					"bin": "408408",
+					"last4": "4081",
+					"exp_month": "12",
+					"exp_year": "2020",
+					"channel": "card",
+					"card_type": "visa visa",
+					"bank": "TEST BANK",
+					"country_code": "NG",
+					"brand": "visa",
+					"reusable": true,
+					"signature": "SIG_uSYN4fv1adlAuoij8QXh",
+					"account_name": "BoJack Horseman"
+				},
+				"customer": {
+					"id": 14571,
+					"first_name": null,
+					"last_name": null,
+					"email": "test@email.co",
+					"customer_code": "CUS_hns72vhhtos0f0k",
+					"phone": null,
+					"metadata": null,
+					"risk_action": "default"
+				},
+				"plan": null
+			}
+		}
+	},
+	"200_otp": {
+		"description": "200 OTP",
+		"data": {
+			"status": true,
+			"message": "Charge attempted",
+			"data": {
+				"reference": "0t4gwo2ft6q0n9h",
+				"status": "send_otp",
+				"display_text": "Please send OTP (none will be sent to your phone)"
+			}
+		}
+	},
+	"200_pending": {
+		"description": "200 Pending",
+		"data": {
+			"status": true,
+			"message": "Reference check successful",
+			"data": {
+				"reference": "5bwib5v6anhe9xa",
+				"status": "pending"
+			}
+		}
+	},
+	"200_pin": {
+		"description": "200 PIN",
+		"data": {
+			"status": true,
+			"message": "Charge attempted",
+			"data": {
+				"reference": "apg8mnjf5yg7zp8",
+				"status": "send_pin"
+			}
+		}
+	},
+	"200_failed": {
+		"description": "200 Failed",
+		"data": {
+			"status": true,
+			"message": "Reference check successful",
+			"data": {
+				"reference": "ojk8k0bimgftf0x",
+				"status": "failed",
+				"message": "Insufficient funds"
+			}
+		}
+	},
+	"200_bank_auth": {
+		"description": "200 Bank Auth",
+		"data": {
+			"status": true,
+			"message": "Charge attempted",
+			"data": {
+				"reference": "apg8mnjf5yg7zp8",
+				"url": "https://standard.paystack.co/close",
+				"status": "open_url"
+			}
+		}
+	},
+	"200_phone": {
+		"description": "200 Phone",
+		"data": {
+			"status": true,
+			"message": "Charge attempted",
+			"data": {
+				"reference": "0t4gwo2ft6q0n9h",
+				"status": "send_phone",
+				"display_text": "Please send phone"
+			}
+		}
+	},
+	"200_birthday": {
+		"description": "200 Birthday",
+		"data": {
+			"status": true,
+			"message": "Charge attempted",
+			"data": {
+				"reference": "0t4gwo2ft6q0n9h",
+				"status": "send_birthday",
+				"display_text": "Please send your birthday"
+			}
+		}
+	},
+	"400": {
+		"description": "400 Bad Request",
+		"data": {
+			"status": false,
+			"message": "Transaction reference is invalid"
+		}
+	}
+}

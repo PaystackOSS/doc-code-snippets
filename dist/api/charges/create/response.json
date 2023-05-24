@@ -1,0 +1,220 @@
+{
+	"200": {
+		"description": "200 Ok",
+		"data": {
+			"status": true,
+			"message": "Charge attempted",
+			"data": {
+				"amount": 200,
+				"currency": "NGN",
+				"transaction_date": "2017-05-24T05:56:12.000Z",
+				"status": "success",
+				"reference": "zuvbpizfcf2fs7y",
+				"domain": "test",
+				"metadata": {
+					"custom_fields": [
+						{
+							"display_name": "Merchant name",
+							"variable_name": "merchant_name",
+							"value": "Van Damme"
+						},
+						{
+							"display_name": "Paid Via",
+							"variable_name": "paid_via",
+							"value": "API call"
+						}
+					]
+				},
+				"gateway_response": "Successful",
+				"message": null,
+				"channel": "card",
+				"ip_address": "54.154.89.28, 162.158.38.82, 172.31.38.35",
+				"log": null,
+				"fees": 3,
+				"authorization": {
+					"authorization_code": "AUTH_6tmt288t0o",
+					"bin": "408408",
+					"last4": "4081",
+					"exp_month": "12",
+					"exp_year": "2020",
+					"channel": "card",
+					"card_type": "visa visa",
+					"bank": "TEST BANK",
+					"country_code": "NG",
+					"brand": "visa",
+					"reusable": true,
+					"signature": "SIG_uSYN4fv1adlAuoij8QXh",
+					"account_name": "BoJack Horseman"
+				},
+				"customer": {
+					"id": 14571,
+					"first_name": null,
+					"last_name": null,
+					"email": "test@email.co",
+					"customer_code": "CUS_hns72vhhtos0f0k",
+					"phone": null,
+					"metadata": null,
+					"risk_action": "default"
+				},
+				"plan": null
+			}
+		}
+	},
+	"200_otp": {
+		"description": "200 OTP",
+		"data": {
+			"status": true,
+			"message": "Charge attempted",
+			"data": {
+				"reference": "0t4gwo2ft6q0n9h",
+				"status": "send_otp",
+				"display_text": "Please send OTP"
+			}
+		}
+	},
+	"200_pending": {
+		"description": "200 Pending",
+		"data": {
+			"status": true,
+			"message": "Reference check successful",
+			"data": {
+				"reference": "5bwib5v6anhe9xa",
+				"status": "pending"
+			}
+		}
+	},
+	"200_pin": {
+		"description": "200 PIN",
+		"data": {
+			"status": true,
+			"message": "Charge attempted",
+			"data": {
+				"reference": "apg8mnjf5yg7zp8",
+				"status": "send_pin"
+			}
+		}
+	},
+	"200_failed": {
+		"description": "200 Failed",
+		"data": {
+			"status": true,
+			"message": "Charge attempted",
+			"data": {
+				"reference": "bc9w93gh629a4d7",
+				"status": "failed",
+				"message": "Transaction declined. Please use the test card."
+			}
+		}
+	},
+	"200_bank_auth": {
+		"description": "200 Bank Auth",
+		"data": {
+			"status": true,
+			"message": "Charge attempted",
+			"data": {
+				"reference": "apg8mnjf5yg7zp8",
+				"url": "https://standard.paystack.co/close",
+				"status": "open_url"
+			}
+		}
+	},
+	"200_phone": {
+		"description": "200 Phone",
+		"data": {
+			"status": true,
+			"message": "Charge attempted",
+			"data": {
+				"reference": "0t4gwo2ft6q0n9h",
+				"status": "send_phone",
+				"display_text": "Please send phone"
+			}
+		}
+	},
+	"200_birthday": {
+		"description": "200 Birthday",
+		"data": {
+			"status": true,
+			"message": "Charge attempted",
+			"data": {
+				"reference": "0t4gwo2ft6q0n9h",
+				"status": "send_birthday",
+				"display_text": "Please send your birthday"
+			}
+		}
+	},
+	"200_ussd": {
+		"description": "200 USSD",
+		"data": {
+			"status": true,
+			"message": "Charge attempted",
+			"data": {
+				"reference": "2ofkbk0yie6dvzb",
+				"status": "pay_offline",
+				"display_text": "Please dial *737*33*4*453441# on your mobile phone to complete the transaction",
+				"ussd_code": "*737*33*4*453441#"
+			}
+		}
+	},
+	"200_momo": {
+		"description": "200 MoMo",
+		"data": {
+			"message": "Charge attempted",
+			"status": true,
+			"data": {
+				"amount": 100,
+				"channel": "mobile_money",
+				"created_at": "2018-11-17T14:39:56.000Z",
+				"currency": "GHS",
+				"domain": "live",
+				"fees": 153,
+				"gateway_response": "Approved",
+				"id": 59333,
+				"ip_address": "35.177.189.123, 162.158.155.220",
+				"message": "madePayment",
+				"paid_at": "2018-11-17T14:40:18.000Z",
+				"reference": "l7lvu4y3xcka6zu",
+				"status": "success",
+				"transaction_date": "2018-11-17T14:39:56.000Z",
+				"authorization": {
+					"authorization_code": "AUTH_33lz7ev5tq",
+					"bank": "MTN Mobile Money",
+					"bin": "055XXX",
+					"brand": "Mtn mobile money",
+					"channel": "mobile_money",
+					"country_code": "GH",
+					"exp_month": 12,
+					"exp_year": 9999,
+					"last4": "X149",
+					"reusable": false,
+					"account_name": "BoJack Horseman"
+				},
+				"customer": {
+					"customer_code": "CUS_s3aa4mx0yyvrqye",
+					"email": "customer@email.com",
+					"id": 16763,
+					"risk_action": "default"
+				}
+			}
+		}
+	},
+	"200_address": {
+		"description": "200 Address",
+		"data": {
+			"message": "Charge attempted",
+			"status": true,
+			"data": {
+				"display_text": "Please send details for address verification",
+				"reference": "7c7rpkqpc0tijs8",
+				"status": "send_address",
+				"country_code": "CA"
+			}
+		}
+	},
+	"400": {
+		"description": "400 Bad Request",
+		"data": {
+			"status": false,
+			"message": "Email address is required for association with card"
+		}
+	}
+}
