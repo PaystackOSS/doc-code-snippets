@@ -50,9 +50,9 @@ const php = `<?php
 
   $fields = [
     "email" => "zero@sum.com",
-    "first_name": "Zero",
-    "last_name": "Sum"
-    "phone": "+2348123456789"
+    "first_name" => "Zero",
+    "last_name" => "Sum",
+    "phone" => "+2348123456789"
   ];
 
   $fields_string = http_build_query($fields);

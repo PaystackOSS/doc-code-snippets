@@ -1,8 +1,15 @@
-const sh = `#!/bin/bash
+const sh = `<<<<<<< HEAD
+const bash = curl https://api.paystack.co/apple-pay/domain
+-H "Authorization: Bearer YOUR_SECRET_KEY"
+-H "Content-Type: application/json"
+-d '{ "domainName": "example.com" }'
+=======
+#!/bin/bash
 curl https://api.paystack.co/apple-pay/domain \
 -H "Authorization: Bearer YOUR_SECRET_KEY" \
 -H "Content-Type: application/json" \
 -d '{ "domainName": "example.com" }' \
+>>>>>>> 9336427ea1eae10f0613394aecc78faf0fa0402b
 -X POST`
 
 const js = `const https = require('https')
@@ -68,4 +75,15 @@ const php = `<?php
   echo $result;
 ?>`
 
-export {sh, js, php}
+const json = `{
+	"200": {
+		"description": "200 Ok",
+		"data": {
+			"status": true,
+			"message": "Domain successfully registered on Apple Pay"
+		}
+	}
+}
+`
+
+export {sh, js, php, json}

@@ -44,7 +44,7 @@ req.write(params)
 req.end()`
 
 const php = `<?php
-  $curl = curl_init();
+$curl = curl_init();
 
   curl_setopt_array($curl, array(
     CURLOPT_URL => "https://api.paystack.co/plan",
@@ -57,7 +57,7 @@ const php = `<?php
     CURLOPT_POSTFIELDS => array(
       "name" => "Monthly Retainer",
       "interval" => "monthly",
-      "amount" => 500000
+      "amount" =>500000
     ),
     CURLOPT_HTTPHEADER => array(
       "Authorization: Bearer SECRET_KEY",
@@ -65,16 +65,16 @@ const php = `<?php
     ),
   ));
 
-  $response = curl_exec($curl);
-  $err = curl_error($curl);
+$response = curl_exec($curl);
+$err = curl_error($curl);
 
-  curl_close($curl);
+curl_close($curl);
 
-  if ($err) {
-    echo "cURL Error #:" . $err;
-  } else {
-    echo $response;
-  }
+if ($err) {
+  echo "cURL Error #:" . $err;
+} else {
+  echo $response;
+}
 ?>`
 
 const json = `{
