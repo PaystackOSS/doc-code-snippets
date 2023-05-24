@@ -1,5 +1,6 @@
-const sh = `curl https://api.paystack.co/bulkcharge/resume/:batch_code
--H "Authorization: Bearer YOUR_SECRET_KEY"
+const sh = `#!/bin/bash
+curl https://api.paystack.co/bulkcharge/resume/:batch_code \
+-H "Authorization: Bearer YOUR_SECRET_KEY" \
 -X GET`
 
 const js = `const https = require('https')
@@ -57,14 +58,4 @@ const php = `<?php
   }
 ?>`
 
-const json = `{
-	"200": {
-		"description": "200 Ok",
-		"data": {
-			"status": true,
-			"message": "Bulk charge batch has been resumed"
-		}
-	}
-}`
-
-export {sh, js, php, json}
+export {sh, js, php}

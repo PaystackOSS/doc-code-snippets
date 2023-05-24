@@ -1,31 +1,24 @@
 <?php
 
-  $url = "https://api.paystack.co/apple-pay/domain";
+$curl = curl_init();
 
-  $fields = [
-    "domainName" => "example.com"
-  ];
+curl_setopt_array($curl, array(
+  CURLOPT_URL => "https://api.paystack.co/apple-pay/domain",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "DELETE",
+  CURLOPT_POSTFIELDS => array("domainName" => "example.com"),
+  CURLOPT_HTTPHEADER => array(
+    "authorization: Bearer SEECRET_KEY",
+    "content-type: application/json"
+  ),
+));
 
-  $fields_string = http_build_query($fields);
+$response = curl_exec($curl);
 
-  //open connection
-  $ch = curl_init();
-  
-  //set the url, number of POST vars, POST data
-  curl_setopt($ch,CURLOPT_URL, $url);
-  curl_setopt($ch,CURLOPT_RETURNTRANSFER, true);
-  curl_setopt($ch,CURLOPT_TIMEOUT, 0);
-  curl_setopt($ch,CURLOPT_MAXREDIRS, 10);
-  curl_setopt($ch,CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1);
-  curl_setopt($ch,CURLOPT_CUSTOMREQUEST, "DELETE");
-  curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
-  curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-    "authorization: Bearer SECRET_KEY",
-    "content-type: application/json",
-    "Cookie: __cfduid=df6355b0f005797cd79527d1a6da37c131598191689"
-  ));
-   
-  //execute post
-  $result = curl_exec($ch);
-  echo $result;
-?>
+curl_close($curl);
+echo $response;

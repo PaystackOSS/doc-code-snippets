@@ -1,5 +1,6 @@
-const sh = `curl https://api.paystack.co/bulkcharge/pause/:batch_code
--H "Authorization: Bearer YOUR_SECRET_KEY"
+const sh = `#!/bin/bash
+curl https://api.paystack.co/bulkcharge/pause/:batch_code \
+-H "Authorization: Bearer YOUR_SECRET_KEY" \
 -X GET`
 
 const js = `const https = require('https')

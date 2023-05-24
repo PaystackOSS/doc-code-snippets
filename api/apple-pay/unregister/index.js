@@ -1,15 +1,15 @@
-const https = require('https');
+const https = require('https')
 
 const params = JSON.stringify({
   "domainName": "example.com"
-});
+})
 
 const options = {
   'method': 'DELETE',
   'hostname': 'api.paystack.co',
   'path': '/apple-pay/domain',
   'headers': {
-    'authorization': 'Bearer SECRET_KEY',
+    'authorization': 'Bearer SEECRET_KEY',
     'content-type': 'application/json'
   }
 };
@@ -21,7 +21,7 @@ const req = https.request(options, function (res) {
     chunks.push(chunk);
   });
 
-  res.on("end", function () {
+  res.on("end", function (chunk) {
     var body = Buffer.concat(chunks);
     console.log(body.toString());
   });
@@ -31,6 +31,6 @@ const req = https.request(options, function (res) {
   });
 });
 
-req.setHeader('Content-Length', Buffer.byteLength(params));
+req.setHeader('Content-Length', params.length);
 req.write(params);
 req.end();
