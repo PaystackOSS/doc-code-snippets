@@ -1,28 +1,21 @@
-const bash = `curl https://api.paystack.co/charge/submit_address
--H "Authorization: Bearer YOUR_SECRET_KEY"
--H "Content-Type: application/json"
--d '{ "reference": "7c7rpkqpc0tijs8",
-      "address": "140 N 2ND ST",
-      "city": "Stroudsburg",
-      "state": "PA",
-      "zip_code": "18360"
-    }'
--X POST`
+const sh = `#!/bin/sh
+curl https://api.paystack.co/charge/submit_otp \
+  -H "Authorization: Bearer YOUR_SECRET_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{ "otp": "123456", "reference": "5bwib5v6anhe9xa" }' \
+  -X POST`
 
 const js = `const https = require('https')
 
 const params = JSON.stringify({
-  "reference": "7c7rpkqpc0tijs8",
-  "address": "140 N 2ND ST",
-  "city": "Stroudsburg",
-  "state": "PA",
-  "zip_code": "18360"
+  "otp": "123456",
+  "reference": "5bwib5v6anhe9xa"
 })
 
 const options = {
   hostname: 'api.paystack.co',
   port: 443,
-  path: '/charge/submit_address',
+  path: '/charge/submit_otp',
   method: 'POST',
   headers: {
     Authorization: 'Bearer SECRET_KEY',
@@ -48,14 +41,11 @@ req.write(params)
 req.end()`
 
 const php = `<?php
-  $url = "https://api.paystack.co/charge/submit_address";
+  $url = "https://api.paystack.co/charge/submit_otp";
 
   $fields = [
-    "reference" => "7c7rpkqpc0tijs8",
-    "address" => "140 N 2ND ST",
-    "city" => "Stroudsburg",
-    "state" => "PA",
-    "zip_code" => "18360"
+    'otp' => "123456",
+    'reference' => "5bwib5v6anhe9xa"
   ];
 
   $fields_string = http_build_query($fields);
@@ -80,4 +70,4 @@ const php = `<?php
   echo $result;
 ?>`
 
-export { bash, js, php }
+export {sh, js, php}
