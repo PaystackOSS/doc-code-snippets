@@ -1,14 +1,14 @@
-const sh = `#!/bin/bash
-curl https://api.paystack.co/bulkcharge \
--H "Authorization: Bearer YOUR_SECRET_KEY" \
--X GET`
+const sh = `#!/bin/sh
+curl https://api.paystack.co/charge/:reference \
+  -H "Authorization: Bearer YOUR_SECRET_KEY" \
+  -X GET`
 
 const js = `const https = require('https')
 
 const options = {
   hostname: 'api.paystack.co',
   port: 443,
-  path: '/bulkcharge',
+  path: '/charge/:reference',
   method: 'GET',
   headers: {
     Authorization: 'Bearer SECRET_KEY'
@@ -33,7 +33,7 @@ const php = `<?php
   $curl = curl_init();
   
   curl_setopt_array($curl, array(
-    CURLOPT_URL => "https://api.paystack.co/bulkcharge",
+    CURLOPT_URL => "https://api.paystack.co/charge/:reference",
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => "",
     CURLOPT_MAXREDIRS => 10,
