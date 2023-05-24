@@ -1,19 +1,17 @@
-const https = require('follow-redirects').https;
-const fs = require('fs');
+const https = require('https');
 
 const params = JSON.stringify({
   "domainName": "example.com"
-})
+});
 
 const options = {
   'method': 'DELETE',
   'hostname': 'api.paystack.co',
   'path': '/apple-pay/domain',
   'headers': {
-    'authorization': 'Bearer SEECRET_KEY',
+    'authorization': 'Bearer SECRET_KEY',
     'content-type': 'application/json'
-  },
-  'maxRedirects': 20
+  }
 };
 
 const req = https.request(options, function (res) {
@@ -23,7 +21,7 @@ const req = https.request(options, function (res) {
     chunks.push(chunk);
   });
 
-  res.on("end", function (chunk) {
+  res.on("end", function () {
     var body = Buffer.concat(chunks);
     console.log(body.toString());
   });
@@ -33,6 +31,6 @@ const req = https.request(options, function (res) {
   });
 });
 
-req.setHeader('Content-Length', params.length);
+req.setHeader('Content-Length', Buffer.byteLength(params));
 req.write(params);
 req.end();

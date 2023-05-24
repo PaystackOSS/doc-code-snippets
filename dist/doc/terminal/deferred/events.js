@@ -1,4 +1,4 @@
-const payment_request_failed = `{
+const invoice_failed = `{
   "event":"invoice.payment_failed",
   "data":{
     "domain":"test",
@@ -86,7 +86,7 @@ const payment_request_pending = `{
   }
 }`
 
-const payment_request_success = `{
+const payment_request_successful = `{
   "event":"paymentrequest.success",
   "data":{
     "id":1089700,
@@ -191,4 +191,4 @@ const transaction_successful = `{
   }
 }`
 
-export {payment_request_failed, payment_request_pending, payment_request_success, transaction_successful}
+export {invoice_failed, payment_request_pending, payment_request_successful, transaction_successful}

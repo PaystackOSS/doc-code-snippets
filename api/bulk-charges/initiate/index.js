@@ -1,4 +1,4 @@
-const https = require('https')
+const https = require('https');
 
 const params = JSON.stringify([
   {
@@ -22,21 +22,21 @@ const options = {
     Authorization: 'Bearer SECRET_KEY',
     'Content-Type': 'application/json'
   }
-}
+};
 
 const req = https.request(options, res => {
-  let data = ''
+  let data = '';
 
   res.on('data', (chunk) => {
-    data += chunk
+    data += chunk;
   });
 
   res.on('end', () => {
-    console.log(JSON.parse(data))
-  })
+    console.log(JSON.parse(data));
+  });
 }).on('error', error => {
-  console.error(error)
-})
+  console.error(error);
+});
 
-req.write(params)
-req.end()
+req.write(params);
+req.end();
