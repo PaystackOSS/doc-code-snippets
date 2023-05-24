@@ -1,34 +1,4 @@
-const bash = `curl https://api.paystack.co/customer
--H "Authorization: Bearer YOUR_SECRET_KEY"
--X GET`
-
-const js = `const https = require('https')
-
-const options = {
-  hostname: 'api.paystack.co',
-  port: 443,
-  path: '/customer,
-  method: 'GET',
-  headers: {
-    Authorization: 'Bearer SECRET_KEY'
-  }
-}
-
-https.request(options, res => {
-  let data = ''
-
-  res.on('data', (chunk) => {
-    data += chunk
-  });
-
-  res.on('end', () => {
-    console.log(JSON.parse(data))
-  })
-}).on('error', error => {
-  console.error(error)
-})`
-
-const php = `<?php
+<?php
   $curl = curl_init();
   
   curl_setopt_array($curl, array(
@@ -55,6 +25,4 @@ const php = `<?php
   } else {
     echo $response;
   }
-?>`
-
-export { bash, js, php }
+?>
