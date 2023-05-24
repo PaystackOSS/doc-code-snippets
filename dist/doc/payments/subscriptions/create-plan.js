@@ -54,11 +54,11 @@ const php = `<?php
     CURLOPT_TIMEOUT => 30,
     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
     CURLOPT_CUSTOMREQUEST => "POST",
-    CURLOPT_POSTFIELDS => "{
-      "name": "Monthly Retainer",
-      "interval": "monthly",
-      "amount": 500000
-    }",
+    CURLOPT_POSTFIELDS => array(
+      "name" => "Monthly Retainer",
+      "interval" => "monthly",
+      "amount" => 500000
+    ),
     CURLOPT_HTTPHEADER => array(
       "Authorization: Bearer SECRET_KEY",
       "Cache-Control: no-cache"

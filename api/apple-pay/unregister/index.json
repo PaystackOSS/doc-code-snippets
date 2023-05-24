@@ -3,7 +3,7 @@
 		"description": "200 Ok",
 		"data": {
 			"status": true,
-			"message": "Domain successfully unregistered on Apple Pay"
+			"message": "Domain successfully registered on Apple Pay"
 		}
 	}
 }
