@@ -1,30 +1,4 @@
-const bash = `curl https://api.paystack.co/decision/bin/539983
--X GET`
-
-const js = `const https = require('https')
-
-const options = {
-  hostname: 'api.paystack.co',
-  port: 443,
-  path: '/decision/bin/539983',
-  method: 'GET'
-}
-
-https.request(options, res => {
-  let data = ''
-
-  res.on('data', (chunk) => {
-    data += chunk
-  });
-
-  res.on('end', () => {
-    console.log(JSON.parse(data))
-  })
-}).on('error', error => {
-  console.error(error)
-})`
-
-const php = `<?php
+<?php
   $curl = curl_init();
   
   curl_setopt_array($curl, array(
@@ -47,6 +21,4 @@ const php = `<?php
   } else {
     echo $response;
   }
-?>`
-
-export { bash, js, php }
+?>
