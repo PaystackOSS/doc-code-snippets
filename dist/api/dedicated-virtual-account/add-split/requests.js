@@ -1,10 +1,13 @@
-const bash = `curl https://api.paystack.co/dedicated_account
--H "Authorization: Bearer YOUR_SECRET_KEY"
--H "Content-Type: application/json"
--d '{ "customer": 481193, "preferred_bank":"wema-bank", 
-      "split_code": "SPL_e7jnRLtzla" 
-    }'
--X POST`
+const sh = `#!/bin/sh
+url="https://api.paystack.co/dedicated_account"
+authorization="Authorization: Bearer YOUR_SECRET_KEY"
+content_type="Content-Type: application/json"
+data='{ "customer": 481193, 
+        "preferred_bank":"wema-bank", 
+        "split_code": "SPL_e7jnRLtzla" 
+      }'
+
+curl "$url" -H "$authorization" -H "$content_type" -d "$data" -X POST`
 
 const js = `const https = require('follow-redirects').https;
 const fs = require('fs');
@@ -57,7 +60,11 @@ curl_setopt_array($curl, array(
   CURLOPT_FOLLOWLOCATION => true,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "POST",
-  CURLOPT_POSTFIELDS =>"{\"customer\":481193,\"preferred_bank\":\"wema-bank\", \"split_code\": \"SPL_e7jnRLtzla\"}",
+  CURLOPT_POSTFIELDS => array(
+    "customer" => 481193,
+    "preferred_bank" => "wema-bank",
+    "split_code" => "SPL_e7jnRLtzla"
+  ),
   CURLOPT_HTTPHEADER => array(
     "authorization: Bearer SECRET_KEY",
     "content-type: application/json",
@@ -69,6 +76,6 @@ $response = curl_exec($curl);
 
 curl_close($curl);
 echo $response;
-`
+?>`
 
-export { bash, js, php }
+export {sh, js, php}

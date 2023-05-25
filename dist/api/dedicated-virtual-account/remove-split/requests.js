@@ -1,10 +1,16 @@
-const bash = `curl https://api.paystack.co/dedicated_account/split
--H "Authorization: Bearer YOUR_SECRET_KEY"
--H "Content-Type: application/json"
--d '{ "account_number": "0033322211" }'
--X DELETE`
+const sh = `#!/bin/sh
+url="https://api.paystack.co/dedicated_account/split"
+authorization="Authorization: Bearer YOUR_SECRET_KEY"
+content_type="Content-Type: application/json"
+data='{
+ "account_number": "0033322211" 
+}'
 
-const js= `const https = require('follow-redirects').https;
+curl "$url" -H "$authorization" -H "$content_type" -d "$data" -X DELETE
+
+`
+
+const js = `const https = require('follow-redirects').https;
 const fs = require('fs');
 
 const options = {
@@ -68,6 +74,6 @@ $response = curl_exec($curl);
 
 curl_close($curl);
 echo $response;
-`
+?>`
 
-export { js, php, bash }
+export {sh, js, php}

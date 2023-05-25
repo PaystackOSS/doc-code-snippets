@@ -1,6 +1,8 @@
-const bash = `curl https://api.paystack.co/dedicated_account/:dedicated_account_id
--H "Authorization: Bearer YOUR_SECRET_KEY"
--X GET`
+const sh = `#!/bin/sh
+url="https://api.paystack.co/dedicated_account/:dedicated_account_id"
+authorization="Authorization: Bearer YOUR_SECRET_KEY"
+
+curl "$url" -H "$authorization" -X DELETE`
 
 const js = `const https = require('https')
 
@@ -8,7 +10,7 @@ const options = {
   hostname: 'api.paystack.co',
   port: 443,
   path: '/dedicated_account/:dedicated_account_id',
-  method: 'GET',
+  method: 'DELETE',
   headers: {
     Authorization: 'Bearer SECRET_KEY'
   }
@@ -38,7 +40,7 @@ const php = `<?php
     CURLOPT_MAXREDIRS => 10,
     CURLOPT_TIMEOUT => 30,
     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-    CURLOPT_CUSTOMREQUEST => "GET",
+    CURLOPT_CUSTOMREQUEST => "DELETE",
     CURLOPT_HTTPHEADER => array(
       "Authorization: Bearer SECRET_KEY",
       "Cache-Control: no-cache",
@@ -57,4 +59,4 @@ const php = `<?php
   }
 ?>`
 
-export { bash, js, php }
+export {sh, js, php}
