@@ -1,7 +1,8 @@
-const sh = `#!/bin/bash
-curl https://api.paystack.co/bulkcharge \
--H "Authorization: Bearer YOUR_SECRET_KEY" \
--X GET`
+const sh = `#!/bin/sh
+url="https://api.paystack.co/bulkcharge"
+authorization="Authorization: Bearer YOUR_SECRET_KEY"
+
+curl "$url" -H "$authorization" -X GET`
 
 const js = `const https = require('https')
 

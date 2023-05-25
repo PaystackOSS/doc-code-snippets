@@ -1,10 +1,12 @@
 #!/bin/sh
-curl https://api.paystack.co/customer \
--H "Authorization: Bearer YOUR_SECRET_KEY" \
--H "Content-Type: application/json" \
--d '{ "email": "zero@sum.com",
-      "first_name": "Zero",
-      "last_name": "Sum",
-      "phone": "+2348123456789"
-    }' \
--X POST
+url="https://api.paystack.co/customer"
+authorization="Authorization: Bearer YOUR_SECRET_KEY"
+content_type="Content-Type: application/json"
+data='{ 
+    "email": "zero@sum.com",
+    "first_name": "Zero",
+    "last_name": "Sum",
+    "phone": "+2348123456789"
+}'
+
+curl "$url" -H "$authorization" -H "$content_type" -d "$data" -X POST

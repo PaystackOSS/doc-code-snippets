@@ -1,13 +1,8 @@
 #!/bin/sh
-
-API_URL="https://api.paystack.co/customer/{customer_code}/identification"
-SECRET_KEY="YOUR_SECRET_KEY"
-
-# Make POST request using curl
-curl -X POST "$API_URL" \
--H "Authorization: Bearer $SECRET_KEY" \
--H "Content-Type: application/json" \
--d '{
+url="https://api.paystack.co/customer/{customer_code}/identification"
+authorization="Authorization: Bearer YOUR_SECRET_KEY"
+content_type="Content-Type: application/json"
+data='{ 
   "country": "NG",
   "type": "bank_account",
   "account_number": "0123456789",
@@ -16,3 +11,5 @@ curl -X POST "$API_URL" \
   "first_name": "Asta",
   "last_name": "Lavista"
 }'
+
+curl "$url" -H "$authorization" -H "$content_type" -d "$data" -X POST

@@ -1,9 +1,13 @@
 const sh = `#!/bin/sh
-curl https://api.paystack.co/charge/submit_phone \
-  -H "Authorization: Bearer YOUR_SECRET_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{ "phone": "08012345678", "reference": "5bwib5v6anhe9xa" }' \
-  -X POST`
+url="https://api.paystack.co/charge/submit_phone"
+authorization="Authorization: Bearer YOUR_SECRET_KEY"
+content_type="Content-Type: application/json"
+data='{ 
+  "phone": "08012345678", 
+  "reference": "5bwib5v6anhe9xa"
+}'
+
+curl "$url" -H "$authorization" -H "$content_type" -d "$data" -X POST`
 
 const js = `const https = require('https')
 

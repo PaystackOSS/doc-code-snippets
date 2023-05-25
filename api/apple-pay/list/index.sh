@@ -1,4 +1,5 @@
-#!/bin/bash
-curl https://api.paystack.co/apple-pay/domain \
--H "Authorization: Bearer YOUR_SECRET_KEY" \
--X GET
+#!/bin/sh
+url="https://api.paystack.co/apple-pay/domain"
+authorization="Authorization: Bearer YOUR_SECRET_KEY"
+
+curl "$url" -H "$authorization" -X GET
