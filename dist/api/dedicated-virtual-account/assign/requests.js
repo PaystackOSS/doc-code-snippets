@@ -1,8 +1,8 @@
 const sh = `#!/bin/sh
-curl https://api.paystack.co/dedicated_account/assign \
--H "Authorization: Bearer YOUR_SECRET_KEY" \
--H "Content-Type: application/json" \
--d '{ 
+url="https://api.paystack.co/dedicated_account"
+authorization="Authorization: Bearer YOUR_SECRET_KEY"
+content_type="Content-Type: application/json"
+data='{ 
       "email": "janedoe@test.com",
       "first_name": "Jane",
       "middle_name": "Karen",
@@ -10,8 +10,9 @@ curl https://api.paystack.co/dedicated_account/assign \
       "phone": "+2348100000000",
       "preferred_bank": "test-bank",
       "country": "NG"
-}' \
--X POST`
+    }'
+
+curl "$url" -H "$authorization" -H "$content_type" -d "$data" -X POST`
 
 const js = `var https = require('follow-redirects').https;
 var fs = require('fs');

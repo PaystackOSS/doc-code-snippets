@@ -1,4 +1,5 @@
 #!/bin/sh
-curl https://api.paystack.co/dedicated_account/:dedicated_account_id \
--H "Authorization: Bearer YOUR_SECRET_KEY" \
--X GET
+url="https://api.paystack.co/dedicated_account/:dedicated_account_id"
+authorization="Authorization: Bearer YOUR_SECRET_KEY"
+
+curl "$url" -H "$authorization" -X GET
