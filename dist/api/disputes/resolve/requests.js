@@ -1,19 +1,31 @@
-const bash = `curl https://api.paystack.co/dispute/:id
--H "Authorization: Bearer YOUR_SECRET_KEY"
--H "Content-Type: application/json"
--d '{ "refund_amount": 1002 }'
--X PUT`
+const sh = `#!/bin/sh
+url="https://api.paystack.co/dispute/:id/resolve"
+authorization="Authorization: Bearer YOUR_SECRET_KEY"
+content_type="Content-Type: application/json"
+data='{ "resolution": "merchant-accepted",
+        "message": "Merchant accepted", 
+        "uploaded_filename": "qesp8a4df1xejihd9x5q", 
+        "refund_amount": 1002 
+     }'
+
+curl "$url" -H "$authorization" -H "$content_type" -d "$data" -X PUT
+
+
+`
 
 const js = `const https = require('https')
 
 const params = JSON.stringify({
+  "resolution": "merchant-accepted",
+  "message": "Merchant accepted",
+  "uploaded_filename": "qesp8a4df1xejihd9x5q",
   "refund_amount": 1002
 })
 
 const options = {
   hostname: 'api.paystack.co',
   port: 443,
-  path: '/dispute/:id',
+  path: '/dispute/:id/resolve',
   method: 'PUT',
   headers: {
     Authorization: 'Bearer SECRET_KEY',
@@ -39,9 +51,12 @@ req.write(params)
 req.end()`
 
 const php = `<?php
-  $url = "https://api.paystack.co/dispute/:id";
+  $url = "https://api.paystack.co/dispute/:id/resolve";
 
   $fields = [
+    "resolution" => "merchant-accepted",
+    "message" => "Merchant accepted",
+    "uploaded_filename" => "qesp8a4df1xejihd9x5q",
     "refund_amount" => 1002
   ];
 
@@ -67,4 +82,4 @@ const php = `<?php
   echo $result;
 ?>`
 
-export { bash, js, php }
+export {sh, js, php}

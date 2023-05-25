@@ -1,13 +1,16 @@
-const bash = `curl https://api.paystack.co/dispute/:id/evidence
--H "Authorization: Bearer YOUR_SECRET_KEY"
--H "Content-Type: application/json"
--d '{ "customer_email": "cus@gmail.com",
+const sh = `#!/bin/sh
+url="https://api.paystack.co/dispute/:id/evidence"
+authorization="Authorization: Bearer YOUR_SECRET_KEY"
+content_type="Content-Type: application/json"
+data='{ "customer_email": "cus@gmail.com",
       "customer_name": "Mensah King",
       "customer_phone": "0802345167",
       "service_details": "claim for buying product",
       "delivery_address": "3a ladoke street ogbomoso"
     }'
--X POST`
+
+curl "$url" -H "$authorization" -H "$content_type" -d "$data" -X POST
+`
 
 const js = `const https = require('https')
 
@@ -80,4 +83,4 @@ const php = `<?php
   echo $result;
 ?>`
 
-export { bash, js, php }
+export {sh, js, php}
