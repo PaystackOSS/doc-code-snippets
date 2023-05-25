@@ -1,0 +1,12 @@
+{
+	"200": {
+		"description": "200 Ok",
+		"data": {
+			"status": true,
+			"message": "Payment session timeout retrieved",
+			"data": {
+				"payment_session_timeout": 30
+			}
+		}
+	}
+}
