@@ -1,14 +1,25 @@
-const bash = `curl https://api.paystack.co/transfer/enable_otp
--H "Authorization: Bearer YOUR_SECRET_KEY"
--H "Content-Type: application/json"'
--X POST`
+const sh = `#!/bin/sh
+url="https://api.paystack.co/transfer/resend_otp"
+authorization="Authorization: Bearer YOUR_SECRET_KEY"
+content_type="Content-Type: application/json"
+data='{ 
+  "transfer_code": "TRF_vsyqdmlzble3uii", 
+  "reason": "resend_otp" 
+}'
+
+curl "$url" -H "$authorization" -H "$content_type" -d "$data" -X POST`
 
 const js = `const https = require('https')
+
+const params = JSON.stringify({
+  "transfer_code": "TRF_vsyqdmlzble3uii",
+  "reason": "resend_otp"
+})
 
 const options = {
   hostname: 'api.paystack.co',
   port: 443,
-  path: '/transfer/enable_otp',
+  path: '/transfer/resend_otp',
   method: 'POST',
   headers: {
     Authorization: 'Bearer SECRET_KEY',
@@ -30,10 +41,16 @@ const req = https.request(options, res => {
   console.error(error)
 })
 
+req.write(params)
 req.end()`
 
 const php = `<?php
-  $url = "https://api.paystack.co/transfer/enable_otp";
+  $url = "https://api.paystack.co/transfer/resend_otp";
+
+  $fields = [
+    "transfer_code" => "TRF_vsyqdmlzble3uii",
+    "reason" => "resend_otp"
+  ];
 
   $fields_string = http_build_query($fields);
 
@@ -43,6 +60,7 @@ const php = `<?php
   //set the url, number of POST vars, POST data
   curl_setopt($ch,CURLOPT_URL, $url);
   curl_setopt($ch,CURLOPT_POST, true);
+  curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
   curl_setopt($ch, CURLOPT_HTTPHEADER, array(
     "Authorization: Bearer SECRET_KEY",
     "Cache-Control: no-cache",
@@ -56,4 +74,4 @@ const php = `<?php
   echo $result;
 ?>`
 
-export { bash, js, php }
+export {sh, js, php}

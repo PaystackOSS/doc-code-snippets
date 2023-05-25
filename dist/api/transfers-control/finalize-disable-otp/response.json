@@ -3,7 +3,7 @@
 		"description": "200 Ok",
 		"data": {
 			"status": true,
-			"message": "OTP requirement for transfers has been enabled"
+			"message": "OTP requirement for transfers has been disabled"
 		}
 	}
 }

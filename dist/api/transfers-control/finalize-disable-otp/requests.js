@@ -1,8 +1,10 @@
-const bash = `curl https://api.paystack.co/transfer/disable_otp_finalize
--H "Authorization: Bearer YOUR_SECRET_KEY"
--H "Content-Type: application/json"
--d '{ "otp": "928783" }'
--X POST`
+const sh = `#!/bin/sh
+url="https://api.paystack.co/transfer/disable_otp_finalize"
+authorization="Authorization: Bearer YOUR_SECRET_KEY"
+content_type="Content-Type: application/json"
+data='{ "otp": "928783" }'
+
+curl "$url" -H "$authorization" -H "$content_type" -d "$data" -X POST`
 
 const js = `const https = require('https')
 
@@ -67,4 +69,4 @@ const php = `<?php
   echo $result;
 ?>`
 
-export { bash, js, php }
+export {sh, js, php}
