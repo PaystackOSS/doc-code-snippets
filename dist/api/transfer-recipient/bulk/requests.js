@@ -1,24 +1,26 @@
-const bash = `curl https://api.paystack.co/transferrecipient/bulk
--H "Authorization: Bearer YOUR_SECRET_KEY"
--H "Content-Type: application/json"
--d '{
-      "batch": [
-      {
-        "type":"nuban",
-        "name" : "Habenero Mundane",
-        "account_number": "0123456789",
-        "bank_code": "033",
-        "currency": "NGN"
-      },
-      {
-        "type":"nuban",
-        "name" : "Soft Merry",
-        "account_number": "98765432310",
-        "bank_code": "50211",
-        "currency": "NGN"
-      }]
+const sh = `#!/bin/sh
+url="https://api.paystack.co/transferrecipient/bulk"
+authorization="Authorization: Bearer YOUR_SECRET_KEY"
+content_type="Content-Type: application/json"
+data='{ 
+  "batch": [
+  {
+    "type":"nuban",
+    "name" : "Habenero Mundane",
+    "account_number": "0123456789",
+    "bank_code": "033",
+    "currency": "NGN"
+  },
+  {
+    "type":"nuban",
+    "name" : "Soft Merry",
+    "account_number": "98765432310",
+    "bank_code": "50211",
+    "currency": "NGN"
+  }]
 }'
--X POST`
+
+curl "$url" -H "$authorization" -H "$content_type" -d "$data" -X POST`
 
 const js = `const https = require('https')
 
@@ -73,20 +75,20 @@ const php = `<?php
   $url = "https://api.paystack.co/transferrecipient/bulk";
 
   $fields = [
-    "batch" => [{
+    "batch" => [[
       "type" => "nuban",
       "name" => "Habenero Mundane",
       "account_number" => "0123456789",
       "bank_code" => "033",
       "currency" => "NGN"
-    },
-    {
+    ],
+    [
       "type" => "nuban",
       "name" => "Soft Merry",
       "account_number" => "98765432310",
       "bank_code" => "50211",
       "currency" => "NGN"
-    }]
+    ]]
   ];
 
   $fields_string = http_build_query($fields);
@@ -111,4 +113,4 @@ const php = `<?php
   echo $result;
 ?>`
 
-export { bash, js, php }
+export {sh, js, php}
