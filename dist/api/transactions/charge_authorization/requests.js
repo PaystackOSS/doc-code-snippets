@@ -1,8 +1,14 @@
-const bash = `curl https://api.paystack.co/transaction/charge_authorization
--H "Authorization: Bearer YOUR_SECRET_KEY"
--H "Content-Type: application/json"
--d '{ "email": "customer@email.com", "amount": "20000", "authorization_code": "AUTH_72btv547" }'
--X POST`
+const sh = `#!/bin/sh
+url="https://api.paystack.co/transaction/charge_authorization"
+authorization="Authorization: Bearer YOUR_SECRET_KEY"
+content_type="Content-Type: application/json"
+data='{ 
+  "email": "customer@email.com", 
+  "amount": "20000", 
+  "authorization_code": "AUTH_72btv547"
+}'
+
+curl "$url" -H "$authorization" -H "$content_type" -d "$data" -X POST`
 
 const js = `const https = require('https')
 
@@ -46,7 +52,7 @@ const php = `<?php
   $fields = [
     'email' => "customer@email.com",
     'amount' => "20000",
-    "authorization_code": "AUTH_72btv547"
+    "authorization_code" => "AUTH_72btv547"
   ];
 
   $fields_string = http_build_query($fields);
@@ -71,4 +77,4 @@ const php = `<?php
   echo $result;
 ?>`
 
-export { bash, js, php }
+export {sh, js, php}
