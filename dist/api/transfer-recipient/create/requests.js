@@ -1,20 +1,32 @@
-const bash = `curl https://api.paystack.co/transferrecipient/:id_or_code
--H "Authorization: Bearer YOUR_SECRET_KEY"
--H "Content-Type: application/json"
--d '{ "name": "Rick Sanchez" }'
--X PUT`
+const sh = `#!/bin/sh
+url="https://api.paystack.co/transferrecipient"
+authorization="Authorization: Bearer YOUR_SECRET_KEY"
+content_type="Content-Type: application/json"
+data='{ 
+  "type": "nuban",
+  "name": "Tolu Robert",
+  "account_number": "01000000010",
+  "bank_code": "058",
+  "currency": "NGN"
+}'
+
+curl "$url" -H "$authorization" -H "$content_type" -d "$data" -X POST`
 
 const js = `const https = require('https')
 
 const params = JSON.stringify({
-  "name": "Rick Sanchez"
+  "type": "nuban",
+  "name": "Tolu Robert",
+  "account_number": "01000000010",
+  "bank_code": "058",
+  "currency": "NGN"
 })
 
 const options = {
   hostname: 'api.paystack.co',
   port: 443,
-  path: '/transferrecipient/:id_or_code',
-  method: 'PUT',
+  path: '/transferrecipient',
+  method: 'POST',
   headers: {
     Authorization: 'Bearer SECRET_KEY',
     'Content-Type': 'application/json'
@@ -39,10 +51,14 @@ req.write(params)
 req.end()`
 
 const php = `<?php
-  $url = "https://api.paystack.co/transferrecipient/:id_or_code";
+  $url = "https://api.paystack.co/transferrecipient";
 
   $fields = [
-    'name' => "Rick Sanchez"
+    "type" => "nuban",
+    "name" => "Tolu Robert",
+    "account_number" => "01000000010",
+    "bank_code" => "058",
+    "currency" => "NGN"
   ];
 
   $fields_string = http_build_query($fields);
@@ -52,7 +68,7 @@ const php = `<?php
   
   //set the url, number of POST vars, POST data
   curl_setopt($ch,CURLOPT_URL, $url);
-  curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
+  curl_setopt($ch,CURLOPT_POST, true);
   curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
   curl_setopt($ch, CURLOPT_HTTPHEADER, array(
     "Authorization: Bearer SECRET_KEY",
@@ -67,4 +83,4 @@ const php = `<?php
   echo $result;
 ?>`
 
-export { bash, js, php }
+export {sh, js, php}
