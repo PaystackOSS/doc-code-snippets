@@ -1,20 +1,28 @@
-const bash = `curl https://api.paystack.co/transfer/finalize_transfer
--H "Authorization: Bearer YOUR_SECRET_KEY"
--H "Content-Type: application/json"
--d '{ "transfer_code": "TRF_vsyqdmlzble3uii", "otp": "928783" }'
--X POST`
+const sh = `#!/bin/sh
+url="https://api.paystack.co/transfer"
+authorization="Authorization: Bearer YOUR_SECRET_KEY"
+content_type="Content-Type: application/json"
+data='{ 
+  "source": "balance", 
+  "reason": "Calm down", 
+  "amount":3794800, "recipient": "RCP_gx2wn530m0i3w3m"
+}'
+
+curl "$url" -H "$authorization" -H "$content_type" -d "$data" -X POST`
 
 const js = `const https = require('https')
 
 const params = JSON.stringify({
-  "transfer_code": "TRF_vsyqdmlzble3uii", 
-  "otp": "928783"
+  "source": "balance", 
+  "reason": "Calm down", 
+  "amount":3794800, 
+  "recipient": "RCP_gx2wn530m0i3w3m"
 })
 
 const options = {
   hostname: 'api.paystack.co',
   port: 443,
-  path: '/transfer/finalize_transfer',
+  path: '/transfer',
   method: 'POST',
   headers: {
     Authorization: 'Bearer SECRET_KEY',
@@ -40,12 +48,14 @@ req.write(params)
 req.end()`
 
 const php = `<?php
-  $url = "https://api.paystack.co/transfer/finalize_transfer";
+  $url = "https://api.paystack.co/transfer";
 
   $fields = [
-    "transfer_code" => "TRF_vsyqdmlzble3uii", 
-    "otp" => "928783"
-  ];
+    "source" => "balance", 
+    "reason" => "Calm down", 
+    "amount" => 3794800, 
+    "recipient" => "RCP_gx2wn530m0i3w3m"
+    ];
 
   $fields_string = http_build_query($fields);
 
@@ -69,4 +79,4 @@ const php = `<?php
   echo $result;
 ?>`
 
-export { bash, js, php }
+export {sh, js, php}
