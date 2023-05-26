@@ -1,24 +1,19 @@
-const bash = `curl https://api.paystack.co/subscription/disable
--H "Authorization: Bearer YOUR_SECRET_KEY"
--H "Content-Type: application/json"
--d '{ "code": "SUB_vsyqdmlzble3uii", "token": "d7gofp6yppn3qz7" }'
--X POST`
+const sh = `#!/bin/sh
+url="https://api.paystack.co/subscription/{code}/manage/email"
+authorization="Authorization: Bearer YOUR_SECRET_KEY"
+
+curl "$url" -H "$authorization" -X POST`
 
 const js = `const https = require('https')
 
-const params = JSON.stringify({
-  "code": "SUB_vsyqdmlzble3uii",
-  "token": "d7gofp6yppn3qz7"
-})
 
 const options = {
   hostname: 'api.paystack.co',
   port: 443,
-  path: '/subscription/disable',
+  path: '/subscription/:code/manage/email',
   method: 'POST',
   headers: {
     Authorization: 'Bearer SECRET_KEY',
-    'Content-Type': 'application/json'
   }
 }
 
@@ -36,18 +31,11 @@ const req = https.request(options, res => {
   console.error(error)
 })
 
-req.write(params)
 req.end()`
 
 const php = `<?php
-  $url = "https://api.paystack.co/subscription/disable";
+  $url = "https://api.paystack.co/subscription/:code/manage/email";
 
-  $fields = [
-    'code' => "SUB_vsyqdmlzble3uii",
-    'token' => "d7gofp6yppn3qz7"
-  ];
-
-  $fields_string = http_build_query($fields);
 
   //open connection
   $ch = curl_init();
@@ -55,7 +43,6 @@ const php = `<?php
   //set the url, number of POST vars, POST data
   curl_setopt($ch,CURLOPT_URL, $url);
   curl_setopt($ch,CURLOPT_POST, true);
-  curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
   curl_setopt($ch, CURLOPT_HTTPHEADER, array(
     "Authorization: Bearer SECRET_KEY",
     "Cache-Control: no-cache",
@@ -69,4 +56,4 @@ const php = `<?php
   echo $result;
 ?>`
 
-export { bash, js, php }
+export {sh, js, php}
