@@ -9,8 +9,7 @@ data='{ "customer_email": "cus@gmail.com",
       "delivery_address": "3a ladoke street ogbomoso"
     }'
 
-curl "$url" -H "$authorization" -H "$content_type" -d "$data" -X POST
-`
+curl "$url" -H "$authorization" -H "$content_type" -d "$data" -X POST`
 
 const js = `const https = require('https')
 

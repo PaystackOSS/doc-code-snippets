@@ -9,5 +9,3 @@ data='{ "resolution": "merchant-accepted",
      }'
 
 curl "$url" -H "$authorization" -H "$content_type" -d "$data" -X PUT
-
-

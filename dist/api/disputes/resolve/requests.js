@@ -8,10 +8,7 @@ data='{ "resolution": "merchant-accepted",
         "refund_amount": 1002 
      }'
 
-curl "$url" -H "$authorization" -H "$content_type" -d "$data" -X PUT
-
-
-`
+curl "$url" -H "$authorization" -H "$content_type" -d "$data" -X PUT`
 
 const js = `const https = require('https')
 
