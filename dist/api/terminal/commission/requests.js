@@ -1,20 +1,24 @@
-const bash = `curl https://api.paystack.co/terminal/:terminal_id
--H "Authorization: Bearer YOUR_SECRET_KEY"
--H "Content-Type: application/json"
--d '{ "address": "Somewhere on earth }'
--X PUT`
+const sh = `#!/bin/sh
+url="https://api.paystack.co/terminal/commission_device"
+authorization="Authorization: Bearer YOUR_SECRET_KEY"
+content_type="Content-Type: application/json"
+data='{ 
+  "serial_number": "1111150412230003899"
+}'
+
+curl "$url" -H "$authorization" -H "$content_type" -d "$data" -X POST`
 
 const js = `const https = require('https')
 
 const params = JSON.stringify({
-  "address": "Somewhere on earth"
+  "serial_number": "1111150412230003899"
 })
 
 const options = {
   hostname: 'api.paystack.co',
   port: 443,
-  path: '/terminal/:terminal_id',
-  method: 'PUT',
+  path: '/terminal/commission_device',
+  method: 'POST',
   headers: {
     Authorization: 'Bearer SECRET_KEY',
     'Content-Type': 'application/json'
@@ -39,32 +43,30 @@ req.write(params)
 req.end()`
 
 const php = `<?php
-  $url = "https://api.paystack.co/terminal/:terminal_id";
+  $url = "https://api.paystack.co/terminal/commission_device";
 
   $body = '{
-    "address": "Somewhere on earth"
+    "serial_number": "1111150412230003899"
   }';
-
-  $fields_string = http_build_query($fields);
 
   //open connection
   $ch = curl_init();
   
   //set the url, number of POST vars, POST data
   curl_setopt($ch,CURLOPT_URL, $url);
-  curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
+  curl_setopt($ch,CURLOPT_POST, true);
   curl_setopt($ch,CURLOPT_POSTFIELDS, $body);
   curl_setopt($ch, CURLOPT_HTTPHEADER, array(
     "Authorization: Bearer SECRET_KEY",
     "Content-Type: application/json",
   ));
   
-  //So that curl_exec returns the contents of the cURL; rather than echoing it
   curl_setopt($ch,CURLOPT_RETURNTRANSFER, true); 
   
-  //execute post
-  $result = curl_exec($ch);
-  echo $result;
+  $response = curl_exec($ch);
+  $json = json_decode($response);
+  curl_close($ch);
+  var_dump($json);
 ?>`
 
-export { bash, js, php }
+export {sh, js, php}
