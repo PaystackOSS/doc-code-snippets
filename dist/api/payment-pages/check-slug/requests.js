@@ -1,6 +1,12 @@
-const bash = `curl https://api.paystack.co/page/check_slug_availability/:slug
--H "Authorization: Bearer YOUR_SECRET_KEY"
--X GET`
+const sh = `#!/bin/sh
+url="https://api.paystack.co/page/check_slug_availability/:slug"
+authorization="Authorization: Bearer YOUR_SECRET_KEY"
+
+curl "$url" -H "$authorization" -X GET
+
+
+
+`
 
 const js = `const https = require('https')
 
@@ -57,4 +63,4 @@ const php = `<?php
   }
 ?>`
 
-export { bash, js, php }
+export {sh, js, php}
