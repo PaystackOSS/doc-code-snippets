@@ -1,8 +1,13 @@
-const bash = `curl https://api.paystack.co/split/:id/subaccount/add
--H "Authorization: Bearer YOUR_SECRET_KEY"
--H "Content-Type: application/json"
--d '{ "subaccount": "ACCT_hdl8abxl8drhrl3", "share": 40000 }'
--X POST`
+const sh = `#!/bin/sh
+url="https://api.paystack.co/split/:id/subaccount/add"
+authorization="Authorization: Bearer YOUR_SECRET_KEY"
+content_type="Content-Type: application/json"
+data='{ 
+  "subaccount": "ACCT_hdl8abxl8drhrl3", 
+  "share": 40000
+}'
+
+curl "$url" -H "$authorization" -H "$content_type" -d "$data" -X POST`
 
 const js = `const https = require('https')
 
@@ -69,4 +74,4 @@ const php = `<?php
   echo $result;
 ?>`
 
-export { bash, js, php }
+export {sh, js, php}

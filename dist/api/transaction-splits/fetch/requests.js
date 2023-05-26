@@ -1,13 +1,15 @@
-const bash = `curl https://api.paystack.co/split
--H "Authorization: Bearer YOUR_SECRET_KEY"
--X GET`
+const sh = `#!/bin/sh
+url="https://api.paystack.co/split/{id}"
+authorization="Authorization: Bearer YOUR_SECRET_KEY"
+
+curl "$url" -H "$authorization" -X GET`
 
 const js = `const https = require('https')
 
 const options = {
   hostname: 'api.paystack.co',
   port: 443,
-  path: '/split,
+  path: '/split/:id',
   method: 'GET',
   headers: {
     Authorization: 'Bearer SECRET_KEY'
@@ -32,7 +34,7 @@ const php = `<?php
   $curl = curl_init();
   
   curl_setopt_array($curl, array(
-    CURLOPT_URL => "https://api.paystack.co/split,
+    CURLOPT_URL => "https://api.paystack.co/split/:id",
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => "",
     CURLOPT_MAXREDIRS => 10,
@@ -57,4 +59,4 @@ const php = `<?php
   }
 ?>`
 
-export { bash, js, php }
+export {sh, js, php}
