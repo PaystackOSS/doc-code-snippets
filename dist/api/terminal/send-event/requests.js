@@ -1,21 +1,33 @@
-const bash = `curl https://api.paystack.co/terminal/commission_device
--H "Authorization: Bearer YOUR_SECRET_KEY"
--H "Content-Type: application/json"
--d '{ 
-      "serial_number": "1111150412230003899"
-    }'
--X POST`
+const sh = `#!/bin/sh
+url="https://api.paystack.co/terminal/{terminal_id}/event"
+authorization="Authorization: Bearer YOUR_SECRET_KEY"
+content_type="Content-Type: application/json"
+data='{ 
+  "type": "invoice",
+  "action": "process",
+  "data": { 
+    "id": 7895939, 
+    "reference": 4634337895939
+  }
+}'
+
+curl "$url" -H "$authorization" -H "$content_type" -d "$data" -X POST`
 
 const js = `const https = require('https')
 
 const params = JSON.stringify({
-  "serial_number": "1111150412230003899"
+  "type": "invoice",
+  "action": "process",
+  "data": { 
+    "id": 7895939, 
+    "reference": 4634337895939
+  }
 })
 
 const options = {
   hostname: 'api.paystack.co',
   port: 443,
-  path: '/terminal/commission_device',
+  path: '/terminal/:terminal_id/event',
   method: 'POST',
   headers: {
     Authorization: 'Bearer SECRET_KEY',
@@ -41,10 +53,15 @@ req.write(params)
 req.end()`
 
 const php = `<?php
-  $url = "https://api.paystack.co/terminal/commission_device";
+  $url = "https://api.paystack.co/terminal/:terminal_id/event";
 
   $body = '{
-    "serial_number": "1111150412230003899"
+    "type": "invoice",
+    "action": "process",
+    "data": { 
+      "id": 7895939, 
+      "reference": 4634337895939
+    }
   }';
 
   //open connection
@@ -67,4 +84,4 @@ const php = `<?php
   var_dump($json);
 ?>`
 
-export { bash, js, php }
+export {sh, js, php}

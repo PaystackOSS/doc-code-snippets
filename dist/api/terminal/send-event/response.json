@@ -1,0 +1,19 @@
+{
+	"200": {
+		"description": "200 Ok",
+		"data": {
+			"status": true,
+			"message": "Event sent to Terminal",
+			"data": {
+				"id": "616d721e8c5cd40a0cdd54a6"
+			}
+		}
+	},
+	"404": {
+		"description": "404 Not Found",
+		"data": {
+			"status": false,
+			"message": "Invoice not found"
+		}
+	}
+}

@@ -1,0 +1,16 @@
+{
+	"200": {
+		"description": "200 Ok",
+		"data": {
+			"status": false,
+			"message": "Device has been commissioned already"
+		}
+	},
+	"404": {
+		"description": "404 Not Found",
+		"data": {
+			"status": false,
+			"message": "Device not found"
+		}
+	}
+}

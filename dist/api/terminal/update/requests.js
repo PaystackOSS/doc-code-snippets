@@ -1,32 +1,24 @@
-const bash = `curl https://api.paystack.co/terminal/:terminal_id/event
--H "Authorization: Bearer YOUR_SECRET_KEY"
--H "Content-Type: application/json"
--d '{ 
-      "type": "invoice",
-      "action": "process",
-      "data": { 
-        "id": 7895939, 
-        "reference": 4634337895939
-      }
-    }'
--X POST`
+const sh = `#!/bin/sh
+url="https://api.paystack.co/terminal/{terminal_id}"
+authorization="Authorization: Bearer YOUR_SECRET_KEY"
+content_type="Content-Type: application/json"
+data='{ 
+  "address": "Somewhere on earth
+}'
+
+curl "$url" -H "$authorization" -H "$content_type" -d "$data" -X PUT`
 
 const js = `const https = require('https')
 
 const params = JSON.stringify({
-  "type": "invoice",
-  "action": "process",
-  "data": { 
-    "id": 7895939, 
-    "reference": 4634337895939
-  }
+  "address": "Somewhere on earth"
 })
 
 const options = {
   hostname: 'api.paystack.co',
   port: 443,
-  path: '/terminal/:terminal_id/event',
-  method: 'POST',
+  path: '/terminal/:terminal_id',
+  method: 'PUT',
   headers: {
     Authorization: 'Bearer SECRET_KEY',
     'Content-Type': 'application/json'
@@ -51,35 +43,32 @@ req.write(params)
 req.end()`
 
 const php = `<?php
-  $url = "https://api.paystack.co/terminal/:terminal_id/event";
+  $url = "https://api.paystack.co/terminal/:terminal_id";
 
   $body = '{
-    "type": "invoice",
-    "action": "process",
-    "data": { 
-      "id": 7895939, 
-      "reference": 4634337895939
-    }
+    "address": "Somewhere on earth"
   }';
+
+  $fields_string = http_build_query($fields);
 
   //open connection
   $ch = curl_init();
   
   //set the url, number of POST vars, POST data
   curl_setopt($ch,CURLOPT_URL, $url);
-  curl_setopt($ch,CURLOPT_POST, true);
+  curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
   curl_setopt($ch,CURLOPT_POSTFIELDS, $body);
   curl_setopt($ch, CURLOPT_HTTPHEADER, array(
     "Authorization: Bearer SECRET_KEY",
     "Content-Type: application/json",
   ));
   
+  //So that curl_exec returns the contents of the cURL; rather than echoing it
   curl_setopt($ch,CURLOPT_RETURNTRANSFER, true); 
   
-  $response = curl_exec($ch);
-  $json = json_decode($response);
-  curl_close($ch);
-  var_dump($json);
+  //execute post
+  $result = curl_exec($ch);
+  echo $result;
 ?>`
 
-export { bash, js, php }
+export {sh, js, php}
