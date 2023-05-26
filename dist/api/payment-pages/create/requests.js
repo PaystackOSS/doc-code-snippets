@@ -1,10 +1,18 @@
-const bash = `curl https://api.paystack.co/page/:id_or_slug
--H "Authorization: Bearer YOUR_SECRET_KEY"
--H "Content-Type: application/json"
--d '{ "name": "Buttercup Brunch", "amount": 500000
+const sh = `#!/bin/sh
+url="https://api.paystack.co/page"
+authorization="Authorization: Bearer YOUR_SECRET_KEY"
+content_type="Content-Type: application/json"
+data='{ "name": "Buttercup Brunch", "amount": 500000
       "description": "Gather your friends for the ritual that is brunch",
-    }'
--X PUT`
+     }'
+
+
+curl "$url" -H "$authorization" -H "$content_type" -d "$data" -X POST
+
+
+
+
+`
 
 const js = `const https = require('https')
 
@@ -17,8 +25,8 @@ const params = JSON.stringify({
 const options = {
   hostname: 'api.paystack.co',
   port: 443,
-  path: '/page/:id_or_slug',
-  method: 'PUT',
+  path: '/page',
+  method: 'POST',
   headers: {
     Authorization: 'Bearer SECRET_KEY',
     'Content-Type': 'application/json'
@@ -43,7 +51,7 @@ req.write(params)
 req.end()`
 
 const php = `<?php
-  $url = "https://api.paystack.co/page/:id_or_slug";
+  $url = "https://api.paystack.co/page";
 
   $fields = [
     'name' => "Buttercup Brunch",
@@ -58,7 +66,7 @@ const php = `<?php
   
   //set the url, number of POST vars, POST data
   curl_setopt($ch,CURLOPT_URL, $url);
-  curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
+  curl_setopt($ch,CURLOPT_POST, true);
   curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
   curl_setopt($ch, CURLOPT_HTTPHEADER, array(
     "Authorization: Bearer SECRET_KEY",
@@ -73,4 +81,4 @@ const php = `<?php
   echo $result;
 ?>`
 
-export { bash, js, php }
+export {sh, js, php}
