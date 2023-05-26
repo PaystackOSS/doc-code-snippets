@@ -6,4 +6,3 @@ data='{ "product": [473, 292] }'
 
 
 curl "$url" -H "$authorization" -H "$content_type" -d "$data" -X POST
-
