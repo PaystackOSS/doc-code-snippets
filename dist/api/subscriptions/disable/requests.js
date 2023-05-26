@@ -1,8 +1,13 @@
-const bash = `curl https://api.paystack.co/subscription/enable
--H "Authorization: Bearer YOUR_SECRET_KEY"
--H "Content-Type: application/json"
--d '{ "code": "SUB_vsyqdmlzble3uii", "token": "d7gofp6yppn3qz7" }'
--X POST`
+const sh = `#!/bin/sh
+url="https://api.paystack.co/subscription/disable"
+authorization="Authorization: Bearer YOUR_SECRET_KEY"
+content_type="Content-Type: application/json"
+data='{ 
+  "code": "SUB_vsyqdmlzble3uii", 
+  "token": "d7gofp6yppn3qz7" 
+}'
+
+curl "$url" -H "$authorization" -H "$content_type" -d "$data" -X POST`
 
 const js = `const https = require('https')
 
@@ -14,7 +19,7 @@ const params = JSON.stringify({
 const options = {
   hostname: 'api.paystack.co',
   port: 443,
-  path: '/subscription/enable',
+  path: '/subscription/disable',
   method: 'POST',
   headers: {
     Authorization: 'Bearer SECRET_KEY',
@@ -40,7 +45,7 @@ req.write(params)
 req.end()`
 
 const php = `<?php
-  $url = "https://api.paystack.co/subscription/enable";
+  $url = "https://api.paystack.co/subscription/disable";
 
   $fields = [
     'code' => "SUB_vsyqdmlzble3uii",
@@ -69,4 +74,4 @@ const php = `<?php
   echo $result;
 ?>`
 
-export { bash, js, php }
+export {sh, js, php}
