@@ -1,21 +1,31 @@
-const bash = `curl https://api.paystack.co/subaccount/:id_or_code
--H "Authorization: Bearer YOUR_SECRET_KEY"
--H "Content-Type: application/json"
--d '{ "primary_contact_email": "dafe@aba.com", "percentage_charge": 18.9 }'
--X PUT`
+const sh = `#!/bin/sh
+url="https://api.paystack.co/subaccount"
+authorization="Authorization: Bearer YOUR_SECRET_KEY"
+content_type="Content-Type: application/json"
+data='{ "business_name": "Sunshine Studios", "settlement_bank": "044", "account_number": "0193274682", "percentage_charge": 18.2 }'
+
+curl "$url" -H "$authorization" -H "$content_type" -d "$data" -X POST
+
+
+
+
+
+`
 
 const js = `const https = require('https')
 
 const params = JSON.stringify({
-  "primary_contact_email": "dafe@aba.com",
-  "percentage_charge": 18.9
+  "business_name": "Sunshine Studios",
+  "settlement_bank": "044", 
+  "account_number": "0193274682", 
+  "percentage_charge": 18.2 
 })
 
 const options = {
   hostname: 'api.paystack.co',
   port: 443,
-  path: '/subaccount/:id_or_code',
-  method: 'PUT',
+  path: '/subaccount',
+  method: 'POST',
   headers: {
     Authorization: 'Bearer SECRET_KEY',
     'Content-Type': 'application/json'
@@ -40,11 +50,13 @@ req.write(params)
 req.end()`
 
 const php = `<?php
-  $url = "https://api.paystack.co/subaccount/:id_or_code";
+  $url = "https://api.paystack.co/subaccount";
 
   $fields = [
-    'primary_contact_email' => "dafe@aba.com",
-    'percentage_charge' => 18.9
+    'business_name' => "Sunshine Studios",
+    'settlement_bank' => "044", 
+    'account_number' => "0193274682", 
+    'percentage_charge' => 18.2 
   ];
 
   $fields_string = http_build_query($fields);
@@ -54,7 +66,7 @@ const php = `<?php
   
   //set the url, number of POST vars, POST data
   curl_setopt($ch,CURLOPT_URL, $url);
-  curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
+  curl_setopt($ch,CURLOPT_POST, true);
   curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
   curl_setopt($ch, CURLOPT_HTTPHEADER, array(
     "Authorization: Bearer SECRET_KEY",
@@ -69,4 +81,4 @@ const php = `<?php
   echo $result;
 ?>`
 
-export { bash, js, php }
+export {sh, js, php}
