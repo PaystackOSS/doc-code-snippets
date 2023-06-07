@@ -14,18 +14,18 @@ function createBaseFolder() {
   }
 }
 
-function getAllFiles(parentDir, directoryContent) {
-  const children = fs.readdirSync(parentDir);
+function getAllFiles(directory, directoryContent) {
+  const children = fs.readdirSync(directory);
   directoryContent = directoryContent || []
 
   children.forEach((child) => {
-    if (fs.statSync(parentDir + "/" + child).isDirectory()) {
-      directoryContent = getAllFiles(parentDir + "/" + child, directoryContent)
+    if (fs.statSync(directory + "/" + child).isDirectory()) {
+      directoryContent = getAllFiles(directory + "/" + child, directoryContent)
     } else {
       if (path.extname(child) === ".yml" || path.extname(child) === ".yaml") {
         directoryContent.push({
           config: child,
-          directory: parentDir
+          directory: directory
         })
       }
     }
@@ -40,7 +40,7 @@ function getEventFileContent(directory) {
   let content = ""
 
   files.forEach((file) => {
-    if(path.extname(file) === ".json") {
+    if (path.extname(file) === ".json") {
       try {
         const filename = file.split(".")[0].replace(/-/g, "_")
         const data = fs.readFileSync(path.join(directory, file), 'utf8');
@@ -59,7 +59,7 @@ function getEventFileContent(directory) {
 
 function readFiles(languages, directory) {
   let content = ""
-  
+
   languages.forEach((language) => {
     try {
       const data = fs.readFileSync(path.join(directory, `index.${language}`), 'utf8');
@@ -118,21 +118,24 @@ function writeToFile(config, directory, tag) {
   let filename = ""
   let parent = ""
 
-  if(tag === "doc") {
+  if (tag === "doc") {
     filename = ancestor[ancestor.length - 1] + ".js"
-    parent = "dist/" + ancestor.slice(0, ancestor.length - 1).join("/")
+    parent = "dist/" + ancestor.slice(2, ancestor.length - 1).join("/")
+
     makeDirectory(parent)
 
-    content = allConfig.type && allConfig.type === "event" 
+    content = allConfig.type && allConfig.type === "event"
       ? getEventFileContent(directory)
       : readFiles(allConfig.languages, directory)
 
-  } else if(tag === "api") {
+  } else if (tag === "api") {
     filename = allConfig.type === "standalone" ? ancestor[ancestor.length - 1] + ".js" : "requests.js"
-    parent = allConfig.type === "standalone" ? "dist/" + ancestor.slice(0, ancestor.length - 1).join("/") : "dist/" + ancestor.join("/")
-    
+    parent = allConfig.type === "standalone" ?
+      "dist/" + ancestor.slice(2, ancestor.length - 1).join("/") :
+      "dist/" + ancestor.slice(2, ancestor.length).join("/")
+
     makeDirectory(parent)
-    
+
     if (!allConfig.type) {
       writeApiResponse(directory, parent)
     }
@@ -152,8 +155,8 @@ function writeToFile(config, directory, tag) {
 
 function buildSnippets() {
   createBaseFolder()
-  const docFiles = getAllFiles("doc", [])
-  const apiFiles = getAllFiles("api", [])
+  const docFiles = getAllFiles("./src/doc", [])
+  const apiFiles = getAllFiles("./src/api", [])
 
   docFiles.forEach(({ config, directory }) => {
     writeToFile(config, directory, "doc")
