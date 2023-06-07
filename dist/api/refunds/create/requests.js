@@ -4,12 +4,7 @@ authorization="Authorization: Bearer YOUR_SECRET_KEY"
 content_type="Content-Type: application/json"
 data='{ "transaction": 1641 }'
 
-curl "$url" -H "$authorization" -H "$content_type" -d "$data" -X POST
-
-
-
-
-`
+curl "$url" -H "$authorization" -H "$content_type" -d "$data" -X POST`
 
 const js = `const https = require('https')
 
