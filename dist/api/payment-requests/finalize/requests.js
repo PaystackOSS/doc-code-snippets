@@ -1,6 +1,13 @@
-const bash = `curl https://api.paystack.co/paymentrequest/finalize/:id_or_code
--H "Authorization: Bearer YOUR_SECRET_KEY"
--X POST`
+const sh = `#!/bin/sh
+url="https://api.paystack.co/paymentrequest/finalize/:id_or_code"
+authorization="Authorization: Bearer YOUR_SECRET_KEY"
+
+curl "$url" -H "$authorization" -X POST
+
+
+
+
+`
 
 const js = `const https = require('https')
 
@@ -57,4 +64,4 @@ const php = `<?php
   }
 ?>`
 
-export { bash, js, php }
+export {sh, js, php}

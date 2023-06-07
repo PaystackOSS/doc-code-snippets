@@ -1,7 +1,8 @@
-const bash = `curl https://api.paystack.co/paymentrequest
--H "Authorization: Bearer YOUR_SECRET_KEY"
--H "Content-Type: application/json"
--d '{ "description": "a test invoice",
+const sh = `#!/bin/sh
+url="https://api.paystack.co/paymentrequest"
+authorization="Authorization: Bearer YOUR_SECRET_KEY"
+content_type="Content-Type: application/json"
+data='{ "description": "a test invoice",
       "line_items": [
         {"name": "item 1", "amount": 20000},
         {"name": "item 2", "amount": 20000}
@@ -12,7 +13,10 @@ const bash = `curl https://api.paystack.co/paymentrequest
       "customer": "CUS_xwaj0txjryg393b",
       "due_date": "2020-07-08"
     }'
--X POST`
+
+curl "$url" -H "$authorization" -H "$content_type" -d "$data" -X POST
+
+`
 
 const js = `const https = require('https')
 
@@ -63,11 +67,20 @@ const php = `<?php
   $fields = [
     "description" => "a test invoice",
     "line_items"=> [
-      {"name" => "item 1", "amount" => 20000},
-      {"name" => "item 2", "amount" => 20000}
+      [
+        "name" => "item 1",
+        "amount" => 20000
+      ],
+      [
+       "name" => "item 2",
+       "amount" => 20000
+       ]
     ],
     "tax" => [
-      {"name" => "VAT", "amount" => 2000}
+      [
+        "name" => "VAT",
+        "amount" => 2000
+      ]
     ],
     "customer" => "CUS_xwaj0txjryg393b",
     "due_date" => "2020-07-08"
@@ -95,4 +108,4 @@ const php = `<?php
   echo $result;
 ?>`
 
-export { bash, js, php }
+export {sh, js, php}

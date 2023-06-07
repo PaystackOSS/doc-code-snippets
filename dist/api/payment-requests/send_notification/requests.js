@@ -1,21 +1,23 @@
-const bash = `curl https://api.paystack.co/paymentrequest/:id_or_code
--H "Authorization: Bearer YOUR_SECRET_KEY"
--H "Content-Type: application/json"
--d '{ "description": "Update test invoice", "due_date": "2017-05-10" }'
--X PUT`
+const sh = `#!/bin/sh
+url="https://api.paystack.co/paymentrequest/notify/:id_or_code"
+authorization="Authorization: Bearer YOUR_SECRET_KEY"
+content_type="Content-Type: application/json"
+
+curl "$url" -H "$authorization" -H "$content_type" -X POST
+
+
+
+
+
+`
 
 const js = `const https = require('https')
-
-const params = JSON.stringify({
-  "description": "Update test invoice", 
-  "due_date": "2017-05-10"
-})
 
 const options = {
   hostname: 'api.paystack.co',
   port: 443,
-  path: '/paymentrequest/:id_or_code',
-  method: 'PUT',
+  path: '/paymentrequest/notify/:id_or_code',
+  method: 'POST',
   headers: {
     Authorization: 'Bearer SECRET_KEY',
     'Content-Type': 'application/json'
@@ -36,16 +38,10 @@ const req = https.request(options, res => {
   console.error(error)
 })
 
-req.write(params)
 req.end()`
 
 const php = `<?php
-  $url = "https://api.paystack.co/paymentrequest/:id_or_code";
-
-  $fields = [
-    "description" => "Update test invoice", 
-    "due_date" => "2017-05-10"
-  ];
+  $url = "https://api.paystack.co/paymentrequest/notify/:id_or_code";
 
   $fields_string = http_build_query($fields);
 
@@ -54,8 +50,7 @@ const php = `<?php
   
   //set the url, number of POST vars, POST data
   curl_setopt($ch,CURLOPT_URL, $url);
-  curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
-  curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
+  curl_setopt($ch,CURLOPT_POST, true);
   curl_setopt($ch, CURLOPT_HTTPHEADER, array(
     "Authorization: Bearer SECRET_KEY",
     "Cache-Control: no-cache",
@@ -69,4 +64,4 @@ const php = `<?php
   echo $result;
 ?>`
 
-export { bash, js, php }
+export {sh, js, php}

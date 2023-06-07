@@ -1,0 +1,9 @@
+{
+	"200": {
+		"description": "200 Ok",
+		"data": {
+			"status": true,
+			"message": "Payment request has been archived"
+		}
+	}
+}

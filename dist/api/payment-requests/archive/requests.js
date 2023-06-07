@@ -1,14 +1,17 @@
-const bash = `curl https://api.paystack.co//paymentrequest/notify/:id_or_code
--H "Authorization: Bearer YOUR_SECRET_KEY"
--H "Content-Type: application/json"
--X POST`
+const sh = `#!/bin/sh
+url="https://api.paystack.co/paymentrequest/archive/:id_or_code"
+authorization="Authorization: Bearer YOUR_SECRET_KEY"
+content_type="Content-Type: application/json"
+
+curl "$url" -H "$authorization" -H "$content_type" -X POST
+`
 
 const js = `const https = require('https')
 
 const options = {
   hostname: 'api.paystack.co',
   port: 443,
-  path: '//paymentrequest/notify/:id_or_code',
+  path: '/paymentrequest/archive/:id_or_code',
   method: 'POST',
   headers: {
     Authorization: 'Bearer SECRET_KEY',
@@ -33,7 +36,7 @@ const req = https.request(options, res => {
 req.end()`
 
 const php = `<?php
-  $url = "https://api.paystack.co//paymentrequest/notify/:id_or_code";
+  $url = "https://api.paystack.co/paymentrequest/archive/:id_or_code";
 
   $fields_string = http_build_query($fields);
 
@@ -56,4 +59,4 @@ const php = `<?php
   echo $result;
 ?>`
 
-export { bash, js, php }
+export {sh, js, php}

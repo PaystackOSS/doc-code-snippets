@@ -1,6 +1,18 @@
-const bash = `curl https://api.paystack.co/paymentrequest/verify/:code
--H "Authorization: Bearer YOUR_SECRET_KEY"
--X GET`
+const sh = `#!/bin/sh
+url="https://api.paystack.co/paymentrequest/verify/:code"
+authorization="Authorization: Bearer YOUR_SECRET_KEY"
+
+curl "$url" -H "$authorization" -X GET
+
+
+
+
+
+
+
+
+
+`
 
 const js = `const https = require('https')
 
@@ -26,7 +38,8 @@ https.request(options, res => {
   })
 }).on('error', error => {
   console.error(error)
-})`
+})
+`
 
 const php = `<?php
   $curl = curl_init();
@@ -57,4 +70,4 @@ const php = `<?php
   }
 ?>`
 
-export { bash, js, php }
+export {sh, js, php}
