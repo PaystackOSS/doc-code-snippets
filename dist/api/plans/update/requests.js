@@ -4,13 +4,7 @@ authorization="Authorization: Bearer YOUR_SECRET_KEY"
 content_type="Content-Type: application/json"
 data='{ "name": "Monthly retainer (renamed)" }'
 
-curl "$url" -H "$authorization" -H "$content_type" -d "$data" -X PUT
-
-
-
-
-
-`
+curl "$url" -H "$authorization" -H "$content_type" -d "$data" -X PUT`
 
 const js = `const https = require('https')
 
