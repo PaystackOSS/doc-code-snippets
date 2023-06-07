@@ -14,9 +14,7 @@ data='{ "description": "a test invoice",
       "due_date": "2020-07-08"
     }'
 
-curl "$url" -H "$authorization" -H "$content_type" -d "$data" -X POST
-
-`
+curl "$url" -H "$authorization" -H "$content_type" -d "$data" -X POST`
 
 const js = `const https = require('https')
 

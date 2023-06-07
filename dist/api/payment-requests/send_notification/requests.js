@@ -3,13 +3,7 @@ url="https://api.paystack.co/paymentrequest/notify/:id_or_code"
 authorization="Authorization: Bearer YOUR_SECRET_KEY"
 content_type="Content-Type: application/json"
 
-curl "$url" -H "$authorization" -H "$content_type" -X POST
-
-
-
-
-
-`
+curl "$url" -H "$authorization" -H "$content_type" -X POST`
 
 const js = `const https = require('https')
 

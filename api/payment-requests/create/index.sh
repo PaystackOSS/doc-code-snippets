@@ -15,4 +15,3 @@ data='{ "description": "a test invoice",
     }'
 
 curl "$url" -H "$authorization" -H "$content_type" -d "$data" -X POST
-
