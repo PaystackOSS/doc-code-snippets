@@ -2,15 +2,7 @@ const sh = `#!/bin/sh
 url="https://api.paystack.co/subaccount/:id_or_code"
 authorization="Authorization: Bearer YOUR_SECRET_KEY"
 
-curl "$url" -H "$authorization" -X GET
-
-
-
-
-
-
-
-`
+curl "$url" -H "$authorization" -X GET`
 
 const js = `const https = require('https')
 
