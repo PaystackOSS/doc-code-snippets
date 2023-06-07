@@ -1,28 +1,37 @@
-const bash = `curl https://api.paystack.co/product/:id
--H "Authorization: Bearer YOUR_SECRET_KEY"
--H "Content-Type: application/json"
--d '{ "description": "Product Six Description", "name": "Product Six",
-      "price": 500000, "currency": "USD", "limited": false, 
-      "quantity": 100 
+const sh = `#!/bin/sh
+url="https://api.paystack.co/product"
+authorization="Authorization: Bearer YOUR_SECRET_KEY"
+content_type="Content-Type: application/json"
+data='{ "name": "Puff Puff",
+      "description": "Crispy flour ball with fluffy interior",
+      "price": "5000",
+      "currency": "NGN",
+      "unlimited": false,
+      "quantity": 100
     }'
--X PUT`
+
+curl "$url" -H "$authorization" -H "$content_type" -d "$data" -X POST
+
+
+
+`
 
 const js = `const https = require('https')
 
 const params = JSON.stringify({
-  "description": "Product Six Description",
-  "name": "Product Six",
-  "price": 500000,
-  "currency": "USD",
-  "limited": false,
+  "name": "Puff Puff",
+  "description": "Crispy flour ball with fluffy interior",
+  "price": "5000",
+  "currency": "NGN",
+  "unlimited": false,
   "quantity": 100
 })
 
 const options = {
   hostname: 'api.paystack.co',
   port: 443,
-  path: '/product/:id',
-  method: 'PUT',
+  path: '/product',
+  method: 'POST',
   headers: {
     Authorization: 'Bearer SECRET_KEY',
     'Content-Type': 'application/json'
@@ -47,14 +56,14 @@ req.write(params)
 req.end()`
 
 const php = `<?php
-  $url = "https://api.paystack.co/product/:id";
+  $url = "https://api.paystack.co/product";
 
   $fields = [
-    'description' => "Product Six Description",
-    'name' => "Product Six",
-    'price' => 500000,
-    'currency' => "USD",
-    'limited' => false,
+    'name' => "Puff Puff",
+    'description' => "Crispy flour ball with fluffy interior",
+    'price' => 5000,
+    'currency' => "NGN",
+    'unlimited' => false,
     'quantity' => 100,
   ];
 
@@ -65,7 +74,7 @@ const php = `<?php
   
   //set the url, number of POST vars, POST data
   curl_setopt($ch,CURLOPT_URL, $url);
-  curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
+  curl_setopt($ch,CURLOPT_POST, true);
   curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
   curl_setopt($ch, CURLOPT_HTTPHEADER, array(
     "Authorization: Bearer SECRET_KEY",
@@ -80,4 +89,4 @@ const php = `<?php
   echo $result;
 ?>`
 
-export { bash, js, php }
+export {sh, js, php}
