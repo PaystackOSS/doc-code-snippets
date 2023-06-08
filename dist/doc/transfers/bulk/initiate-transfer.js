@@ -1,7 +1,8 @@
-const sh = `curl https://api.paystack.co/transfer/bulk
--H "Authorization: Bearer YOUR_SECRET_KEY"
--H "Content-Type: application/json"
--d '{
+const sh = `#!/bin/sh
+url="https://api.paystack.co/transfer/bulk"
+authorization="Authorization: Bearer YOUR_SECRET_KEY"
+content_type="Content-Type: application/json"
+data='{
   "currency": "NGN",
   "source": "balance",
   "transfers": [
@@ -24,7 +25,8 @@ const sh = `curl https://api.paystack.co/transfer/bulk
     }
   ]
 }'
--X POST`
+
+curl "$url" -H "$authorization" -H "$content_type" -d "$data" -X POST`
 
 const js = `const https = require('https')
 
