@@ -1,0 +1,11 @@
+const json = `{
+	"status": true,
+	"message": "Charge attempted",
+	"data": {
+		"reference": "jq3psd5n96sprwl",
+		"status": "pay_offline",
+		"display_text": "Please complete authorization process on your mobile phone"
+	}
+}`
+
+export {json}
