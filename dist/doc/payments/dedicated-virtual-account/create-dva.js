@@ -1,7 +1,7 @@
 const sh = `curl https://api.paystack.co/dedicated_account
 -H "Authorization: Bearer YOUR_SECRET_KEY"
 -H "Content-Type: application/json"
--d '{ "customer": "CUS_358xertt55", "preferred_bank": "access-bank"}'
+-d '{ "customer": "CUS_358xertt55", "preferred_bank": "titan-paystack"}'
 -X POST`
 
 const js = `var https = require('https');
@@ -35,7 +35,7 @@ var req = https.request(options, function (res) {
 
 var postData = JSON.stringify({
   "customer":"CUS_358xertt55",
-  "preferred_bank":"access-bank"
+  "preferred_bank":"titan-paystack"
 });
 
 req.write(postData);
@@ -55,7 +55,7 @@ curl_setopt_array($curl, array(
   CURLOPT_FOLLOWLOCATION => true,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "POST",
-  CURLOPT_POSTFIELDS => array("customer" => "CUS_358xertt55", "preferred_bank" => "access-bank"),
+  CURLOPT_POSTFIELDS => array("customer" => "CUS_358xertt55", "preferred_bank" => "titan-paystack"),
   CURLOPT_HTTPHEADER => array(
     "Authorization: Bearer SECRET_KEY",
     "Content-Type: application/json"
@@ -72,9 +72,9 @@ const json = `{
 	"message": "NUBAN successfully created",
 	"data": {
 		"bank": {
-			"name": "Access Bank",
+			"name": "Titan Paystack",
 			"id": 1,
-			"slug": "access-bank"
+			"slug": "titan-paystack"
 		},
 		"account_name": "KaroKart Rhoda Church",
 		"account_number": "9930000737",

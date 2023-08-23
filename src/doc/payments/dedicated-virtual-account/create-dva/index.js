@@ -29,7 +29,7 @@ var req = https.request(options, function (res) {
 
 var postData = JSON.stringify({
   "customer":"CUS_358xertt55",
-  "preferred_bank":"access-bank"
+  "preferred_bank":"titan-paystack"
 });
 
 req.write(postData);
