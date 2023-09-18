@@ -1,0 +1,25 @@
+{
+	"event": "bank.transfer.rejected",
+	"data": {
+		"bank_transfer": {
+			"amount": "30000",
+			"message": "incorrect amount sent",
+			"message_type": "INCORRECT_AMOUNT",
+			"transaction_id": "3103959930"
+		},
+		"customer": {
+			"first_name": null,
+			"last_name": null,
+			"email": "test@amount.com",
+			"phone": null,
+			"metadata": null,
+			"domain": "test",
+			"customer_code": "CUS_1qjgujjddixs8gd",
+			"risk_action": "default",
+			"id": 138492368,
+			"integration": 165949,
+			"createdAt": "2023-09-12T12:55:55.000Z",
+			"updatedAt": "2023-09-12T12:55:55.000Z"
+		}
+	}
+}
