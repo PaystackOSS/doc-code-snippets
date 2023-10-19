@@ -33,7 +33,6 @@
     CURLOPT_HTTPHEADER => array(
       "Authorization: Bearer SECRET_KEY",
       "Cache-Control: no-cache",
-      "Content-Type: application/json"
     ),
   ));
 
