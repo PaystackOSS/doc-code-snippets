@@ -3,9 +3,9 @@
 	"message": "NUBAN successfully created",
 	"data": {
 		"bank": {
-			"name": "Access Bank",
+			"name": "Titan Paystack",
 			"id": 1,
-			"slug": "access-bank"
+			"slug": "titan-paystack"
 		},
 		"account_name": "KaroKart Rhoda Church",
 		"account_number": "9930000737",
