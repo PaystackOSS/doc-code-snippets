@@ -3,66 +3,18 @@
 		"description": "200 Ok",
 		"data": {
 			"status": true,
-			"message": "Verification successful",
+			"message": "Authorization retrieved successfully",
 			"data": {
-				"id": 1504238596,
-				"domain": "live",
-				"status": "processing",
-				"reference": "nl3eljdd6qgbrho",
-				"receipt_number": null,
-				"amount": 10000,
-				"message": null,
-				"gateway_response": "Transaction in progress",
-				"paid_at": null,
-				"created_at": "2023-10-24T12:32:24.000Z",
+				"authorization_code": "AUTH_JV4T9Wawdj",
 				"channel": "direct_debit",
-				"currency": "NGN",
-				"ip_address": null,
-				"metadata": "",
-				"log": null,
-				"fees": null,
-				"fees_split": null,
-				"authorization": {
-					"authorization_code": "AUTH_JV4T9Wawdj",
-					"bin": null,
-					"last4": null,
-					"exp_month": null,
-					"exp_year": null,
-					"channel": "direct_debit",
-					"card_type": null,
-					"bank": "Guaranty Trust Bank",
-					"country_code": "NG",
-					"brand": null,
-					"reusable": true,
-					"signature": null,
-					"account_name": null
-				},
+				"bank": "Guaranty Trust Bank",
+				"active": true,
 				"customer": {
-					"id": 180061682,
-					"first_name": "Dami",
-					"last_name": "Olukini",
-					"email": "damilola@test.com",
-					"customer_code": "CUS_24lze1c8i2zl76y",
-					"phone": "",
-					"metadata": null,
-					"risk_action": "default",
-					"international_format_phone": null
-				},
-				"plan": null,
-				"split": {},
-				"order_id": null,
-				"paidAt": null,
-				"createdAt": "2023-10-24T12:32:24.000Z",
-				"requested_amount": 10000,
-				"pos_transaction_data": null,
-				"source": null,
-				"fees_breakdown": null,
-				"transaction_date": "2023-10-24T12:32:24.000Z",
-				"plan_object": {},
-				"subaccount": {}
+					"code": "CUS_24lze1c8i2zl76y",
+					"email": "ravi@demo.com"
+				}
 			}
 		}
-
 	},
 	"404": {
 		"description": "404 Not Found",
