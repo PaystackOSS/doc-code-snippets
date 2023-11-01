@@ -1,5 +1,5 @@
 const sh = `#!/bin/sh
-url="https://api.paystack.co/transaction/verify/{reference}"
+url="https://api.paystack.co/customer/authorization/verify/{reference}"
 authorization="Authorization: Bearer YOUR_SECRET_KEY"
 
 curl "$url" -H "$authorization" -X GET`
@@ -9,7 +9,7 @@ const js = `const https = require('https')
 const options = {
   hostname: 'api.paystack.co',
   port: 443,
-  path: '/transaction/verify/:reference',
+  path: '/customer/authorization/verify/:reference',
   method: 'GET',
   headers: {
     Authorization: 'Bearer SECRET_KEY'
@@ -34,7 +34,7 @@ const php = `<?php
   $curl = curl_init();
   
   curl_setopt_array($curl, array(
-    CURLOPT_URL => "https://api.paystack.co/transaction/verify/:reference",
+    CURLOPT_URL => "https://api.paystack.co/customer/authorization/verify/:reference",
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => "",
     CURLOPT_MAXREDIRS => 10,
