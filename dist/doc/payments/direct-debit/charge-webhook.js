@@ -1,12 +1,10 @@
-{
-	"status": true,
-	"message": "Verification successful",
+const json = `{
+	"event": "charge.success",
 	"data": {
 		"id": 1504238596,
 		"domain": "live",
 		"status": "success",
 		"reference": "nl3eljdd6qgbrho",
-		"receipt_number": null,
 		"amount": 10000,
 		"message": "madePayment",
 		"gateway_response": "Payment successful",
@@ -16,8 +14,9 @@
 		"currency": "NGN",
 		"ip_address": null,
 		"metadata": "",
+		"fees_breakdown": null,
 		"log": null,
-		"fees": null,
+		"fees": 0,
 		"fees_split": null,
 		"authorization": {
 			"authorization_code": "AUTH_JV4T9Wawdj",
@@ -36,26 +35,30 @@
 		},
 		"customer": {
 			"id": 180061682,
-			"first_name": "Dami",
-			"last_name": "Olukini",
-			"email": "damilola@test.com",
+			"first_name": "Ravi",
+			"last_name": "Demo",
+			"email": "ravi@demo.com",
 			"customer_code": "CUS_24lze1c8i2zl76y",
 			"phone": "",
 			"metadata": null,
 			"risk_action": "default",
 			"international_format_phone": null
 		},
-		"plan": null,
+		"plan": {},
+		"subaccount": {},
 		"split": {},
 		"order_id": null,
 		"paidAt": "2023-10-24T12:32:30.000Z",
-		"createdAt": "2023-10-24T12:32:24.000Z",
 		"requested_amount": 10000,
 		"pos_transaction_data": null,
-		"source": null,
-		"fees_breakdown": null,
-		"transaction_date": "2023-10-24T12:32:24.000Z",
-		"plan_object": {},
-		"subaccount": {}
+		"source": {
+			"type": "api",
+			"source": "merchant_api",
+			"entry_point": "charge",
+			"identifier": null
+		}
 	}
 }
+`
+
+export {json}

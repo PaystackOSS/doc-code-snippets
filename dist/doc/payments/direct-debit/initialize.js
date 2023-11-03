@@ -80,7 +80,7 @@ const json = `{
 	"status": true,
 	"message": "Authorization initialized",
 	"data": {
-		"redirect_url": "https://checkout.paystack.com/82t4mp5b5mfn51h",
+		"redirect_url": "https://link.paystack.co/82t4mp5b5mfn51h",
 		"access_code": "82t4mp5b5mfn51h",
 		"reference": "dfbzfotsrbv4n5s82t4mp5b5mfn51h"
 	}
