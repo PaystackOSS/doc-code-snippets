@@ -4,7 +4,7 @@ const sh = `curl https://api.paystack.co/subaccount
 -d '{ "business_name": "Cheese Sticks", 
       "bank_code": "058", 
       "account_number": "0123456789", 
-      "percentage_charge": 0.2 
+      "percentage_charge": 20 
     }'
 -X POST`
 
@@ -14,7 +14,7 @@ const params = JSON.stringify({
   "business_name": "Cheese Sticks",
   "bank_code": "058",
   "account_number": "0123456789",
-  "percentage_charge": 0.2
+  "percentage_charge": 20
 })
 
 const options = {
@@ -51,8 +51,8 @@ const php = `<?php
   $fields = [
     'business_name' => "Cheese Sticks",
     'bank_code' => "058",
-    'account_number' => "0137472047",
-    'percentage_charge' => 0.2
+    'account_number' => "0123456789",
+    'percentage_charge' => 20
   ];
 
   $fields_string = http_build_query($fields);
@@ -78,24 +78,30 @@ const php = `<?php
 ?>`
 
 const json = `{
-  "status": true,
-  "message": "Subaccount created",
-  "data": {
-    "business_name": "Cheese Sticks",
-    "account_number": "0123456789",
-    "percentage_charge": 0.2,
-    "settlement_bank": "Guaranty Trust Bank",
-    "integration": 428626,
-    "domain": "test",
-    "subaccount_code": "ACCT_xxxxxxxxxxxxx",
-    "is_verified": false,
-    "settlement_schedule": "AUTO",
-    "active": true,
-    "migrate": false,
-    "id": 37614,
-    "createdAt": "2020-05-19T11:54:20.655Z",
-    "updatedAt": "2020-05-19T11:54:20.655Z"
-  }
-}`
+	"status": true,
+	"message": "Subaccount created",
+	"data": {
+		"business_name": "Cheese Sticks",
+		"account_number": "0123456789",
+		"percentage_charge": 20,
+		"settlement_bank": "Guaranty Trust Bank",
+		"currency": "NGN",
+		"bank": 9,
+		"integration": 463433,
+		"domain": "test",
+		"account_name": "Jamie Ng",
+		"product": "collection",
+		"managed_by_integration": 463433,
+		"subaccount_code": "ACCT_xxxxxxxxxxxx",
+		"is_verified": false,
+		"settlement_schedule": "AUTO",
+		"active": true,
+		"migrate": false,
+		"id": 1026585,
+		"createdAt": "2024-01-17T13:34:08.807Z",
+		"updatedAt": "2024-01-17T13:34:08.807Z"
+	}
+}
+`
 
 export {sh, js, php, json}
