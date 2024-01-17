@@ -1,6 +1,6 @@
 {
-	"200": {
-		"description": "200 Ok",
+	"202": {
+		"description": "202 Accepted",
 		"data": {
 			"status": true,
 			"message": "Customer Identification in progress"
