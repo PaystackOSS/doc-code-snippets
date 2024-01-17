@@ -4,7 +4,7 @@ const params = JSON.stringify({
   "business_name": "Cheese Sticks",
   "bank_code": "058",
   "account_number": "0123456789",
-  "percentage_charge": 0.2
+  "percentage_charge": 20
 })
 
 const options = {

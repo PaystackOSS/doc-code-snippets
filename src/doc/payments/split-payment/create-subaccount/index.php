@@ -4,8 +4,8 @@
   $fields = [
     'business_name' => "Cheese Sticks",
     'bank_code' => "058",
-    'account_number' => "0137472047",
-    'percentage_charge' => 0.2
+    'account_number' => "0123456789",
+    'percentage_charge' => 20
   ];
 
   $fields_string = http_build_query($fields);
