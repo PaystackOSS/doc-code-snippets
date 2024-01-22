@@ -1,8 +1,8 @@
 <?php
-  $url = "https://api.paystack.co/customer/deactivate_authorization";
+  $url = "https://api.paystack.co/customer/authorization/deactivate";
 
   $fields = [
-    "authorization_code" => "AUTH_72btv547"
+    "authorization_code" => "AUTH_xxxIjkZVj5"
   ];
 
   $fields_string = http_build_query($fields);
