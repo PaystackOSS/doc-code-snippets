@@ -1,13 +1,13 @@
 const https = require('https')
 
 const params = JSON.stringify({
-  "authorization_code": "AUTH_72btv547"
+  "authorization_code": "AUTH_xxxIjkZVj5"
 })
 
 const options = {
   hostname: 'api.paystack.co',
   port: 443,
-  path: '/customer/deactivate_authorization',
+  path: '/customer/authorization/deactivate',
   method: 'POST',
   headers: {
     Authorization: 'Bearer SECRET_KEY',
