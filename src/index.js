@@ -34,13 +34,13 @@ function getAllFiles(directory, directoryContent) {
   return directoryContent
 }
 
-function getEventFileContent(directory) {
+function getSingleLanguageFileContent(language, directory) {
   const files = fs.readdirSync(directory);
   let exportVariables = []
   let content = ""
 
   files.forEach((file) => {
-    if (path.extname(file) === ".json") {
+    if (path.extname(file) === `.${language}`) {
       try {
         const filename = file.split(".")[0].replace(/-/g, "_")
         const data = fs.readFileSync(path.join(directory, file), 'utf8');
@@ -124,8 +124,8 @@ function writeToFile(config, directory, tag) {
 
     makeDirectory(parent)
 
-    content = allConfig.type && allConfig.type === "event"
-      ? getEventFileContent(directory)
+    content = allConfig.type && allConfig.type === "event" || allConfig.type === "single-lang"
+      ? getSingleLanguageFileContent(allConfig.languages[0], directory)
       : readFiles(allConfig.languages, directory)
 
   } else if (tag === "api") {
