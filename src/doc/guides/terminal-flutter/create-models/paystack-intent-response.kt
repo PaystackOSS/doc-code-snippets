@@ -1,4 +1,3 @@
-
 // PaystackIntentResponse.kt
 data class PaystackIntentResponse (
     val intentKey: String,

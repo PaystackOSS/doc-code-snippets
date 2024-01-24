@@ -1,4 +1,3 @@
-
 // TransactionResponse.java
 import com.google.gson.annotations.SerializedName;
 

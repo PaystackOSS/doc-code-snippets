@@ -1,5 +1,4 @@
-const paystack_intent_response = `
-// PaystackIntentResponse.java
+const paystack_intent_response = `// PaystackIntentResponse.java
 public class PaystackIntentResponse {
   private final String intentkey;
   private final int intentResponseCode;
@@ -24,8 +23,7 @@ public class PaystackIntentResponse {
   }
 }`
 
-const terminal_response = `
-// TerminalResponse.java
+const terminal_response = `// TerminalResponse.java
 public class TerminalResponse {
   private final String statusCode;
   private final String message;
@@ -50,8 +48,7 @@ public class TerminalResponse {
   }
 }`
 
-const transaction_request = `
-// TransactionRequest.java
+const transaction_request = `// TransactionRequest.java
 import java.util.Map;
 
 public class TransactionRequest {
@@ -70,8 +67,7 @@ public class TransactionRequest {
   }
 }`
 
-const transaction_response = `
-// TransactionResponse.java
+const transaction_response = `// TransactionResponse.java
 import com.google.gson.annotations.SerializedName;
 
 public class TransactionResponse {

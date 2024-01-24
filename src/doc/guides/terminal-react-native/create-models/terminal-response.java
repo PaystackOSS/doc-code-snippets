@@ -1,4 +1,3 @@
-
 // TerminalResponse.java
 public class TerminalResponse {
   private final String statusCode;

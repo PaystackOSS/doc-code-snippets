@@ -1,4 +1,3 @@
-
 // PaystackIntentResponse.java
 public class PaystackIntentResponse {
   private final String intentkey;
