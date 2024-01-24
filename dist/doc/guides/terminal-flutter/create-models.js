@@ -1,21 +1,18 @@
-const paystack_intent_response = `
-// PaystackIntentResponse.kt
+const paystack_intent_response = `// PaystackIntentResponse.kt
 data class PaystackIntentResponse (
     val intentKey: String,
     val intentResponseCode: Int,
     val intentResponse: TerminalResponse
 )`
 
-const terminal_response = `
-// TerminalResponse.kt
+const terminal_response = `// TerminalResponse.kt
 data class TerminalResponse(
     val statusCode: String,
     val message: String,
     val data: String
 )`
 
-const transaction_request = `
-// TransactionRequest.kt
+const transaction_request = `// TransactionRequest.kt
 data class TransactionRequest(
     val amount: Int,
     val offlineReference: String?,
