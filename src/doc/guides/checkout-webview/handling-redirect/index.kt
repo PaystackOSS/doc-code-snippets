@@ -4,6 +4,8 @@ class MainActivity : AppCompatActivity() {
     get() = "https://checkout.paystack.com/ok62i2sdld514e4"
   private val callbackUrl: String
     get() = "https://yourcallback.com"
+  private val cancelUrl: String
+    get() = "https://your-cancel-url.com"
 
   override fun onCreate(savedInstanceState: Bundle?) {
     // ...
@@ -23,6 +25,11 @@ class MainActivity : AppCompatActivity() {
         val url: Uri? = request?.url
 
         if (url?.host == callbackUrl) {
+          return true
+        }
+        if (url?.host == cancelUrl) {
+          // handle webview removal
+          // Run the cancel payment function if you have one
           return true
         }
         

@@ -1,14 +1,19 @@
 const sh = `curl https://api.paystack.co/transaction/initialize
 -H "Authorization: Bearer YOUR_SECRET_KEY"
 -H "Content-Type: application/json"
--d '{ "email": "customer@email.com", "amount": "20000" }'
+-d '{ "email": "customer@email.com", "amount": "20000",
+    "callback_url":"https://hello.pstk.xyz/callback",
+    "metadata":{"cancel_action": "https://your-cancel-url.com"} 
+    }'
 -X POST`
 
 const js = `const https = require('https')
 
 const params = JSON.stringify({
   "email": "customer@email.com",
-  "amount": "20000"
+  "amount": "20000",
+  "callback_url":"https://hello.pstk.xyz/callback",
+  "metadata":{"cancel_action": "https://your-cancel-url.com"}
 })
 
 const options = {
@@ -44,7 +49,9 @@ const php = `<?php
 
   $fields = [
     'email' => "customer@email.com",
-    'amount' => "20000"
+    'amount' => "20000",
+    'callback_url' => "https://hello.pstk.xyz/callback",
+    'metadata' => ["cancel_action" => "https://your-cancel-url.com"]
   ];
 
   $fields_string = http_build_query($fields);
