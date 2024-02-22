@@ -5,17 +5,23 @@ Widget build(BuildContext context) {
       initialUrl: 'https://checkout.paystack.com/7zu1ot06d0qn9h6',
       javascriptMode: JavascriptMode.unrestricted,
       userAgent: 'Flutter;Webview',
-      navigationDelegate: (navigation){
-      //Listen for callback URL
-        if(navigation.url == "https://hello.pstk.xyz/callback"){
+      navigationDelegate: (navigation) {
+        //Listen for callback URL
+        if (navigation.url == "https://hello.pstk.xyz/callback") {
           verifyTransaction(reference);
           Navigator.of(context).pop(); //close webview
+        }
+        if (navigation.url == "https://your-cancel-url.com") {
+          //handle webview removal
+          Navigator.of(context).pop(); //close webview
+          //Run the cancel payment function if you have one
         }
         return NavigationDecision.navigate;
       },
     ),
   );
-}`
+}
+`
 
 const js = `import React from 'react';
 import { WebView } from 'react-native-webview';
@@ -25,6 +31,7 @@ export default function App() {
 
   const authorization_url = 'https://checkout.paystack.com/luKuasMan';
   const callback_url = 'https://yourcallback.com';
+  const cancel_url = "https://your-cancel-url.com";
 
   onNavigationStateChange = state => {
  
@@ -37,6 +44,12 @@ export default function App() {
       const redirectTo = 'window.location = "' + callback_url + '"';
       this.webview.injectJavaScript(redirectTo);
     }
+    if (url === cancel_url) {
+      // handle webview removal
+      // You can either unmount the component, or
+      // Use a navigator to pop off the view
+      // Run the cancel payment function if you have one
+    }
   };
 
   return (
@@ -46,8 +59,7 @@ export default function App() {
       onNavigationStateChange={ this.onNavigationStateChange }
     />
   );
-}
-`
+}`
 
 const kt = `class MainActivity : AppCompatActivity() {
 
@@ -55,6 +67,8 @@ const kt = `class MainActivity : AppCompatActivity() {
     get() = "https://checkout.paystack.com/ok62i2sdld514e4"
   private val callbackUrl: String
     get() = "https://yourcallback.com"
+  private val cancelUrl: String
+    get() = "https://your-cancel-url.com"
 
   override fun onCreate(savedInstanceState: Bundle?) {
     // ...
@@ -74,6 +88,11 @@ const kt = `class MainActivity : AppCompatActivity() {
         val url: Uri? = request?.url
 
         if (url?.host == callbackUrl) {
+          return true
+        }
+        if (url?.host == cancelUrl) {
+          // handle webview removal
+          // Run the cancel payment function if you have one
           return true
         }
         
