@@ -4,7 +4,7 @@ curl https://api.paystack.co/customer/authorization/initialize
 -H "Content-Type: application/json"
 -d '{ 
         "email": "ravi@demo.com",
-        "channels": ["direct_debit"],
+        "channels": "direct_debit",
         "callback_url": "http://test.url.com"
     }'
 -X POST`
@@ -13,7 +13,7 @@ const js = `const https = require('https')
 
 const params = JSON.stringify({
   "email" : "mail@mail.com",
-  "channels": ["direct_debit"],
+  "channels": "direct_debit",
   "callback_url": "http://test.url.com"
 })
 
@@ -50,7 +50,7 @@ const php = `<?php
 
   $fields = [
     'email' => "mail@mail.com",
-    'channels' => ["direct-debit"],
+    'channels' => "direct-debit",
     'callback_url' => "http://test.url.com"
   ];
 

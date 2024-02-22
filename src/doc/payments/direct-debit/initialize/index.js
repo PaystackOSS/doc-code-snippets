@@ -2,7 +2,7 @@ const https = require('https')
 
 const params = JSON.stringify({
   "email" : "mail@mail.com",
-  "channels": ["direct_debit"],
+  "channels": "direct_debit",
   "callback_url": "http://test.url.com"
 })
 

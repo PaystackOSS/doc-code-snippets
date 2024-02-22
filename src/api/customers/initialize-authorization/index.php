@@ -3,7 +3,7 @@
 
   $fields = [
     'email' => "mail@mail.com",
-    'channels' => ["direct-debit"],
+    'channels' => "direct-debit",
     'callback_url' => "http://test.url.com"
   ];
 
