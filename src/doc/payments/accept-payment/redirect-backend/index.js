@@ -2,7 +2,9 @@ const https = require('https')
 
 const params = JSON.stringify({
   "email": "customer@email.com",
-  "amount": "20000"
+  "amount": "20000",
+  "callback_url":"https://hello.pstk.xyz/callback",
+  "metadata":{"cancel_action": "https://your-cancel-url.com"}
 })
 
 const options = {
