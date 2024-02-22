@@ -4,7 +4,7 @@ authorization="Authorization: Bearer YOUR_SECRET_KEY"
 content_type="Content-Type: application/json"
 data='{ 
   "email": "ravi@demo.com",
-  "channels": "direct_debit",
+  "channel": "direct_debit",
   "callback_url": "http://test.url.com"
 }'
 
