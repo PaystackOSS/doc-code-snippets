@@ -36,7 +36,7 @@ const authorization_created = `{
 	"message": "Authorization retrieved successfully",
 	"data": {
 		"authorization_code": "AUTH_JV4T9Wawdj",
-		"active": true,
+		"active": false,
 		"last4": "1234",
 		"channel": "direct_debit",
 		"card_type": "mandate",

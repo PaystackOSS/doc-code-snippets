@@ -4,8 +4,8 @@ curl https://api.paystack.co/charge
 -d '{ "email": "customer@email.com", 
       "amount": "10000", 
       "bank": {
-        "code": "057", 
-        "phone": "+23481234567890",
+        "code": "50211", 
+        "phone": "+2348100000000",
         "token": "123456"
       }
     }'
