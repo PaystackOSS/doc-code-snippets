@@ -1,0 +1,2 @@
+pod 'PaystackCore'
+pod 'PaystackUI'
