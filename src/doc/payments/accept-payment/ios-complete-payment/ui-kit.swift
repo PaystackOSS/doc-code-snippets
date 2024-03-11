@@ -8,11 +8,11 @@ class ViewController: UIViewController {
 			.setKey("PUBLIC_KEY")
 			.build()
 
-	let paymentAccessCodee = "ACCESS_CODE"
+	let paymentAccessCode = "ACCESS_CODE"
 
 	@IBAction func launchPaymentTapped(_ sender: Any) {
 		paystack?.presentChargeUI(on: self,
-															accessCode: paymentAccessCodee,
+															accessCode: paymentAccessCode, 
 															onComplete: paymentCompleted)
 	}
 
