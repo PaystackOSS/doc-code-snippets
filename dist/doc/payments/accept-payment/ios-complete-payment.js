@@ -40,9 +40,7 @@ class ViewController: UIViewController {
 	let paymentAccessCode = "ACCESS_CODE"
 
 	@IBAction func launchPaymentTapped(_ sender: Any) {
-		paystack?.presentChargeUI(on: self,
-															accessCode: paymentAccessCode, 
-															onComplete: paymentCompleted)
+		paystack?.presentChargeUI(on: self, accessCode: paymentAccessCode, onComplete: paymentCompleted)
 	}
 
 	func paymentCompleted(_ result: TransactionResult) {
