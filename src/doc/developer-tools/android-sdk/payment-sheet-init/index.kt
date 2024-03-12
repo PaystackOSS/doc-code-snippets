@@ -1,10 +1,12 @@
 private lateinit var paymentSheet: PaymentSheet
 
-override fun onCreate(savedInstanceState: Bundle?) {  
+override fun onCreate(savedInstanceState: Bundle?) {
   super.onCreate(savedInstanceState)
-  
-  paymentSheet = PaymentSheet(this) { paymentResult ->
-    // Handle payment result here.
-  }
-    
+  setContentView(R.layout.activity_main)
+
+  // library initialization code snippets and others go here
+
+  paymentSheet = PaymentSheet(this, ::paymentComplete)
+
+  // more snippet
 }

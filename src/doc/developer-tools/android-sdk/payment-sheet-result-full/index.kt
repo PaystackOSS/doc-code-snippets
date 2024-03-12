@@ -1,4 +1,4 @@
-private fun paymentComplete(paymentSheetResult: PaymentSheetResult ) {
+private fun paymentComplete(paymentSheetResult: PaymentSheetResult) {
   val message = when (paymentSheetResult) {
     PaymentSheetResult.Cancelled -> "Cancelled"
     is PaymentSheetResult.Failed -> {
