@@ -1,4 +1,4 @@
-const kt = `private fun paymentComplete(paymentSheetResult: PaymentSheetResult ) {
+const kt = `private fun paymentComplete(paymentSheetResult: PaymentSheetResult) {
   val message = when (paymentSheetResult) {
     PaymentSheetResult.Cancelled -> "Cancelled"
     is PaymentSheetResult.Failed -> {
@@ -16,25 +16,25 @@ const kt = `private fun paymentComplete(paymentSheetResult: PaymentSheetResult )
   Toast.makeText(this, "Payment $message", Toast.LENGTH_SHORT).show()
 }`
 
-const java = `private void onPaymentResult(PaymentSheetResult paymentResult) {
+const java = `private void paymentComplete(PaymentSheetResult paymentSheetResult) {
   String message;
-  if (paymentResult instanceof PaymentSheetResult.Cancelled) {
+
+  if (paymentSheetResult instanceof PaymentSheetResult.Cancelled) {
     message = "Cancelled";
-  } 
-  else if (paymentResult instanceof PaymentSheetResult.Failed) {
-    PaymentSheetResult.Failed failedResult = (PaymentSheetResult.Failed) paymentResult;
-    Log.e(TAG, failedResult.getError().getMessage() != null ?
-            failedResult.getError().getMessage() : "Failed", failedResult.getError());
-    message = failedResult.getError().getMessage() != null ?
-            failedResult.getError().getMessage() : "Failed";
-  } 
-  else if (paymentResult instanceof PaymentSheetResult.Completed) {
-    Log.d("Payment successful", paymentSheetResult.paymentCompletionDetails.toString())
+  } else if (paymentSheetResult instanceof PaymentSheetResult.Failed) {
+    PaymentSheetResult.Failed failedResult = (PaymentSheetResult.Failed) paymentSheetResult;
+    Log.e("Payment failed",
+        failedResult.getError().getMessage() != null ? failedResult.getError().getMessage() : "Failed",
+        failedResult.getError());
+    message = failedResult.getError().getMessage() != null ? failedResult.getError().getMessage() : "Failed";
+  } else if (paymentSheetResult instanceof PaymentSheetResult.Completed) {
+    Log.d("Payment successful",
+        ((PaymentSheetResult.Completed) paymentSheetResult).getPaymentCompletionDetails().toString());
     message = "Successful";
   } else {
-    message = "";
+    message = "You shouldn't be here";
   }
-  
+
   Toast.makeText(this, "Payment " + message, Toast.LENGTH_SHORT).show();
 }`
 
