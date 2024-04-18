@@ -1,5 +1,5 @@
 const sh = `#!/bin/sh
-url="https://api.paystack.co/refund/:reference"
+url="https://api.paystack.co/refund/:id"
 authorization="Authorization: Bearer YOUR_SECRET_KEY"
 
 curl "$url" -H "$authorization" -X GET`
@@ -9,7 +9,7 @@ const js = `const https = require('https')
 const options = {
   hostname: 'api.paystack.co',
   port: 443,
-  path: '/refund/:reference',
+  path: '/refund/:id',
   method: 'GET',
   headers: {
     Authorization: 'Bearer SECRET_KEY'
@@ -34,7 +34,7 @@ const php = `<?php
   $curl = curl_init();
   
   curl_setopt_array($curl, array(
-    CURLOPT_URL => "https://api.paystack.co/refund/:reference",
+    CURLOPT_URL => "https://api.paystack.co/refund/:id",
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => "",
     CURLOPT_MAXREDIRS => 10,
