@@ -3,7 +3,7 @@ const https = require('https')
 const options = {
   hostname: 'api.paystack.co',
   port: 443,
-  path: '/refund/:reference',
+  path: '/refund/:id',
   method: 'GET',
   headers: {
     Authorization: 'Bearer SECRET_KEY'
