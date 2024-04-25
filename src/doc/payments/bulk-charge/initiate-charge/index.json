@@ -1,0 +1,16 @@
+{
+	"status": true,
+	"message": "Charges have been queued",
+	"data": {
+		"batch_code": "BCH_ml3zk2hregr1inj",
+		"reference": "bulkcharge-1713528671888-29smeabva5",
+		"id": 191016934,
+		"integration": 463433,
+		"domain": "test",
+		"status": "active",
+		"total_charges": 3,
+		"pending_charges": 3,
+		"createdAt": "2024-04-19T12:11:11.000Z",
+		"updatedAt": "2024-04-19T12:11:11.000Z"
+	}
+}
