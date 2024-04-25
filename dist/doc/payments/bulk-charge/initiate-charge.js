@@ -3,21 +3,21 @@ url="https://api.paystack.co/bulkcharge"
 authorization="Authorization: Bearer YOUR_SECRET_KEY"
 content_type="Content-Type: application/json"
 data='[
-	{
-		"amount": 10000,
-		"authorization": "AUTH_ncx8hews93",
-		"reference": "my_reference_1"
-	},
-    {
-		"amount": 15000,
-		"authorization": "AUTH_200nvt70zo",
-		"reference": "my_reference_2"
-	},
-    {
-		"amount": 25000,
-		"authorization": "AUTH_84bqxd3rkf",
-		"reference": "my_reference_3"
-	}
+  {
+    "amount": 10000,
+    "authorization": "AUTH_ncx8hews93",
+    "reference": "my_reference_1"
+  },
+  {
+    "amount": 15000,
+    "authorization": "AUTH_200nvt70zo",
+    "reference": "my_reference_2"
+  },
+  {
+    "amount": 25000,
+    "authorization": "AUTH_84bqxd3rkf",
+    "reference": "my_reference_3"
+  }
 ]'
 
 curl "$url" -H "$authorization" -H "$content_type" -d "$data" -X POST`
@@ -25,21 +25,21 @@ curl "$url" -H "$authorization" -H "$content_type" -d "$data" -X POST`
 const js = `const https = require('https')
 
 const params = JSON.stringify([
-  	{
-		"amount": 10000,
-		"authorization": "AUTH_ncx8hews93",
-		"reference": "my_reference_1"
-	},
-    {
-		"amount": 15000,
-		"authorization": "AUTH_200nvt70zo",
-		"reference": "my_reference_2"
-	},
-    {
-		"amount": 25000,
-		"authorization": "AUTH_84bqxd3rkf",
-		"reference": "my_reference_3"
-	}
+  {
+    "amount": 10000,
+    "authorization": "AUTH_ncx8hews93",
+    "reference": "my_reference_1"
+  },
+  {
+    "amount": 15000,
+    "authorization": "AUTH_200nvt70zo",
+    "reference": "my_reference_2"
+  },
+  {
+    "amount": 25000,
+    "authorization": "AUTH_84bqxd3rkf",
+    "reference": "my_reference_3"
+  }
 ])
 
 const options = {
@@ -74,11 +74,12 @@ const php = `<?php
   $curl = curl_init();
   $url = "https://api.paystack.co/bulkcharge";
 
-  $fields = '[{
+  $fields = '[
+    {
       "amount": 10000,
       "authorization": "AUTH_ncx8hews93",
       "reference": "my_reference_1"
-	  },
+    },
     {
       "amount": 15000,
       "authorization": "AUTH_200nvt70zo",
@@ -88,7 +89,8 @@ const php = `<?php
       "amount": 25000,
       "authorization": "AUTH_84bqxd3rkf",
       "reference": "my_reference_3"
-    }]';
+    }
+  ]';
 
   curl_setopt_array($curl, array(
     CURLOPT_URL => $url,

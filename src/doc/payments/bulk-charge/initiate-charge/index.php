@@ -2,11 +2,12 @@
   $curl = curl_init();
   $url = "https://api.paystack.co/bulkcharge";
 
-  $fields = '[{
+  $fields = '[
+    {
       "amount": 10000,
       "authorization": "AUTH_ncx8hews93",
       "reference": "my_reference_1"
-	  },
+    },
     {
       "amount": 15000,
       "authorization": "AUTH_200nvt70zo",
@@ -16,7 +17,8 @@
       "amount": 25000,
       "authorization": "AUTH_84bqxd3rkf",
       "reference": "my_reference_3"
-    }]';
+    }
+  ]';
 
   curl_setopt_array($curl, array(
     CURLOPT_URL => $url,

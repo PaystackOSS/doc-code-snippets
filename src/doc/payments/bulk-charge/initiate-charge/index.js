@@ -1,21 +1,21 @@
 const https = require('https')
 
 const params = JSON.stringify([
-  	{
-		"amount": 10000,
-		"authorization": "AUTH_ncx8hews93",
-		"reference": "my_reference_1"
-	},
-    {
-		"amount": 15000,
-		"authorization": "AUTH_200nvt70zo",
-		"reference": "my_reference_2"
-	},
-    {
-		"amount": 25000,
-		"authorization": "AUTH_84bqxd3rkf",
-		"reference": "my_reference_3"
-	}
+  {
+    "amount": 10000,
+    "authorization": "AUTH_ncx8hews93",
+    "reference": "my_reference_1"
+  },
+  {
+    "amount": 15000,
+    "authorization": "AUTH_200nvt70zo",
+    "reference": "my_reference_2"
+  },
+  {
+    "amount": 25000,
+    "authorization": "AUTH_84bqxd3rkf",
+    "reference": "my_reference_3"
+  }
 ])
 
 const options = {
