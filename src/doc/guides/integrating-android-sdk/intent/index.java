@@ -6,7 +6,7 @@ protected void onCreate(Bundle savedInstanceState) {
     Button mCheckout = findViewById(R.id.btn_checkout);
 
     mCheckout.setOnClickListener(v -> {
-        Intent intent = new Intent(MainActivity.this, CheckoutActivity.class);
+        Intent intent = new Intent(index.this, CheckoutActivity.class);
         intent.putExtra(getString(R.string.meal_name), price);
         startActivity(intent);
     });
