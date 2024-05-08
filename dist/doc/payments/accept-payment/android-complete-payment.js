@@ -1,41 +1,94 @@
-const kt = `import com.paystack.android_sdk.core.Paystack
-import com.paystack.android_sdk.ui.paymentsheet.PaymentSheet
-import com.paystack.android_sdk.ui.paymentsheet.PaymentSheetResult
+const kt = `// other imports
 
-private lateinit var paymentSheet: PaymentSheet
+import com.paystack.android.core.Paystack
+import com.paystack.android.ui.paymentsheet.PaymentSheet
+import com.paystack.android.ui.paymentsheet.PaymentSheetResult
 
-override fun onCreate(savedInstanceState: Bundle?) {
-  super.onCreate(savedInstanceState)
-  
-  //...
+class MainActivity : AppCompatActivity() {
+    private lateinit var paymentSheet: PaymentSheet
 
-  Paystack.builder()
-          .setPublicKey("pk_{your-public-key}")
-          .build()
-  paymentSheet = PaymentSheet(this, {your-callback-function})
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        // Other code snippets
 
-  //...
-}
+        Paystack.builder()
+            .setPublicKey("pk_test_xxxx")
+            .build()
+        paymentSheet = PaymentSheet(this, ::paymentComplete)
 
-// example paymentResult function
-private fun paymentComplete(paymentSheetResult: PaymentSheetResult ) {
-  val message = when (paymentSheetResult) {
-    PaymentSheetResult.Cancelled -> "Cancelled"
-    is PaymentSheetResult.Failed -> {
-      Log.e("Something went wrong", paymentSheetResult.error.message.orEmpty(), paymentSheetResult.error)
-      paymentSheetResult.error.message ?: "Failed"
     }
 
-    is PaymentSheetResult.Completed -> {
-      // Returns the transaction reference  PaymentCompletionDetails(reference={TransactionRef})
-      Log.d("Payment successful", paymentSheetResult.paymentCompletionDetails.toString())
-      "Successful"
+    private fun makePayment() {
+        // Pass access_code from transaction initialize call
+        paymentSheet.launch("br6cgmvflhn3qtd")
     }
-  }
 
-  Toast.makeText(this, "Payment $message", Toast.LENGTH_SHORT).show()
+
+    private fun paymentComplete(paymentSheetResult: PaymentSheetResult) {
+        val message = when (paymentSheetResult) {
+            PaymentSheetResult.Cancelled -> "Cancelled"
+            is PaymentSheetResult.Failed -> {
+                Log.e("Something went wrong", paymentSheetResult.error.message.orEmpty(), paymentSheetResult.error)
+                paymentSheetResult.error.message ?: "Failed"
+            }
+
+            is PaymentSheetResult.Completed -> {
+                // Returns the transaction reference  PaymentCompletionDetails(reference={TransactionRef})
+                Log.d("Payment successful", paymentSheetResult.paymentCompletionDetails.toString())
+                "Successful"
+            }
+        }
+    }
 }`
 
-const java = `// TODO: Add snippet`
+const java = `// other imports
+
+import com.paystack.android.core.Paystack;
+import com.paystack.android.ui.paymentsheet.PaymentSheet;
+import com.paystack.android.ui.paymentsheet.PaymentSheetResult;
+
+public class MainActivity extends AppCompatActivity {
+
+  private PaymentSheet paymentSheet;
+
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    // other snippets
+
+    Paystack.builder()
+        .setPublicKey("pk_test_xxxxx")
+        .setLoggingEnabled(true)
+        .build();
+
+    paymentSheet = new PaymentSheet(this, this::paymentComplete);
+
+  }
+
+  private void makePayment() {
+    // Pass access_code from transaction initialize call
+    paymentSheet.launch("br6cgmvflhn3qtd");
+  }
+
+  private void paymentComplete(PaymentSheetResult paymentSheetResult) {
+    String message;
+
+    if (paymentSheetResult instanceof PaymentSheetResult.Cancelled) {
+      message = "Cancelled";
+    } else if (paymentSheetResult instanceof PaymentSheetResult.Failed) {
+      PaymentSheetResult.Failed failedResult = (PaymentSheetResult.Failed) paymentSheetResult;
+      Log.e("Payment failed",
+          failedResult.getError().getMessage() != null ? failedResult.getError().getMessage() : "Failed",
+          failedResult.getError());
+      message = failedResult.getError().getMessage() != null ? failedResult.getError().getMessage() : "Failed";
+    } else if (paymentSheetResult instanceof PaymentSheetResult.Completed) {
+      Log.d("Payment successful",
+          ((PaymentSheetResult.Completed) paymentSheetResult).getPaymentCompletionDetails().toString());
+      message = "Successful";
+    } else {
+      message = "You shouldn't be here";
+    }
+  }
+}`
 
 export {kt, java}
