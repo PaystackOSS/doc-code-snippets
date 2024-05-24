@@ -1,0 +1,1 @@
+Paystack.setDefaultPublicKey("pk_test_xxxxx")
