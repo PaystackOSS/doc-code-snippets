@@ -1,5 +1,4 @@
-const swift_ui = `// SwiftUI
-paystack?.chargeUIButton(accessCode: "0peioxfhpn", onComplete: paymentDone) {
+const swift_ui = `paystack?.chargeUIButton(accessCode: "0peioxfhpn", onComplete: paymentDone) {
   Text("Initiate Payment")
 }`
 
