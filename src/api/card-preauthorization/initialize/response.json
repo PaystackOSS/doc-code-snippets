@@ -1,0 +1,21 @@
+{
+    "200": {
+        "description": "200 Ok",
+        "data": {
+            "status": true,
+            "message": "Authorization URL created",
+            "data": {
+                "authorization_url": "https://checkout.paystack.com/preauthorization/NDEyOTIyOmxpdmU6ZWloZ2VodTNyczZjanJj",
+                "access_code": "NDEyOTIyOmxpdmU6ZWloZ2VodTNyczZjanJj",
+                "reference": "eihgehu3rs6cjrc"
+            }
+        }
+    },
+    "400": {
+        "description": "400 Invalid",
+        "data": {
+            "status": false,
+            "message": "Customer email address is required"
+        }
+    }
+}
