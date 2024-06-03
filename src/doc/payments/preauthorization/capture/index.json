@@ -7,7 +7,7 @@
         "transaction_date": "2023-08-24T11:38:32.000Z",
         "status": "success",
         "reference": "123-abc",
-        "domain": "live",
+        "domain": "test",
         "metadata": {
             "custom_fields": [
               {
@@ -25,17 +25,17 @@
         "fees": 373,
         "authorization": {
             "authorization_code": "AUTH_5h7ifp9x1h",
-            "bin": "541333",
-            "last4": "0028",
+            "bin": "541541",
+            "last4": "0051",
             "exp_month": "12",
-            "exp_year": "2025",
+            "exp_year": "2028",
             "channel": "card",
-            "card_type": "mastercard ",
+            "card_type": "mastercard",
             "bank": "Absa Bank Limited, South Africa ",
             "country_code": "ZA",
             "brand": "mastercard",
             "reusable": true,
-            "signature": "SIG_6bCAS8p20rANfmuYgQ2i",
+            "signature": "SIG_6bCAS8p20rANfmuYgQ4a",
             "account_name": null
         },
         "customer": {

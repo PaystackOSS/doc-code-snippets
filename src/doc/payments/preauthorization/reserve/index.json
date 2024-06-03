@@ -3,7 +3,7 @@
     "message": "Preauthorization successful",
     "data": {
         "id": 523,
-        "domain": "live",
+        "domain": "test",
         "status": "authorized",
         "reference": "pre_p0xpfge2",
         "amount": 1600,
@@ -19,10 +19,10 @@
         "fees": 0,
         "authorization": {
             "authorization_code": "AUTH_dalhwqi5vw",
-            "bin": "492312",
-            "last4": "5652",
+            "bin": "454545",
+            "last4": "4545",
             "exp_month": "08",
-            "exp_year": "2024",
+            "exp_year": "2028",
             "channel": "card",
             "card_type": "visa credit",
             "bank": "NEDBANK",
