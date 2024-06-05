@@ -78,4 +78,54 @@ const php = `<?php
   echo $result;
 ?>`
 
-export {sh, js, php}
+const json = `{
+    "status": true,
+    "message": "Preauthorization successful",
+    "data": {
+        "id": 523,
+        "domain": "test",
+        "status": "authorized",
+        "reference": "pre_p0xpfge2",
+        "amount": 1600,
+        "gateway_response": {
+            "authorizeResponse": "Approved",
+            "rrn":"KdeasineK"
+        },
+        "created_at": "2023-08-24T19:00:18.000Z",
+        "released_at": null,
+        "scheduled_release_date": "2023-08-25T19:00:26.000Z",
+        "currency": "ZAR",
+        "metadata": null,
+        "fees": 0,
+        "authorization": {
+            "authorization_code": "AUTH_dalhwqi5vw",
+            "bin": "454545",
+            "last4": "4545",
+            "exp_month": "08",
+            "exp_year": "2028",
+            "channel": "card",
+            "card_type": "visa credit",
+            "bank": "NEDBANK",
+            "country_code": "ZA",
+            "brand": "visa",
+            "reusable": true,
+            "signature": "SIG_BAJR7TwTw5TwKOYCro5c",
+            "account_name": null
+        },
+        "customer": {
+            "id": 180063193,
+            "first_name": null,
+            "last_name": null,
+            "email": "test@paystack.com",
+            "customer_code": "CUS_zi5os4fs31qxao0",
+            "phone": null,
+            "metadata": null,
+            "risk_action": "default",
+            "international_format_phone": null
+        },
+        "merchant_id": 210002,
+        "merchant_name": "ABC merchant"
+    }
+}`
+
+export {sh, js, php, json}

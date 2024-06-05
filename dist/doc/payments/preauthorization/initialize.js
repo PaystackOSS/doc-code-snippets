@@ -74,4 +74,14 @@ const php = `<?php
   echo $result;
 ?>`
 
-export {sh, js, php}
+const json = `{
+    "status": true,
+    "message": "Authorization URL created",
+    "data": {
+        "authorization_url": "https://checkout.paystack.com/preauthorization/NDEyOTIyOmxpdmU6ZWloZ2VodTNyczZjanJj",
+        "access_code": "NDEyOTIyOmxpdmU6ZWloZ2VodTNyczZjanJj",
+        "reference": "eihgehu3rs6cjrc"
+    }
+}`
+
+export {sh, js, php, json}
