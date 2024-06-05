@@ -1,0 +1,67 @@
+{
+    "200": {
+        "description": "200 Ok",
+        "data": {
+            "status": true,
+            "message": "Capture attempted",
+            "data": {
+                "amount": 1000,
+                "currency": "ZAR",
+                "transaction_date": "2023-08-24T11:38:32.000Z",
+                "status": "success",
+                "reference": "123-abc",
+                "domain": "live",
+                "metadata": {
+                    "custom_fields": [
+                      {
+                        "display_name": "Cart Number",
+                        "variable_name": "cart_number",
+                        "value": "123443"
+                      }
+                    ]
+                },
+                "gateway_response": "Approved",
+                "message": null,
+                "channel": "preauth",
+                "ip_address": null,
+                "log": null,
+                "fees": 373,
+                "authorization": {
+                    "authorization_code": "AUTH_5h7ifp9x1h",
+                    "bin": "541333",
+                    "last4": "0028",
+                    "exp_month": "12",
+                    "exp_year": "2025",
+                    "channel": "card",
+                    "card_type": "mastercard ",
+                    "bank": "Absa Bank Limited, South Africa ",
+                    "country_code": "ZA",
+                    "brand": "mastercard",
+                    "reusable": true,
+                    "signature": "SIG_6bCAS8p20rANfmuYgQ2i",
+                    "account_name": null
+                },
+                "customer": {
+                    "id": 180063193,
+                    "first_name": null,
+                    "last_name": null,
+                    "email": "customer@email.com",
+                    "customer_code": "CUS_zi5os4fs31qxao0",
+                    "phone": null,
+                    "metadata": null,
+                    "risk_action": "default",
+                    "international_format_phone": null
+                },
+                "plan": null,
+                "id": 1504173002
+            }
+        }
+    },
+    "400": {
+        "description": "400 Invalid",
+        "data": {
+            "status": false,
+            "message": "Capture amount cannot be more than authorized amount"
+        }
+    }
+}
