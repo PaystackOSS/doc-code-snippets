@@ -69,4 +69,14 @@ const php = `<?php
   echo $result;
 ?>`
 
-export {sh, js, php}
+const json = `{
+    "status": true,
+    "message": "Successfully released",
+    "data": {
+        "id": 507,
+        "status": "released",
+        "reference": "123-abc"
+    }
+}`
+
+export {sh, js, php, json}
