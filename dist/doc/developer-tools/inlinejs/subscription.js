@@ -14,8 +14,8 @@ popup.newTransaction({
   onCancel: () => {
     console.log("onCancel");
   },
-  onError: () => {
-    console.log("onError");
+  onError: (error) => {
+    console.log("Error: ", error.message);
   }
 })`
 
