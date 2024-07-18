@@ -1,4 +1,4 @@
-const js = `onSuccess: (response) => {
+const js = `onSuccess: (transaction) => {
   // Post payment flow can go here
 }`
 
