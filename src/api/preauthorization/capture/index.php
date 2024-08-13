@@ -2,8 +2,8 @@
   $url = "https://api.paystack.co/preauthorization/capture";
 
   $fields = [
-    'reference' => '123-abc'
-    'currency' => 'ZAR'
+    'reference' => '123-abc',
+    'currency' => 'ZAR',
     'amount' => '10000'
   ];
 

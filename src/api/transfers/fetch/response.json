@@ -5,37 +5,67 @@
 			"status": true,
 			"message": "Transfer retrieved",
 			"data": {
-				"recipient": {
-					"domain": "test",
-					"type": "nuban",
-					"currency": "NGN",
-					"name": "Flesh",
-					"details": {
-						"account_number": "olounje",
-						"account_name": null,
-						"bank_code": "044",
-						"bank_name": "Access Bank"
-					},
-					"metadata": null,
-					"recipient_code": "RCP_2x5j67tnnw1t98k",
-					"active": true,
-					"id": 28,
-					"integration": 100073,
-					"createdAt": "2017-02-02T19:39:04.000Z",
-					"updatedAt": "2017-02-02T19:39:04.000Z"
-				},
-				"domain": "test",
-				"amount": 4400,
+				"amount": 20000,
+				"createdAt": "2024-02-01T08:32:21.000Z",
 				"currency": "NGN",
+				"domain": "test",
+				"failures": null,
+				"id": 451930323,
+				"integration": 463433,
+				"reason": "Life go better for you",
+				"reference": "ge-bzrf8u8k2pygxrnqf",
 				"source": "balance",
 				"source_details": null,
-				"reason": "Redemption",
-				"status": "pending",
-				"failures": null,
-				"transfer_code": "TRF_2x5j67tnnw1t98k",
-				"id": 14938,
-				"createdAt": "2017-02-03T17:21:54.000Z",
-				"updatedAt": "2017-02-03T17:21:54.000Z"
+				"status": "success",
+				"titan_code": null,
+				"transfer_code": "TRF_fpmd0l8uta8upow7",
+				"request": 502643104,
+				"transferred_at": null,
+				"updatedAt": "2024-02-01T08:34:07.000Z",
+				"recipient": {
+					"active": true,
+					"createdAt": "2021-10-21T11:08:04.000Z",
+					"currency": "NGN",
+					"description": null,
+					"domain": "test",
+					"email": "jake@jill.com",
+					"id": 19643784,
+					"integration": 463433,
+					"metadata": {
+						"custom_fields": [
+							{
+								"display_name": "Branch Name",
+								"variable_name": "branchName",
+								"value": "funny place, Alabama"
+							},
+							{
+								"display_name": "Branch ID",
+								"variable_name": "branchID",
+								"value": "123"
+							}
+						]
+					},
+					"name": "Abbey Baker",
+					"recipient_code": "RCP_rjs1szi4ax5hoeo",
+					"type": "nuban",
+					"updatedAt": "2023-03-29T08:39:39.000Z",
+					"is_deleted": false,
+					"isDeleted": false,
+					"details": {
+						"authorization_code": null,
+						"account_number": "0123456789",
+						"account_name": "Abbey Baker",
+						"bank_code": "058",
+						"bank_name": "Guaranty Trust Bank"
+					}
+				},
+				"session": {
+					"provider": null,
+					"id": null
+				},
+				"fee_charged": 0,
+				"fees_breakdown": null,
+				"gateway_response": null
 			}
 		}
 	}

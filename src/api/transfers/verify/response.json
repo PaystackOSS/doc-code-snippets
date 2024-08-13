@@ -2,54 +2,78 @@
 	"200": {
 		"description": "200 Ok",
 		"data": {
-  "status": true,
-  "message": "Transfer retrieved",
-  "data": {
-    "integration": 119333,
-    "recipient": {
-      "domain": "test",
-      "type": "nuban",
-      "currency": "NGN",
-      "name": "Zombie",
-      "details": {
-        "account_number": "0100000001",
-        "account_name": null,
-        "bank_code": "044",
-        "bank_name": "Access Bank"
-      },
-      "description": "Zombier",
-      "metadata": "",
-      "recipient_code": "RCP_c2mty1w1uvd4av4",
-      "active": true,
-      "email": null,
-      "id": 31911,
-      "integration": 119333,
-      "createdAt": "2017-10-13T20:35:51.000Z",
-      "updatedAt": "2017-10-13T20:35:51.000Z"
-    },
-    "domain": "test",
-    "amount": 50000,
-    "currency": "NGN",
-    "reference": "ref_demo",
-    "source": "balance",
-    "source_details": null,
-    "reason": "Test for reference",
-    "status": "success",
-    "failures": null,
-    "transfer_code": "TRF_kjati32r73poyt5",
-    "titan_code": null,
-    "transferred_at": null,
-    "id": 476948,
-    "createdAt": "2018-07-22T10:29:33.000Z",
-    "updatedAt": "2018-07-22T10:29:33.000Z"
-  }
-}
+			"status": true,
+			"message": "Transfer retrieved",
+			"data": {
+				"amount": 20000,
+				"createdAt": "2024-02-01T08:32:21.000Z",
+				"currency": "NGN",
+				"domain": "test",
+				"failures": null,
+				"id": 451930323,
+				"integration": 463433,
+				"reason": "Life go better for you",
+				"reference": "ge-bzrf8u8k2pygxrnqf",
+				"source": "balance",
+				"source_details": null,
+				"status": "success",
+				"titan_code": null,
+				"transfer_code": "TRF_fpmd0l8uta8upow7",
+				"request": 502643104,
+				"transferred_at": null,
+				"updatedAt": "2024-02-01T08:34:07.000Z",
+				"recipient": {
+					"active": true,
+					"createdAt": "2021-10-21T11:08:04.000Z",
+					"currency": "NGN",
+					"description": null,
+					"domain": "test",
+					"email": "jake@jill.com",
+					"id": 19643784,
+					"integration": 463433,
+					"metadata": {
+						"custom_fields": [
+							{
+								"display_name": "Branch Name",
+								"variable_name": "branchName",
+								"value": "funny place, Alabama"
+							},
+							{
+								"display_name": "Branch ID",
+								"variable_name": "branchID",
+								"value": "123"
+							}
+						]
+					},
+					"name": "Abbey Baker",
+					"recipient_code": "RCP_rjs1szi4ax5hoeo",
+					"type": "nuban",
+					"updatedAt": "2023-03-29T08:39:39.000Z",
+					"is_deleted": false,
+					"isDeleted": false,
+					"details": {
+						"authorization_code": null,
+						"account_number": "0123456789",
+						"account_name": "Abbey Baker",
+						"bank_code": "058",
+						"bank_name": "Guaranty Trust Bank"
+					}
+				},
+				"session": {
+					"provider": null,
+					"id": null
+				},
+				"fee_charged": 0,
+				"fees_breakdown": null,
+				"gateway_response": null
+			}
+		}
 	},
 	"404": {
 		"description": "404 Not Found",
 		"data": {
-  "status": false,
-  "message": "Transfer not found"
-}
+			"status": false,
+			"message": "Transfer not found"
+		}
 	}
 }
