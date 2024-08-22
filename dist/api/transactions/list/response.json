@@ -6,89 +6,96 @@
 			"message": "Transactions retrieved",
 			"data": [
 				{
-					"id": 5833,
+					"id": 4099260516,
 					"domain": "test",
-					"status": "failed",
-					"reference": "icy9ma6jd1",
-					"amount": 100,
+					"status": "success",
+					"reference": "re4lyvq3s3",
+					"amount": 40333,
 					"message": null,
-					"gateway_response": "Declined",
-					"paid_at": null,
-					"created_at": "2016-09-29T00:00:05.000Z",
+					"gateway_response": "Successful",
+					"paid_at": "2024-08-22T09:15:02.000Z",
+					"created_at": "2024-08-22T09:14:24.000Z",
 					"channel": "card",
 					"currency": "NGN",
-					"ip_address": null,
+					"ip_address": "197.210.54.33",
 					"metadata": null,
-					"timeline": null,
-					"customer": {
-						"first_name": "Test",
-						"last_name": "Dummy",
-						"email": "test@dummy.com",
-						"phone": "16504173147",
-						"metadata": null,
-						"customer_code": "CUS_1uld4hluw0g2gn0"
-					},
-					"authorization": {},
-					"plan": {},
-					"requested_amount": 100
-				},
-				{
-					"id": 298126,
-					"domain": "live",
-					"status": "failed",
-					"reference": "z1gsnks86e6kfo8",
-					"amount": 10000,
-					"message": null,
-					"gateway_response": "Declined",
-					"paid_at": null,
-					"created_at": "2016-09-29T00:03:22.000Z",
-					"channel": "card",
-					"currency": "NGN",
-					"ip_address": null,
-					"metadata": {
-						"custom_fields": [
+					"log": {
+						"start_time": 1724318098,
+						"time_spent": 4,
+						"attempts": 1,
+						"errors": 0,
+						"success": true,
+						"mobile": false,
+						"input": [],
+						"history": [
 							{
-								"display_name": "Mobile Number",
-								"variable_name": "mobile_number",
-								"value": "+2348012345678"
+								"type": "action",
+								"message": "Attempted to pay with card",
+								"time": 3
+							},
+							{
+								"type": "success",
+								"message": "Successfully paid with card",
+								"time": 4
 							}
 						]
 					},
-					"log": null,
-					"fees": null,
-					"paidAt": "2016-09-29T00:03:25.000Z",
-					"createdAt": "2016-09-29T00:03:22.000Z",
-					"authorization": {
-						"authorization_code": "AUTH_86gs11dr",
-						"bin": "539983",
-						"last4": "0061",
-						"exp_month": "08",
-						"exp_year": "2018",
-						"card_type": "mastercard DEBIT",
-						"bank": "Guaranty Trust Bank",
-						"country_code": "NG",
-						"brand": "mastercard",
-						"account_name": "BoJack Horseman"
-					},
+					"fees": 10283,
+					"fees_split": null,
 					"customer": {
-						"id": 8279,
-						"first_name": "Test",
-						"last_name": "Dummy",
-						"email": "test@dummy.com",
-						"phone": "16504173147",
-						"customer_code": "CUS_1uld4hluw0g2gn0",
-						"metadata": null,
+						"id": 181873746,
+						"first_name": null,
+						"last_name": null,
+						"email": "demo@test.com",
+						"phone": null,
+						"metadata": {
+							"custom_fields": [
+								{
+									"display_name": "Customer email",
+									"variable_name": "customer_email",
+									"value": "new@email.com"
+								}
+							]
+						},
+						"customer_code": "CUS_1rkzaqsv4rrhqo6",
 						"risk_action": "default"
 					},
-					"requested_amount": 10000
+					"authorization": {
+						"authorization_code": "AUTH_uh8bcl3zbn",
+						"bin": "408408",
+						"last4": "4081",
+						"exp_month": "12",
+						"exp_year": "2030",
+						"channel": "card",
+						"card_type": "visa ",
+						"bank": "TEST BANK",
+						"country_code": "NG",
+						"brand": "visa",
+						"reusable": true,
+						"signature": "SIG_yEXu7dLBeqG0kU7g95Ke",
+						"account_name": null
+					},
+					"plan": {},
+					"split": {},
+					"subaccount": {},
+					"order_id": null,
+					"paidAt": "2024-08-22T09:15:02.000Z",
+					"createdAt": "2024-08-22T09:14:24.000Z",
+					"requested_amount": 30050,
+					"source": {
+						"source": "merchant_api",
+						"type": "api",
+						"identifier": null,
+						"entry_point": "transaction_initialize"
+					},
+					"connect": null,
+					"pos_transaction_data": null
 				}
 			],
 			"meta": {
-				"total": 1,
-				"skipped": 0,
-				"perPage": 50,
-				"page": 1,
-				"pageCount": 1
+				"next": "dW5kZWZpbmVkOjQwMTM3MDk2MzU=",
+				"previous": null,
+				"perPage": 50
 			}
 		}
 	}
