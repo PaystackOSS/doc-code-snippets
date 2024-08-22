@@ -62,22 +62,23 @@ const json = `{
 	"status": true,
 	"message": "Verification successful",
 	"data": {
-		"id": 690075529,
+		"id": 4099260516,
 		"domain": "test",
 		"status": "success",
-		"reference": "nms6uvr1pl",
-		"amount": 20000,
+		"reference": "re4lyvq3s3",
+		"receipt_number": null,
+		"amount": 40333,
 		"message": null,
 		"gateway_response": "Successful",
-		"paid_at": "2020-05-19T12:30:56.000Z",
-		"created_at": "2020-05-19T12:26:44.000Z",
+		"paid_at": "2024-08-22T09:15:02.000Z",
+		"created_at": "2024-08-22T09:14:24.000Z",
 		"channel": "card",
 		"currency": "NGN",
-		"ip_address": "154.118.28.239",
+		"ip_address": "197.210.54.33",
 		"metadata": "",
 		"log": {
-			"start_time": 1589891451,
-			"time_spent": 6,
+			"start_time": 1724318098,
+			"time_spent": 4,
 			"attempts": 1,
 			"errors": 0,
 			"success": true,
@@ -87,71 +88,56 @@ const json = `{
 				{
 					"type": "action",
 					"message": "Attempted to pay with card",
-					"time": 5
+					"time": 3
 				},
 				{
 					"type": "success",
 					"message": "Successfully paid with card",
-					"time": 6
+					"time": 4
 				}
 			]
 		},
-		"fees": 300,
-		"fees_split": {
-			"paystack": 300,
-			"integration": 40,
-			"subaccount": 19660,
-			"params": {
-				"bearer": "account",
-				"transaction_charge": "",
-				"percentage_charge": "0.2"
-			}
-		},
+		"fees": 10283,
+		"fees_split": null,
 		"authorization": {
-			"authorization_code": "AUTH_xxxxxxxxxx",
+			"authorization_code": "AUTH_uh8bcl3zbn",
 			"bin": "408408",
 			"last4": "4081",
 			"exp_month": "12",
-			"exp_year": "2020",
+			"exp_year": "2030",
 			"channel": "card",
-			"card_type": "visa DEBIT",
-			"bank": "Test Bank",
+			"card_type": "visa ",
+			"bank": "TEST BANK",
 			"country_code": "NG",
 			"brand": "visa",
 			"reusable": true,
-			"signature": "SIG_xxxxxxxxxxxxxxx",
+			"signature": "SIG_yEXu7dLBeqG0kU7g95Ke",
 			"account_name": null
 		},
 		"customer": {
-			"id": 24259516,
+			"id": 181873746,
 			"first_name": null,
 			"last_name": null,
-			"email": "customer@email.com",
-			"customer_code": "CUS_xxxxxxxxxxx",
+			"email": "demo@test.com",
+			"customer_code": "CUS_1rkzaqsv4rrhqo6",
 			"phone": null,
 			"metadata": null,
-			"risk_action": "default"
+			"risk_action": "default",
+			"international_format_phone": null
 		},
 		"plan": null,
+		"split": {},
 		"order_id": null,
-		"paidAt": "2020-05-19T12:30:56.000Z",
-		"createdAt": "2020-05-19T12:26:44.000Z",
-		"requested_amount": 20000,
-		"transaction_date": "2020-05-19T12:26:44.000Z",
+		"paidAt": "2024-08-22T09:15:02.000Z",
+		"createdAt": "2024-08-22T09:14:24.000Z",
+		"requested_amount": 30050,
+		"pos_transaction_data": null,
+		"source": null,
+		"fees_breakdown": null,
+		"connect": null,
+		"transaction_date": "2024-08-22T09:14:24.000Z",
 		"plan_object": {},
-		"subaccount": {
-			"id": 37614,
-			"subaccount_code": "ACCT_xxxxxxxxxx",
-			"business_name": "Cheese Sticks",
-			"description": "Cheese Sticks",
-			"primary_contact_name": null,
-			"primary_contact_email": null,
-			"primary_contact_phone": null,
-			"metadata": null,
-			"percentage_charge": 0.2,
-			"settlement_bank": "Guaranty Trust Bank",
-			"account_number": "0123456789"
-		}
+		"subaccount": {}
 	}
 }`
 

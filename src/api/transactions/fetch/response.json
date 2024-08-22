@@ -5,31 +5,24 @@
 			"status": true,
 			"message": "Transaction retrieved",
 			"data": {
-				"id": 292584114,
+				"id": 4099260516,
 				"domain": "test",
 				"status": "success",
-				"reference": "203520101",
-				"amount": 10000,
+				"reference": "re4lyvq3s3",
+				"receipt_number": null,
+				"amount": 40333,
 				"message": null,
 				"gateway_response": "Successful",
-				"paid_at": "2019-10-09T13:03:28.000Z",
-				"created_at": "2019-10-09T13:00:16.000Z",
+				"helpdesk_link": null,
+				"paid_at": "2024-08-22T09:15:02.000Z",
+				"created_at": "2024-08-22T09:14:24.000Z",
 				"channel": "card",
 				"currency": "NGN",
-				"ip_address": "197.211.43.98",
-				"metadata": {
-					"custom_fields": [
-						{
-							"display_name": "Mobile Number",
-							"variable_name": "mobile_number",
-							"value": "+2348012345678"
-						}
-					],
-					"referrer": "http://localhost:3001/integration/microphone.html?"
-				},
+				"ip_address": "197.210.54.33",
+				"metadata": "",
 				"log": {
-					"start_time": 1570626018,
-					"time_spent": 192,
+					"start_time": 1724318098,
+					"time_spent": 4,
 					"attempts": 1,
 					"errors": 0,
 					"success": true,
@@ -39,48 +32,66 @@
 						{
 							"type": "action",
 							"message": "Attempted to pay with card",
-							"time": 191
+							"time": 3
 						},
 						{
 							"type": "success",
 							"message": "Successfully paid with card",
-							"time": 192
+							"time": 4
 						}
 					]
 				},
-				"fees": 150,
+				"fees": 10283,
 				"fees_split": null,
 				"authorization": {
-					"authorization_code": "AUTH_2e4k18sj52",
+					"authorization_code": "AUTH_uh8bcl3zbn",
 					"bin": "408408",
 					"last4": "4081",
 					"exp_month": "12",
-					"exp_year": "2020",
+					"exp_year": "2030",
 					"channel": "card",
-					"card_type": "visa DEBIT",
-					"bank": "Test Bank",
+					"card_type": "visa ",
+					"bank": "TEST BANK",
 					"country_code": "NG",
 					"brand": "visa",
 					"reusable": true,
-					"signature": "SIG_JrPFkMYhcu8AD75eQWKl",
-					"account_name": "BoJack Horseman"
+					"signature": "SIG_yEXu7dLBeqG0kU7g95Ke",
+					"account_name": null
 				},
 				"customer": {
-					"id": 1809887,
+					"id": 181873746,
 					"first_name": null,
 					"last_name": null,
-					"email": "customer@email.com",
-					"customer_code": "CUS_0c35ys9w8ma5tbr",
+					"email": "demo@test.com",
+					"customer_code": "CUS_1rkzaqsv4rrhqo6",
 					"phone": null,
-					"metadata": null,
-					"risk_action": "deny"
+					"metadata": {
+						"custom_fields": [
+							{
+								"display_name": "Customer email",
+								"variable_name": "customer_email",
+								"value": "new@email.com"
+							}
+						]
+					},
+					"risk_action": "default",
+					"international_format_phone": null
 				},
 				"plan": {},
 				"subaccount": {},
+				"split": {},
 				"order_id": null,
-				"paidAt": "2019-10-09T13:03:28.000Z",
-				"createdAt": "2019-10-09T13:00:16.000Z",
-				"requested_amount": 1500000
+				"paidAt": "2024-08-22T09:15:02.000Z",
+				"createdAt": "2024-08-22T09:14:24.000Z",
+				"requested_amount": 30050,
+				"pos_transaction_data": null,
+				"source": {
+					"type": "api",
+					"source": "merchant_api",
+					"identifier": null
+				},
+				"fees_breakdown": null,
+				"connect": null
 			}
 		}
 	},
