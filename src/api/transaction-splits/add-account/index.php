@@ -2,8 +2,8 @@
   $url = "https://api.paystack.co/split/:id/subaccount/add";
 
   $fields = [
-    "subaccount" => "ACCT_hdl8abxl8drhrl3", 
-    "share" => 40000
+    "subaccount" => "ACCT_eg4sob4590pq9vb", 
+    "share" => 20
   ];
 
   $fields_string = http_build_query($fields);

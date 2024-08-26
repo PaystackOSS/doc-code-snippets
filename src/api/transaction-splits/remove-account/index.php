@@ -2,7 +2,7 @@
   $url = "https://api.paystack.co/split/:id/subaccount/remove";
 
   $fields = [
-    "subaccount" => "ACCT_hdl8abxl8drhrl3"
+    "subaccount" => "ACCT_eg4sob4590pq9vb"
   ];
 
   $fields_string = http_build_query($fields);

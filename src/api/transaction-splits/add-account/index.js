@@ -1,8 +1,8 @@
 const https = require('https')
 
 const params = JSON.stringify({
-  "subaccount": "ACCT_hdl8abxl8drhrl3", 
-  "share": 40000
+  "subaccount": "ACCT_eg4sob4590pq9vb", 
+  "share": 20
 })
 
 const options = {
