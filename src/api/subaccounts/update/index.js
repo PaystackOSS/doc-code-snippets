@@ -1,8 +1,8 @@
 const https = require('https')
 
 const params = JSON.stringify({
-  "primary_contact_email": "dafe@aba.com",
-  "percentage_charge": 18.9
+  "business_name": "Oasis Global",
+  "description": "Provide IT services"
 })
 
 const options = {
