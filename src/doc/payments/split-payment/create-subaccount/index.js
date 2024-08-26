@@ -1,10 +1,10 @@
 const https = require('https')
 
 const params = JSON.stringify({
-  "business_name": "Cheese Sticks",
+  "business_name": "Oasis",
   "bank_code": "058",
-  "account_number": "0123456789",
-  "percentage_charge": 20
+  "account_number": "0123456047",
+  "percentage_charge": 30
 })
 
 const options = {
