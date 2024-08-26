@@ -2,8 +2,8 @@
   $url = "https://api.paystack.co/subaccount/:id_or_code";
 
   $fields = [
-    'primary_contact_email' => "dafe@aba.com",
-    'percentage_charge' => 18.9
+    'business_name' => "Oasis Global",
+    'description' => "Provide IT services"
   ];
 
   $fields_string = http_build_query($fields);

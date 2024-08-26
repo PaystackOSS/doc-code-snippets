@@ -2,10 +2,10 @@
   $url = "https://api.paystack.co/subaccount";
 
   $fields = [
-    'business_name' => "Sunshine Studios",
-    'settlement_bank' => "044", 
-    'account_number' => "0193274682", 
-    'percentage_charge' => 18.2 
+    'business_name' => "Oasis",
+    'settlement_bank' => "058", 
+    'account_number' => "0123456047", 
+    'percentage_charge' => 30
   ];
 
   $fields_string = http_build_query($fields);
