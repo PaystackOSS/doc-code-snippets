@@ -1,38 +1,29 @@
-const sh = `curl https://api.paystack.co/split
--H "Authorization: Bearer YOUR_SECRET_KEY"
--H "Content-Type: application/json"
--d '{ "name":"Percentage Split", 
-      "type":"percentage", 
-      "currency": "NGN",
-      "subaccounts":[{
-        "subaccount": "ACCT_z3x6z3nbo14xsil",
-        "share": 20
-    },
-    {
-        "subaccount": "ACCT_pwwualwty4nhq9d",
-        "share": 30
-    }], 
-      "bearer_type":"subaccount", 
-      "bearer_subaccount":"ACCT_hdl8abxl8drhrl3"
-    }'
--X POST`
+const sh = `#!/bin/sh
+url="https://api.paystack.co/split"
+authorization="Authorization: Bearer YOUR_SECRET_KEY"
+content_type="Content-Type: application/json"
+data='{ 
+  "name":"Halfsies", 
+  "type":"percentage", 
+  "currency": "NGN",
+  "subaccounts":[{
+    "subaccount": "ACCT_6uujpqtzmnufzkw",
+    "share": 50
+  }]
+}'
+
+curl "$url" -H "$authorization" -H "$content_type" -d "$data" -X POST`
 
 const js = `const https = require('https')
 
 const params = JSON.stringify({
-  "name":"Percentage Split", 
+  "name":"Halfsies", 
   "type":"percentage",
   "currency": "NGN", 
 	"subaccounts":[{
-    "subaccount": "ACCT_z3x6z3nbo14xsil",
-    "share": 20
-  },
-  {
-      "subaccount": "ACCT_pwwualwty4nhq9d",
-      "share": 30
-  }], 
-	"bearer_type":"subaccount", 
-	"bearer_subaccount":"ACCT_hdl8abxl8drhrl3"
+    "subaccount": "ACCT_6uujpqtzmnufzkw",
+    "share": 50
+  }]
 })
 
 const options = {
@@ -67,19 +58,13 @@ const php = `<?php
   $url = "https://api.paystack.co/split";
 
   $fields = [
-    'name' => "Percentage Split", 
+    'name' => "Halfsies", 
     'type' => "percentage",
     'currency' => "NGN", 
     'subaccounts' => [[
-      "subaccount" => "ACCT_z3x6z3nbo14xsil",
-      "share" => 20
-    ],
-    [
-        "subaccount" => "ACCT_pwwualwty4nhq9d",
-        "share" => 30 
-    ]], 
-    'bearer_type' => "subaccount", 
-    'bearer_subaccount' => "ACCT_hdl8abxl8drhrl3"
+      "subaccount" => "ACCT_6uujpqtzmnufzkw",
+      "share" => 50
+    ]]
   ];
 
   $fields_string = http_build_query($fields);
@@ -108,53 +93,37 @@ const json = `{
 	"status": true,
 	"message": "Split created",
 	"data": {
-		"id": 142,
-		"name": "Test Doc",
+		"id": 2703655,
+		"name": "Halfsies",
 		"type": "percentage",
 		"currency": "NGN",
-		"integration": 428626,
+		"integration": 463433,
 		"domain": "test",
-		"split_code": "SPL_e7jnRLtzla",
+		"split_code": "SPL_RcScyW5jp2",
 		"active": true,
-		"bearer_type": "subaccount",
-		"bearer_subaccount": 40809,
-		"createdAt": "2020-06-30T11:42:29.150Z",
-		"updatedAt": "2020-06-30T11:42:29.150Z",
+		"bearer_type": "all",
+		"createdAt": "2024-08-26T11:38:47.506Z",
+		"updatedAt": "2024-08-26T11:38:47.506Z",
+		"is_dynamic": false,
 		"subaccounts": [
 			{
 				"subaccount": {
-					"id": 40809,
-					"subaccount_code": "ACCT_z3x6z3nbo14xsil",
-					"business_name": "Business Name",
-					"description": "Business Description",
+					"id": 1151727,
+					"subaccount_code": "ACCT_6uujpqtzmnufzkw",
+					"business_name": "Oasis Global",
+					"description": "Oasis Global",
 					"primary_contact_name": null,
 					"primary_contact_email": null,
 					"primary_contact_phone": null,
 					"metadata": null,
-					"percentage_charge": 20,
-					"settlement_bank": "Business Bank",
-					"account_number": "1234567890"
+					"settlement_bank": "Guaranty Trust Bank",
+					"currency": "NGN",
+					"account_number": "0123456047"
 				},
-				"share": 20
-			},
-			{
-				"subaccount": {
-					"id": 40809,
-					"subaccount_code": "ACCT_pwwualwty4nhq9d",
-					"business_name": "Business Name",
-					"description": "Business Description",
-					"primary_contact_name": null,
-					"primary_contact_email": null,
-					"primary_contact_phone": null,
-					"metadata": null,
-					"percentage_charge": 20,
-					"settlement_bank": "Business Bank",
-					"account_number": "0123456789"
-				},
-				"share": 30
+				"share": 50
 			}
 		],
-		"total_subaccounts": 2
+		"total_subaccounts": 1
 	}
 }`
 

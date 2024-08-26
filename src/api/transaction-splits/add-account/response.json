@@ -5,50 +5,51 @@
 			"status": true,
 			"message": "Subaccount added",
 			"data": {
-				"id": 143,
-				"name": "Test Doc",
+				"id": 2703655,
+				"name": "Halfsies",
 				"type": "percentage",
 				"currency": "NGN",
-				"integration": 428626,
+				"integration": 463433,
 				"domain": "test",
-				"split_code": "SPL_UO2vBzEqHW",
+				"split_code": "SPL_RcScyW5jp2",
 				"active": true,
-				"bearer_type": "subaccount",
-				"bearer_subaccount": 40809,
-				"createdAt": "2020-06-30T11:52:24.000Z",
-				"updatedAt": "2020-06-30T11:52:24.000Z",
+				"bearer_type": "all-proportional",
+				"bearer_subaccount": null,
+				"createdAt": "2024-08-26T11:38:47.000Z",
+				"updatedAt": "2024-08-26T11:50:47.000Z",
+				"is_dynamic": false,
 				"subaccounts": [
 					{
 						"subaccount": {
-							"id": 40809,
-							"subaccount_code": "ACCT_sv6roe394nkpu6j",
-							"business_name": "Business Name",
-							"description": "Business Description",
+							"id": 1151727,
+							"subaccount_code": "ACCT_6uujpqtzmnufzkw",
+							"business_name": "Oasis Global",
+							"description": "Oasis Global",
 							"primary_contact_name": null,
 							"primary_contact_email": null,
 							"primary_contact_phone": null,
 							"metadata": null,
-							"percentage_charge": 20,
-							"settlement_bank": "Business Bank",
-							"account_number": "1234567890"
+							"settlement_bank": "Guaranty Trust Bank",
+							"currency": "NGN",
+							"account_number": "0123456047"
 						},
-						"share": 30
+						"share": 50
 					},
 					{
 						"subaccount": {
-							"id": 40811,
-							"subaccount_code": "ACCT_7i76qpjh7rr6q3z",
-							"business_name": "Business Name",
-							"description": "Business Description",
+							"id": 803508,
+							"subaccount_code": "ACCT_eg4sob4590pq9vb",
+							"business_name": "mmhm",
+							"description": "mmhm",
 							"primary_contact_name": null,
 							"primary_contact_email": null,
 							"primary_contact_phone": null,
 							"metadata": null,
-							"percentage_charge": 20,
-							"settlement_bank": "Business Bank",
-							"account_number": "0123456789"
+							"settlement_bank": "Zenith Bank",
+							"currency": "NGN",
+							"account_number": "0000000000"
 						},
-						"share": 30
+						"share": 20
 					}
 				],
 				"total_subaccounts": 2

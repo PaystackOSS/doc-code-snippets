@@ -3,8 +3,7 @@ url="https://api.paystack.co/split/{id}"
 authorization="Authorization: Bearer YOUR_SECRET_KEY"
 content_type="Content-Type: application/json"
 data='{ 
-  "name": "Newness", 
-  "active": true
+  "bearer_type": "all-proportional"
 }'
 
 curl "$url" -H "$authorization" -H "$content_type" -d "$data" -X PUT`
@@ -12,8 +11,7 @@ curl "$url" -H "$authorization" -H "$content_type" -d "$data" -X PUT`
 const js = `const https = require('https')
 
 const params = JSON.stringify({
-  "name": "Updated Name",
-  "active": true
+  "bearer_type": "all-proportional"
 })
 
 const options = {
@@ -48,8 +46,7 @@ const php = `<?php
   $url = "https://api.paystack.co/split/:id";
 
   $fields = [
-    "name" => "Updated Name",
-    "active" => true
+    "bearer_type" => "all-proportional"
   ];
 
   $fields_string = http_build_query($fields);

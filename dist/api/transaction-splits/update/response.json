@@ -5,38 +5,51 @@
 			"status": true,
 			"message": "Split group updated",
 			"data": {
-				"id": 95,
-				"name": "Updated Name",
+				"id": 2703655,
+				"name": "Halfsies",
 				"type": "percentage",
 				"currency": "NGN",
-				"integration": 165956,
+				"integration": 463433,
 				"domain": "test",
-				"split_code": "SPL_uMzcGbG5ca",
-				"active": false,
-				"bearer_type": "all",
+				"split_code": "SPL_RcScyW5jp2",
+				"active": true,
+				"bearer_type": "all-proportional",
 				"bearer_subaccount": null,
-				"createdAt": "2020-06-22T16:20:53.000Z",
-				"updatedAt": "2020-06-22T17:26:59.000Z",
+				"createdAt": "2024-08-26T11:38:47.000Z",
+				"updatedAt": "2024-08-26T11:50:47.000Z",
+				"is_dynamic": false,
 				"subaccounts": [
 					{
 						"subaccount": {
-							"id": 12700,
-							"subaccount_code": "ACCT_jsuq5uwf3n8la7b",
-							"business_name": "Ayobami GTB",
-							"description": "Ayobami GTB",
+							"id": 1151727,
+							"subaccount_code": "ACCT_6uujpqtzmnufzkw",
+							"business_name": "Oasis Global",
+							"description": "Oasis Global",
 							"primary_contact_name": null,
 							"primary_contact_email": null,
 							"primary_contact_phone": null,
 							"metadata": null,
-							"percentage_charge": 20,
 							"settlement_bank": "Guaranty Trust Bank",
-							"account_number": "0259111351"
+							"currency": "NGN",
+							"account_number": "0123456047"
 						},
-						"share": 80
+						"share": 50
 					}
 				],
 				"total_subaccounts": 1
 			}
+		}
+	},
+	"400": {
+		"description": "400 Bad Request",
+		"data": {
+			"status": false,
+			"message": "Invalid bearer type : must be one of: subaccount, account, all-proportional or all",
+			"meta": {
+				"nextStep": "Ensure that the value(s) you're passing are valid."
+			},
+			"type": "validation_error",
+			"code": "invalid_params"
 		}
 	}
 }

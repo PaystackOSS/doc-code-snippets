@@ -1,8 +1,7 @@
 const https = require('https')
 
 const params = JSON.stringify({
-  "name": "Updated Name",
-  "active": true
+  "bearer_type": "all-proportional"
 })
 
 const options = {

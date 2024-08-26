@@ -2,8 +2,7 @@
   $url = "https://api.paystack.co/split/:id";
 
   $fields = [
-    "name" => "Updated Name",
-    "active" => true
+    "bearer_type" => "all-proportional"
   ];
 
   $fields_string = http_build_query($fields);
