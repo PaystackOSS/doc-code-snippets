@@ -1,29 +1,29 @@
 {
-	"200": {
-		"description": "200 Ok",
+	"201": {
+		"description": "201 Created",
 		"data": {
 			"status": true,
 			"message": "Subaccount created",
 			"data": {
-				"integration": 100973,
+				"business_name": "Oasis",
+				"account_number": "0123456047",
+				"percentage_charge": 30,
+				"settlement_bank": "Guaranty Trust Bank",
+				"currency": "NGN",
+				"bank": 9,
+				"integration": 463433,
 				"domain": "test",
-				"subaccount_code": "ACCT_4hl4xenwpjy5wb",
-				"business_name": "Sunshine Studios",
-				"description": null,
-				"primary_contact_name": null,
-				"primary_contact_email": null,
-				"primary_contact_phone": null,
-				"metadata": null,
-				"percentage_charge": 18.2,
+				"account_name": "LARRY JAMES  O",
+				"product": "collection",
+				"managed_by_integration": 463433,
+				"subaccount_code": "ACCT_6uujpqtzmnufzkw",
 				"is_verified": false,
-				"settlement_bank": "Access Bank",
-				"account_number": "0193274682",
 				"settlement_schedule": "AUTO",
 				"active": true,
 				"migrate": false,
-				"id": 55,
-				"createdAt": "2016-10-05T13:22:04.000Z",
-				"updatedAt": "2016-10-21T02:19:47.000Z"
+				"id": 1151727,
+				"createdAt": "2024-08-26T09:24:28.723Z",
+				"updatedAt": "2024-08-26T09:24:28.723Z"
 			}
 		}
 	}

@@ -1,20 +1,20 @@
 const sh = `curl https://api.paystack.co/subaccount
 -H "Authorization: Bearer YOUR_SECRET_KEY"
 -H "Content-Type: application/json"
--d '{ "business_name": "Cheese Sticks", 
+-d '{ "business_name": "Oasis", 
       "bank_code": "058", 
-      "account_number": "0123456789", 
-      "percentage_charge": 20 
+      "account_number": "0123456047", 
+      "percentage_charge": 30 
     }'
 -X POST`
 
 const js = `const https = require('https')
 
 const params = JSON.stringify({
-  "business_name": "Cheese Sticks",
+  "business_name": "Oasis",
   "bank_code": "058",
-  "account_number": "0123456789",
-  "percentage_charge": 20
+  "account_number": "0123456047",
+  "percentage_charge": 30
 })
 
 const options = {
@@ -49,10 +49,10 @@ const php = `<?php
   $url = "https://api.paystack.co/subaccount";
 
   $fields = [
-    'business_name' => "Cheese Sticks",
+    'business_name' => "Oasis",
     'bank_code' => "058",
-    'account_number' => "0123456789",
-    'percentage_charge' => 20
+    'account_number' => "0123456047",
+    'percentage_charge' => 30
   ];
 
   $fields_string = http_build_query($fields);
@@ -81,27 +81,26 @@ const json = `{
 	"status": true,
 	"message": "Subaccount created",
 	"data": {
-		"business_name": "Cheese Sticks",
-		"account_number": "0123456789",
-		"percentage_charge": 20,
+		"business_name": "Oasis",
+		"account_number": "0123456047",
+		"percentage_charge": 30,
 		"settlement_bank": "Guaranty Trust Bank",
 		"currency": "NGN",
 		"bank": 9,
 		"integration": 463433,
 		"domain": "test",
-		"account_name": "Jamie Ng",
+		"account_name": "LARRY JAMES  O",
 		"product": "collection",
 		"managed_by_integration": 463433,
-		"subaccount_code": "ACCT_xxxxxxxxxxxx",
+		"subaccount_code": "ACCT_6uujpqtzmnufzkw",
 		"is_verified": false,
 		"settlement_schedule": "AUTO",
 		"active": true,
 		"migrate": false,
-		"id": 1026585,
-		"createdAt": "2024-01-17T13:34:08.807Z",
-		"updatedAt": "2024-01-17T13:34:08.807Z"
+		"id": 1151727,
+		"createdAt": "2024-08-26T09:24:28.723Z",
+		"updatedAt": "2024-08-26T09:24:28.723Z"
 	}
-}
-`
+}`
 
 export {sh, js, php, json}
