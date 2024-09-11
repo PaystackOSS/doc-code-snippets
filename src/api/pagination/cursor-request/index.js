@@ -1,11 +1,9 @@
 const https = require('https')
 
-const use_cursor = true;
-const perPage = 50;
 const options = {
   hostname: 'api.paystack.co',
   port: 443,
-  path: `/transaction?use_cursor=${use_cursor}&perPage=${perPage}`,
+  path: `/transaction?use_cursor=true&perPage=50`,
   method: 'GET',
   headers: {
     Authorization: 'Bearer YOUR_SECRET_KEY'

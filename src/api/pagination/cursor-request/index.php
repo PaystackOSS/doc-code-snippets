@@ -1,10 +1,8 @@
 <?php
-  $use_cursor = true;
-  $perPage = 50;
   $curl = curl_init();
   
   curl_setopt_array($curl, array(
-    CURLOPT_URL => "https://api.paystack.co/transaction?use_cursor=$use_cursor&perPage=$perPage",
+    CURLOPT_URL => "https://api.paystack.co/transaction?use_cursor=true&perPage=50",
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => "",
     CURLOPT_MAXREDIRS => 10,

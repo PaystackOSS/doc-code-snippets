@@ -1,11 +1,9 @@
 const https = require('https')
 
-const page = 1;
-const perPage = 50;
 const options = {
   hostname: 'api.paystack.co',
   port: 443,
-  path: `/transaction?page=${page}&perPage=${perPage}`,
+  path: `/transaction?page=1&perPage=50`,
   method: 'GET',
   headers: {
     Authorization: 'Bearer SECRET_KEY'
