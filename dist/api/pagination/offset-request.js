@@ -1,11 +1,9 @@
 const js = `const https = require('https')
 
-const page = 1;
-const perPage = 50;
 const options = {
   hostname: 'api.paystack.co',
   port: 443,
-  path: `/transaction?page=${page}&perPage=${perPage}`,
+  path: `/transaction?page=1&perPage=50`,
   method: 'GET',
   headers: {
     Authorization: 'Bearer SECRET_KEY'
@@ -27,12 +25,10 @@ https.request(options, res => {
 })`
 
 const php = `<?php
-  $page = 1;
-  $perPage = 50;
   $curl = curl_init();
   
   curl_setopt_array($curl, array(
-    CURLOPT_URL => "https://api.paystack.co/transaction?page=$page&perPage=$perPage",
+    CURLOPT_URL => "https://api.paystack.co/transaction?page=1&perPage=50",
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => "",
     CURLOPT_MAXREDIRS => 10,
@@ -58,9 +54,7 @@ const php = `<?php
 ?>`
 
 const sh = `#!/bin/sh
-page="1"
-perPage="50"
-url="https://api.paystack.co/transaction?page=$page&perPage=$perPage"
+url="https://api.paystack.co/transaction?page=1&perPage=50"
 authorization="Authorization: Bearer YOUR_SECRET_KEY"
 
 curl "$url" -H "$authorization" -X GET`
