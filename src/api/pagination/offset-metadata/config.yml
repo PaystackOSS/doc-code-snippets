@@ -1,0 +1,4 @@
+# TODO: Work on handling multiple non-response JSON
+type: standalone
+languages:
+  - json
