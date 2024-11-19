@@ -15,8 +15,8 @@ data='{
     ]
   },
   "bank": {
-      code: "057",
-      account_number: "0000000000"
+      "code": "057",
+      "account_number": "0000000000"
   },
   "birthday": "1995-12-23"
 }'
