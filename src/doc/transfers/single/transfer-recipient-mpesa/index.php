@@ -2,11 +2,11 @@
   $url = "https://api.paystack.co/transferrecipient";
 
   $fields = [
-    'type' => "mobile_money",
-    'name' => "Andrew Jones",
-    'account_number' => "0751234987",
-    'bank_code' => "MPESA",
-    'currency' => "KES"
+    "type" => "mobile_money_business",
+    "name" => "Till Transfer",
+    "bank_code" => "MPTILL",
+    "account_number" => "247247",
+    "currency" => "KES"
   ];
 
   $fields_string = http_build_query($fields);
