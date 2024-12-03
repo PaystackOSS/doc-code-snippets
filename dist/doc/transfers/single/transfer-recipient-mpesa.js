@@ -94,7 +94,7 @@ const json = `{
         "id": 92176030,
         "integration": 845995,
         "metadata": null,
-        "name": "Till Transfer",
+        "name": "Till Transfer Example",
         "recipient_code": "RCP_5vl8b2yma7xdnjp",
         "type": "mobile_money_business",
         "updatedAt": "2024-11-28T09:28:50.000Z",
