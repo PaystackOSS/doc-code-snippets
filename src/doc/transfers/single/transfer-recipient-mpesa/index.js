@@ -1,10 +1,10 @@
 const https = require('https')
 
 const params = JSON.stringify({
-  "type":"mobile_money",
-  "name" : "Andrew Jones",
-  "account_number": "0751234987",
-  "bank_code": "MPESA",
+  "type": "mobile_money_business",
+  "name": "Till Transfer",
+  "bank_code": "MPTILL",
+  "account_number": "247247",
   "currency": "KES"
 })
 
