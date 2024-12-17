@@ -63,7 +63,7 @@ public class HMacExample {
     Mac sha512_HMAC = Mac.getInstance(HMAC_SHA512);      
     sha512_HMAC.init(keySpec);
     byte [] mac_data = sha512_HMAC.
-    doFinal(body.toString().getBytes("UTF-8"));
+    doFinal(body.getBytes("UTF-8"));
     result = DatatypeConverter.printHexBinary(mac_data);
     if(result.toLowerCase().equals(xpaystackSignature)) {
       // you can trust the event, it came from paystack
