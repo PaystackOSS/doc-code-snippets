@@ -1,0 +1,12 @@
+{
+      "paymentMethods": [
+        {
+          "dedicated_nuban_id": 26196910,
+          "type": "dedicated_nuban",
+          "account_number": "9964842038",
+          "account_name": "Paystack Demo/Sales Point #1",
+          "bank": "Paystack-Titan"
+        }
+      ]
+  }
+  
