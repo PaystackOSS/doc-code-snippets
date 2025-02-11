@@ -1,0 +1,11 @@
+{
+    "paymentMethods": [
+        {
+            "paystack_paybill_id": 25120781,
+            "type": "paystack_paybill",
+            "account_number": "93223",
+            "account_name": "PAYSTACK - Paystack Demo",
+            "bank": "M-Pesa Kenya"
+        }
+    ]
+}
