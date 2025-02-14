@@ -1,0 +1,33 @@
+{
+    "status": true,
+    "message": "Virtual Terminal created",
+    "data": {
+      "id": 26677,
+      "name": "Sales Point #1",
+      "integration": 353514,
+      "domain": "live",
+      "code": "VT_L837PT5K",
+      "paymentMethods": [
+        {
+          "dedicated_nuban_id": 26196910,
+          "type": "dedicated_nuban",
+          "account_number": "9964842038",
+          "account_name": "Paystack Demo/Sales Point #1",
+          "bank": "Paystack-Titan"
+        }
+      ],
+      "active": true,
+      "metadata": {
+        "testing": "metadata"
+      },
+      "destinations": [
+        {
+          "target": "2348183742921",
+          "type": "whatsapp",
+          "name": null
+        }
+      ],
+      "currency": "NGN"
+    }
+  }
+  

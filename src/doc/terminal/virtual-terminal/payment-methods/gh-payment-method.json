@@ -1,0 +1,8 @@
+{
+    "paymentMethods": [
+        {
+            "type": "mobile_money_ussd",
+            "account_number": "*415*1548#"
+        }
+    ]
+}

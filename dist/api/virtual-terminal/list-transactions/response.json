@@ -1,0 +1,9 @@
+{
+  "200": {
+    "status": false,
+    "message": "Access not permitted using app key provided",
+    "meta": { "nextStep": "Try again later" },
+    "type": "api_error",
+    "code": "unknown"
+  }
+}
