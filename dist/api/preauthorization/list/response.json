@@ -45,5 +45,17 @@
             "status": false,
             "message": "An error occurred"
         }
+    },
+    "404": {
+        "description": "404 Not Found",
+        "data": {
+            "status": false,
+            "message": "No preauthorized transaction exists for the reference provided",
+            "meta": {
+                "nextStep": "Try again later"
+            },
+            "type": "api_error",
+            "code": "unknown"
+        }
     }
 }
