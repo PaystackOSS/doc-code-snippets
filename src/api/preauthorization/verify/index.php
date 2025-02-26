@@ -2,7 +2,7 @@
   $curl = curl_init();
   
   curl_setopt_array($curl, array(
-    CURLOPT_URL => "https://api.paystack.co/preauthorization/verify/:reference",
+    CURLOPT_URL => "https://api.paystack.co/preauthorization/:reference",
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => "",
     CURLOPT_MAXREDIRS => 10,

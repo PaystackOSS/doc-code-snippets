@@ -3,7 +3,7 @@ const https = require('https')
 const options = {
   hostname: 'api.paystack.co',
   port: 443,
-  path: '/preauthorization/verify/:reference',
+  path: '/preauthorization/:reference',
   method: 'GET',
   headers: {
     Authorization: 'Bearer SECRET_KEY'
