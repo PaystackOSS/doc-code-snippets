@@ -104,7 +104,7 @@ const json = `{
       },
       "destinations": [
         {
-          "target": "2348183742921",
+          "target": "2347081234567",
           "type": "whatsapp",
           "name": null
         }

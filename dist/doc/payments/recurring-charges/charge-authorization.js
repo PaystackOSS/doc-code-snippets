@@ -92,7 +92,7 @@ const json = `{
     "log": null,
     "fees": 10247,
     "authorization": {
-      "authorization_code": "AUTH_uh8bcl3zbn",
+      "authorization_code": "AUTH_pmx3mgawyd",
       "bin": "408408",
       "last4": "4081",
       "exp_month": "12",
