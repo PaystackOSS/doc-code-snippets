@@ -94,18 +94,6 @@
 			}
 		}
 	},
-	"200_failed": {
-		"description": "200 Failed",
-		"data": {
-			"status": true,
-			"message": "Charge attempted",
-			"data": {
-				"reference": "bc9w93gh629a4d7",
-				"status": "failed",
-				"message": "Transaction declined. Please use the test card."
-			}
-		}
-	},
 	"200_bank_auth": {
 		"description": "200 Bank Auth",
 		"data": {
