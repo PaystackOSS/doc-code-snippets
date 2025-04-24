@@ -5,9 +5,9 @@ authorization="Authorization: Bearer YOUR_SECRET_KEY"
 content_type="Content-Type: application/json"
 data='{ 
   "email": "another@one.com", 
-  "amount": "25000", 
+  "amount": "10000", 
   "bank_transfer": {
-    "account_expires_at": "2023-09-12T13:10:00Z"
+    "account_expires_at": "2025-04-24T16:40:57.954Z"
   } 
 }'
 
@@ -17,9 +17,9 @@ const js = `const https = require('https')
 
 const params = JSON.stringify({ 
   "email": "another@one.com", 
-  "amount": "25000",
+  "amount": "10000",
   "bank_transfer": {
-    "account_expires_at": "2023-09-12T13:10:00Z"
+    "account_expires_at": "2025-04-24T16:40:57.954Z"
   }
 })
 
@@ -66,7 +66,7 @@ const php = `<?php
       "email" => "another@one.com", 
       "amount" => "10000",
       "bank_transfer" => [
-        "account_expires_at" => "2023-09-12T13:10:00Z"
+        "account_expires_at" => "2025-04-24T16:40:57.954Z"
       ]
     ],
     CURLOPT_HTTPHEADER => array(
@@ -88,23 +88,21 @@ const php = `<?php
 ?>`
 
 const json = `{
-	"status": true,
-	"message": "Charge attempted",
-	"data": {
-		"status": "pending_bank_transfer",
-		"display_text": "Please make a transfer to the account specified",
-		"reference": "4tn28gwznc",
-		"amount": 20000,
-		"account_name": "PAYSTACK CHECKOUT",
-		"account_number": "1231084927",
-		"bank": {
-			"slug": "test-bank",
-			"name": "Test Bank",
-			"id": 24
-		},
-		"account_expires_at": "2023-09-12T13:10:55.000Z"
-	}
-}
-`
+    "status": true,
+    "message": "Charge attempted",
+    "data": {
+        "reference": "kcvu0t3kzs",
+        "status": "pending_bank_transfer",
+        "display_text": "Please make a transfer to the account specified",
+        "account_name": "TEST-MANAGED-ACCOUNT",
+        "account_number": "1260257501",
+        "bank": {
+            "slug": "test-bank",
+            "name": "Test Bank",
+            "id": 24
+        },
+        "account_expires_at": "2025-04-24T16:40:57.954Z"
+    }
+}`
 
 export {sh, js, php, json}
