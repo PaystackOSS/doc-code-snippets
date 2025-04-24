@@ -13,7 +13,7 @@
       "email" => "another@one.com", 
       "amount" => "10000",
       "bank_transfer" => [
-        "account_expires_at" => "2023-09-12T13:10:00Z"
+        "account_expires_at" => "2025-04-24T16:40:57.954Z"
       ]
     ],
     CURLOPT_HTTPHEADER => array(
