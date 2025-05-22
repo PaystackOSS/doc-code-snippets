@@ -43,7 +43,10 @@
                     "international_format_phone": null
                 },
                 "merchant_id": 210002,
-                "merchant_name": "ABC merchant"
+                "merchant_name": "ABC merchant",
+                "expire_action": "release",
+                "split_code": null,
+                "split": null
             }
         }
     },
