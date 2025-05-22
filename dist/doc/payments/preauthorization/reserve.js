@@ -93,7 +93,7 @@ const json = `{
         },
         "created_at": "2023-08-24T19:00:18.000Z",
         "released_at": null,
-        "scheduled_release_date": "2023-08-25T19:00:26.000Z",
+        "expiry_date": "2023-08-25T19:00:26.000Z",
         "currency": "ZAR",
         "metadata": null,
         "fees": 0,
@@ -124,7 +124,10 @@ const json = `{
             "international_format_phone": null
         },
         "merchant_id": 210002,
-        "merchant_name": "ABC merchant"
+        "merchant_name": "ABC merchant",
+        "expire_action": "release",
+        "split_code": null,
+        "split": null
     }
 }`
 
