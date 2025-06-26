@@ -1,10 +1,16 @@
 <?php
-  $url = "https://api.paystack.co/customer/authorization/initialize";
+  $url = "https://api.paystack.co/customer/{id}/initialize-direct-debit";
 
   $fields = [
-    'email' => "mail@mail.com",
-    'channel' => "direct_debit",
-    'callback_url' => "http://test.url.com"
+    'account' => [
+      'number' => '0123456789',
+      'bank_code' => '058'
+    ],
+    'address' => [
+      'street' => 'Some Where',
+      'city' => 'Ikeja',
+      'state' => 'Lagos'
+    ]
   ];
 
   $fields_string = http_build_query($fields);

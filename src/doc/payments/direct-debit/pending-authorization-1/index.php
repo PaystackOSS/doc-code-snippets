@@ -1,10 +1,8 @@
 <?php
-  $url = "https://api.paystack.co/customer/authorization/initialize";
+  $url = "https://api.paystack.co/customer/{id}/directdebit-activation-charge";
 
   $fields = [
-    'email' => "mail@mail.com",
-    'channel' => "direct_debit",
-    'callback_url' => "http://test.url.com"
+    'authorization_id' => 1069309917
   ];
 
   $fields_string = http_build_query($fields);
@@ -12,9 +10,9 @@
   //open connection
   $ch = curl_init();
   
-  //set the url, number of POST vars, POST data
+  //set the url, PUT data
   curl_setopt($ch,CURLOPT_URL, $url);
-  curl_setopt($ch,CURLOPT_POST, true);
+  curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
   curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
   curl_setopt($ch, CURLOPT_HTTPHEADER, array(
     "Authorization: Bearer SECRET_KEY",
