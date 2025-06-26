@@ -1,27 +1,23 @@
 const sh = `#!/bin/sh
-curl https://api.paystack.co/customer/authorization/initialize
+curl https://api.paystack.co/customer/{id}/directdebit-activation-charge
 -H "Authorization: Bearer YOUR_SECRET_KEY"
 -H "Content-Type: application/json"
 -d '{ 
-        "email": "ravi@demo.com",
-        "channel": "direct_debit",
-        "callback_url": "http://test.url.com"
+        "authorization_id" : 1069309917
     }'
--X POST`
+-X PUT`
 
 const js = `const https = require('https')
 
 const params = JSON.stringify({
-  "email" : "mail@mail.com",
-  "channel": "direct_debit",
-  "callback_url": "http://test.url.com"
+	"authorization_id" : 1069309917
 })
 
 const options = {
   hostname: 'api.paystack.co',
   port: 443,
-  path: '/customer/authorization/initialize',
-  method: 'POST',
+  path: '/customer/{id}/directdebit-activation-charge',
+  method: 'PUT',
   headers: {
     Authorization: 'Bearer SECRET_KEY',
     'Content-Type': 'application/json'
@@ -46,12 +42,10 @@ req.write(params)
 req.end()`
 
 const php = `<?php
-  $url = "https://api.paystack.co/customer/authorization/initialize";
+  $url = "https://api.paystack.co/customer/{id}/directdebit-activation-charge";
 
   $fields = [
-    'email' => "mail@mail.com",
-    'channel' => "direct_debit",
-    'callback_url' => "http://test.url.com"
+    'authorization_id' => 1069309917
   ];
 
   $fields_string = http_build_query($fields);
@@ -59,9 +53,9 @@ const php = `<?php
   //open connection
   $ch = curl_init();
   
-  //set the url, number of POST vars, POST data
+  //set the url, PUT data
   curl_setopt($ch,CURLOPT_URL, $url);
-  curl_setopt($ch,CURLOPT_POST, true);
+  curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
   curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
   curl_setopt($ch, CURLOPT_HTTPHEADER, array(
     "Authorization: Bearer SECRET_KEY",
@@ -76,14 +70,4 @@ const php = `<?php
   echo $result;
 ?>`
 
-const json = `{
-	"status": true,
-	"message": "Authorization initialized",
-	"data": {
-		"redirect_url": "https://link.paystack.co/82t4mp5b5mfn51h",
-		"access_code": "82t4mp5b5mfn51h",
-		"reference": "dfbzfotsrbv4n5s82t4mp5b5mfn51h"
-	}
-}`
-
-export {sh, js, php, json}
+export {sh, js, php}

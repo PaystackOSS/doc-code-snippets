@@ -1,26 +1,34 @@
-const sh = `#!/bin/sh
-curl https://api.paystack.co/customer/authorization/initialize
+const sh = `curl https://api.paystack.co/transaction/initialize
 -H "Authorization: Bearer YOUR_SECRET_KEY"
 -H "Content-Type: application/json"
--d '{ 
-        "email": "ravi@demo.com",
-        "channel": "direct_debit",
-        "callback_url": "http://test.url.com"
+-d '{ "email": "customer@email.com", 
+      "amount": "10000", 
+      "channels": ["bank"],
+      "metadata": {
+        "custom_filters": {
+          "recurring": true
+        }
+      }
     }'
 -X POST`
 
 const js = `const https = require('https')
 
 const params = JSON.stringify({
-  "email" : "mail@mail.com",
-  "channel": "direct_debit",
-  "callback_url": "http://test.url.com"
+  "email": "customer@email.com",
+  "amount": 10000,
+  "channels": ["bank"],
+  "metadata": {
+    "custom_filters": {
+      "recurring": true
+    }
+  }
 })
 
 const options = {
   hostname: 'api.paystack.co',
   port: 443,
-  path: '/customer/authorization/initialize',
+  path: '/transaction/initialize',
   method: 'POST',
   headers: {
     Authorization: 'Bearer SECRET_KEY',
@@ -46,12 +54,17 @@ req.write(params)
 req.end()`
 
 const php = `<?php
-  $url = "https://api.paystack.co/customer/authorization/initialize";
+  $url = "https://api.paystack.co/transaction/initialize";
 
   $fields = [
-    'email' => "mail@mail.com",
-    'channel' => "direct_debit",
-    'callback_url' => "http://test.url.com"
+    'email' => "customer@email.com",
+    'amount' => "10000",
+    'channels' => ["bank"],
+    'metadata' => [
+      'custom_filters' => [
+        'recurring' => true
+      ]
+    ]
   ];
 
   $fields_string = http_build_query($fields);
@@ -77,13 +90,13 @@ const php = `<?php
 ?>`
 
 const json = `{
-	"status": true,
-	"message": "Authorization initialized",
-	"data": {
-		"redirect_url": "https://link.paystack.co/82t4mp5b5mfn51h",
-		"access_code": "82t4mp5b5mfn51h",
-		"reference": "dfbzfotsrbv4n5s82t4mp5b5mfn51h"
-	}
+  "status": true,
+  "message": "Authorization URL created",
+  "data": {
+    "authorization_url": "https://checkout.paystack.com/zcwh3axoir37x7q",
+    "access_code": "zcwh3axoir37x7q",
+    "reference": "gz8nyit2zd"
+  }
 }`
 
 export {sh, js, php, json}

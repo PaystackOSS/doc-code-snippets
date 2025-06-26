@@ -1,26 +1,39 @@
 const sh = `#!/bin/sh
-curl https://api.paystack.co/customer/authorization/initialize
--H "Authorization: Bearer YOUR_SECRET_KEY"
--H "Content-Type: application/json"
--d '{ 
-        "email": "ravi@demo.com",
-        "channel": "direct_debit",
-        "callback_url": "http://test.url.com"
-    }'
--X POST`
+url="https://api.paystack.co/customer/{id}/initialize-direct-debit"
+authorization="Authorization: Bearer YOUR_SECRET_KEY"
+content_type="Content-Type: application/json"
+data='{ 
+  "account": {
+		"number": "0123456789",
+		"bank_code": "058"
+	},
+	"address": {
+		"street": "Some Where",
+		"city": "Ikeja",
+		"state": "Lagos"
+	}
+}'
+
+curl "$url" -H "$authorization" -H "$content_type" -d "$data" -X POST`
 
 const js = `const https = require('https')
 
 const params = JSON.stringify({
-  "email" : "mail@mail.com",
-  "channel": "direct_debit",
-  "callback_url": "http://test.url.com"
+	"account": {
+		"number": "0123456789",
+		"bank_code": "058"
+	},
+	"address": {
+		"street": "Some Where",
+		"city": "Ikeja",
+		"state": "Lagos"
+	}
 })
 
 const options = {
   hostname: 'api.paystack.co',
   port: 443,
-  path: '/customer/authorization/initialize',
+  path: '/customer/{id}/initialize-direct-debit',
   method: 'POST',
   headers: {
     Authorization: 'Bearer SECRET_KEY',
@@ -46,12 +59,18 @@ req.write(params)
 req.end()`
 
 const php = `<?php
-  $url = "https://api.paystack.co/customer/authorization/initialize";
+  $url = "https://api.paystack.co/customer/{id}/initialize-direct-debit";
 
   $fields = [
-    'email' => "mail@mail.com",
-    'channel' => "direct_debit",
-    'callback_url' => "http://test.url.com"
+    'account' => [
+      'number' => '0123456789',
+      'bank_code' => '058'
+    ],
+    'address' => [
+      'street' => 'Some Where',
+      'city' => 'Ikeja',
+      'state' => 'Lagos'
+    ]
   ];
 
   $fields_string = http_build_query($fields);
@@ -76,14 +95,4 @@ const php = `<?php
   echo $result;
 ?>`
 
-const json = `{
-	"status": true,
-	"message": "Authorization initialized",
-	"data": {
-		"redirect_url": "https://link.paystack.co/82t4mp5b5mfn51h",
-		"access_code": "82t4mp5b5mfn51h",
-		"reference": "dfbzfotsrbv4n5s82t4mp5b5mfn51h"
-	}
-}`
-
-export {sh, js, php, json}
+export {sh, js, php}
