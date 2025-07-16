@@ -1,10 +1,15 @@
 <?php
-  $url = "https://api.paystack.co/customer/authorization/initialize";
+  $url = "https://api.paystack.co/transaction/initialize";
 
   $fields = [
-    'email' => "mail@mail.com",
-    'channel' => "direct_debit",
-    'callback_url' => "http://test.url.com"
+    'email' => "customer@email.com",
+    'amount' => "10000",
+    'channels' => ["bank"],
+    'metadata' => [
+      'custom_filters' => [
+        'recurring' => true
+      ]
+    ]
   ];
 
   $fields_string = http_build_query($fields);
