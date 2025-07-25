@@ -1,0 +1,19 @@
+{
+  "status": true,
+  "message": "Charge attempted",
+  "data": {
+    "reference": "kcvu0t3kzs",
+    "status": "pending_bank_transfer",
+    "display_text": "Please make a transfer to the account specified",
+    "account_name": "Paystack Payments Kenya Limited",
+    "account_number": "1234567891",
+    "bank": {
+      "slug": "dtbk-bank",
+      "name": "Diamond Trust Bank Kenya Ltd",
+      "id": 225
+    },
+    "account_expires_at": "2025-04-24T16:55:57.954Z",
+    "amount": 10000,
+    "transaction_reference": "1234567"
+  }
+}
