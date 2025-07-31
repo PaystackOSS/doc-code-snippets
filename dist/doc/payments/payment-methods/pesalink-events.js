@@ -67,7 +67,7 @@ const charge_successful = `{
       "sender_bank_account_number": "XXXXXXX607",
       "sender_name": "ANN ABELL",
       "narration": null,
-      "receiver_bank_account_number": "0096220001",
+      "receiver_bank_account_number": "0123456789",
       "receiver_bank": "Diamond Trust Bank Kenya Ltd"
     },
     "customer": {
