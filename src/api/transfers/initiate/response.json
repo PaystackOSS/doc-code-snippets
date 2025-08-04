@@ -1,30 +1,43 @@
 {
-	"200": {
-		"description": "200 Ok",
-		"data": {
-			"status": true,
-			"message": "Transfer requires OTP to continue",
-			"data": {
-				"integration": 100073,
-				"domain": "test",
-				"amount": 3794800,
-				"currency": "NGN",
-				"source": "balance",
-				"reason": "Calm down",
-				"recipient": 28,
-				"status": "otp",
-				"transfer_code": "TRF_1ptvuv321ahaa7q",
-				"id": 14,
-				"createdAt": "2017-02-03T17:21:54.508Z",
-				"updatedAt": "2017-02-03T17:21:54.508Z"
-			}
-		}
-	},
-	"404": {
-		"description": "404 Not Found",
-		"data": {
-			"status": false,
-			"message": "The customer specified has no saved authorizations"
-		}
-	}
+  "200": {
+    "description": "200 Ok",
+    "data": {
+      "status": true,
+      "message": "Transfer has been queued",
+      "data": {
+        "transfersessionid": [],
+        "transfertrials": [],
+        "domain": "test",
+        "amount": 100000,
+        "currency": "NGN",
+        "reference": "ACV_9ee55786-2323-4760-98e2-6380c9cb3f68",
+        "source": "balance",
+        "source_details": null,
+        "reason": "Bonus for the week",
+        "status": "success",
+        "failures": null,
+        "transfer_code": "TRF_v5tip3zx8nna9o78",
+        "titan_code": null,
+        "transferred_at": null,
+        "id": 860703114,
+        "integration": 463433,
+        "request": 1068439313,
+        "recipient": 56824902,
+        "createdAt": "2025-08-04T10:32:40.000Z",
+        "updatedAt": "2025-08-04T10:32:40.000Z"
+      }
+    }
+  },
+  "400": {
+    "description": "400 Bad Request",
+    "data": {
+      "status": false,
+      "message": "Recipient specified is invalid",
+      "meta": {
+        "nextStep": "Provide a valid recipient. Ensure you are passing the recipient code in the recipient param"
+      },
+      "type": "validation_error",
+      "code": "invalid_transfer_recipient"
+    }
+  }
 }

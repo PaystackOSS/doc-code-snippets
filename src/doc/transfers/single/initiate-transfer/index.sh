@@ -1,10 +1,11 @@
 curl https://api.paystack.co/transfer
 -H "Authorization: Bearer YOUR_SECRET_KEY"
 -H "Content-Type: application/json"
--d '{ "source": "balance", 
-      "amount": "37800",
-      "reference": "your-unique-reference", 
-      "recipient": "RCP_t0ya41mp35flk40", 
-      "reason": "Holiday Flexing" 
-    }'
+-d '{ 
+  "source": "balance",
+	"reason": "Bonus for the week",
+	"amount": 100000,
+	"recipient": "RCP_gd9vgag7n5lr5ix",
+  "reference": "ACV_9ee55786-2323-4760-98e2-6380c9cb3f68"
+}'
 -X POST

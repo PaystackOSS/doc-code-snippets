@@ -2,10 +2,10 @@ const https = require('https')
 
 const params = JSON.stringify({
   "source": "balance",
-  "amount": 37800,
-  "reference": "your-unique-reference",
-  "recipient": "RCP_t0ya41mp35flk40",
-  "reason": "Holiday Flexing"
+  "reason": "Bonus for the week",
+  "amount": 100000,
+  "recipient": "RCP_gd9vgag7n5lr5ix",
+  "reference": "ACV_9ee55786-2323-4760-98e2-6380c9cb3f68"
 })
 
 const options = {

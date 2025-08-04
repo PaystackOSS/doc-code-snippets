@@ -3,27 +3,28 @@ url="https://api.paystack.co/transfer/bulk"
 authorization="Authorization: Bearer YOUR_SECRET_KEY"
 content_type="Content-Type: application/json"
 data='{
-  "currency": "NGN",
-  "source": "balance",
-  "transfers": [
-    {
-      "amount": 20000,
-      "reference": "588YtfftReF355894J",
-      "reason": "Why not?",
-      "recipient": "RCP_2tn9clt23s7qr28"
-    },
-    {
-      "amount": 30000,
-      "reference": "YunoTReF35e0r4J",
-      "reason": "Because I can",
-      "recipient": "RCP_1a25w1h3n0xctjg"
-    },
-    {
-      "amount": 40000,
-      "reason": "Coming right up",
-      "recipient": "RCP_aps2aibr69caua7"
-    }
-  ]
+	"currency": "NGN",
+	"source": "balance",
+	"transfers": [
+		{
+			"amount": 20000,
+			"reference": "ACV_2627bbfe-1a2a-4a1a-8d0e-9d2ee6c31496",
+			"reason": "Bonus for the week",
+			"recipient": "RCP_gd9vgag7n5lr5ix"
+		},
+		{
+			"amount": 35000,
+			"reference": "ACV_1bd0c1f8-78c2-463b-8bd4-ed9eeb36be50",
+			"reason": "Bonus for the week",
+			"recipient": "RCP_zpk2tgagu6lgb4g"
+		},
+		{
+			"amount": 15000,
+			"reference": "ACV_11bebfc3-18b3-40aa-a4df-c55068c93457",
+			"reason": "Bonus for the week",
+			"recipient": "RCP_dfznnod8rwxlwgn"
+		}
+	]
 }'
 
 curl "$url" -H "$authorization" -H "$content_type" -d "$data" -X POST`
@@ -36,20 +37,21 @@ const params = JSON.stringify({
   "transfers": [
     {
       "amount": 20000,
-      "reference": "588YtfftReF355894J",
-      "reason": "Why not?",
-      "recipient": "RCP_2tn9clt23s7qr28"
+      "reference": "ACV_2627bbfe-1a2a-4a1a-8d0e-9d2ee6c31496",
+      "reason": "Bonus for the week",
+      "recipient": "RCP_gd9vgag7n5lr5ix"
     },
     {
-      "amount": 30000,
-      "reference": "YunoTReF35e0r4J",
-      "reason": "Because I can",
-      "recipient": "RCP_1a25w1h3n0xctjg"
+      "amount": 35000,
+      "reference": "ACV_1bd0c1f8-78c2-463b-8bd4-ed9eeb36be50",
+      "reason": "Bonus for the week",
+      "recipient": "RCP_zpk2tgagu6lgb4g"
     },
     {
-      "amount": 40000,
-      "reason": "Coming right up",
-      "recipient": "RCP_aps2aibr69caua7"
+      "amount": 15000,
+      "reference": "ACV_11bebfc3-18b3-40aa-a4df-c55068c93457",
+      "reason": "Bonus for the week",
+      "recipient": "RCP_dfznnod8rwxlwgn"
     }
   ]
 })
@@ -88,23 +90,26 @@ const php = `<?php
   $fields = [
     'currency' => "NGN",
     'source' => "balance",
-    'transfers' => [[
-      "amount" => 20000,
-      "reference" => "588YtfftReF355894J",
-      "reason" => "Why not?",
-      "recipient" => "RCP_2tn9clt23s7qr28"
-    ],
-    [
-      "amount" => 30000,
-      "reference" => "YunoTReF35e0r4J",
-      "reason" => "Because I can",
-      "recipient" => "RCP_1a25w1h3n0xctjg"
-    ],
-    [
-      "amount" => 40000,
-      "reason" => "Coming right up",
-      "recipient" => "RCP_aps2aibr69caua7"
-    ]]
+    'transfers' => [
+      [
+        "amount" => 20000,
+        "reference" => "ACV_2627bbfe-1a2a-4a1a-8d0e-9d2ee6c31496",
+        "reason" => "Bonus for the week",
+        "recipient" => "RCP_gd9vgag7n5lr5ix"
+      ],
+      [
+        "amount" => 35000,
+        "reference" => "ACV_1bd0c1f8-78c2-463b-8bd4-ed9eeb36be50",
+        "reason" => "Bonus for the week",
+        "recipient" => "RCP_zpk2tgagu6lgb4g"
+      ],
+      [
+        "amount" => 15000,
+        "reference" => "ACV_11bebfc3-18b3-40aa-a4df-c55068c93457",
+        "reason" => "Bonus for the week",
+        "recipient" => "RCP_dfznnod8rwxlwgn"
+      ]
+    ]
   ];
 
   $fields_string = http_build_query($fields);
@@ -134,28 +139,28 @@ const json = `{
   "message": "3 transfers queued.",
   "data": [
     {
-      "reference": "588YtfftReF355894J",
-      "recipient": "RCP_2tn9clt23s7qr28",
+      "reference": "ACV_2627bbfe-1a2a-4a1a-8d0e-9d2ee6c31496",
+      "recipient": "RCP_gd9vgag7n5lr5ix",
       "amount": 20000,
-      "transfer_code": "TRF_ful4rvpbiuaph4fo",
+      "transfer_code": "TRF_o0mv5dc2lv4t2wdb",
       "currency": "NGN",
-      "status": "received"
+      "status": "success"
     },
     {
-      "reference": "YunoTReF35e0r4J",
-      "recipient": "RCP_1a25w1h3n0xctjg",
-      "amount": 30000,
-      "transfer_code": "TRF_0lztrf3rox1rpbw1",
+      "reference": "ACV_1bd0c1f8-78c2-463b-8bd4-ed9eeb36be50",
+      "recipient": "RCP_zpk2tgagu6lgb4g",
+      "amount": 35000,
+      "transfer_code": "TRF_tlvxomz43gjso2py",
       "currency": "NGN",
-      "status": "received"
+      "status": "success"
     },
     {
-      "reference": "nm7kjk9gb-l5i4lr9wq3",
-      "recipient": "RCP_aps2aibr69caua7",
-      "amount": 40000,
-      "transfer_code": "TRF_hsk59k6loek7vlut",
+      "reference": "ACV_11bebfc3-18b3-40aa-a4df-c55068c93457",
+      "recipient": "RCP_dfznnod8rwxlwgn",
+      "amount": 15000,
+      "transfer_code": "TRF_yt2y2gcd3dmli8av",
       "currency": "NGN",
-      "status": "received"
+      "status": "success"
     }
   ]
 }`
