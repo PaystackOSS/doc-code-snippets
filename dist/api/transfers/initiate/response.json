@@ -10,7 +10,7 @@
         "domain": "test",
         "amount": 100000,
         "currency": "NGN",
-        "reference": "ACV_9ee55786-2323-4760-98e2-6380c9cb3f68",
+        "reference": "acv_9ee55786-2323-4760-98e2-6380c9cb3f68",
         "source": "balance",
         "source_details": null,
         "reason": "Bonus for the week",

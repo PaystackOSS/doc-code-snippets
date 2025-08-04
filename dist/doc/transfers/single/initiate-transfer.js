@@ -4,7 +4,7 @@ const sh = `curl https://api.paystack.co/transfer
 -d '{ 
   "source": "balance",
   "amount": 100000,
-  "reference": "ACV_9ee55786-2323-4760-98e2-6380c9cb3f68",
+  "reference": "acv_9ee55786-2323-4760-98e2-6380c9cb3f68",
   "recipient": "RCP_gd9vgag7n5lr5ix",
   "reason": "Bonus for the week"
 }'
@@ -18,7 +18,7 @@ const params = JSON.stringify({
   "reason": "Bonus for the week",
   "amount": 100000,
   "recipient": "RCP_gd9vgag7n5lr5ix",
-  "reference": "ACV_9ee55786-2323-4760-98e2-6380c9cb3f68"
+  "reference": "acv_9ee55786-2323-4760-98e2-6380c9cb3f68"
 })
 
 const options = {
@@ -57,7 +57,7 @@ $fields = [
   "reason" => "Bonus for the week",
   "amount" => 100000,
   "recipient" => "RCP_gd9vgag7n5lr5ix",
-  "reference" => "ACV_9ee55786-2323-4760-98e2-6380c9cb3f68"
+  "reference" => "acv_9ee55786-2323-4760-98e2-6380c9cb3f68"
 ];
 
 $fields_string = http_build_query($fields);
@@ -92,7 +92,7 @@ const json = `{
     "domain": "test",
     "amount": 100000,
     "currency": "NGN",
-    "reference": "ACV_9ee55786-2323-4760-98e2-6380c9cb3f68",
+    "reference": "acv_9ee55786-2323-4760-98e2-6380c9cb3f68",
     "source": "balance",
     "source_details": null,
     "reason": "Bonus for the week",

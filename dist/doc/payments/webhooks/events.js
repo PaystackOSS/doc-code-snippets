@@ -991,7 +991,7 @@ const transfer_successful = `{
       "logo_path": "https://public-files-paystack-prod.s3.eu-west-1.amazonaws.com/integration-logos/hpyxo8n1c7du6gxup7h6.png"
     },
     "reason": "Bonus for the week",
-    "reference": "ACV_9ee55786-2323-4760-98e2-6380c9cb3f68",
+    "reference": "acv_9ee55786-2323-4760-98e2-6380c9cb3f68",
     "source": "balance",
     "source_details": null,
     "status": "success",

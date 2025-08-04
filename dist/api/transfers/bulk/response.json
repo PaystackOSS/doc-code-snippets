@@ -6,7 +6,7 @@
       "message": "3 transfers queued.",
       "data": [
         {
-          "reference": "ACV_2627bbfe-1a2a-4a1a-8d0e-9d2ee6c31496",
+          "reference": "acv_2627bbfe-1a2a-4a1a-8d0e-9d2ee6c31496",
           "recipient": "RCP_gd9vgag7n5lr5ix",
           "amount": 20000,
           "transfer_code": "TRF_o0mv5dc2lv4t2wdb",
@@ -14,7 +14,7 @@
           "status": "success"
         },
         {
-          "reference": "ACV_1bd0c1f8-78c2-463b-8bd4-ed9eeb36be50",
+          "reference": "acv_1bd0c1f8-78c2-463b-8bd4-ed9eeb36be50",
           "recipient": "RCP_zpk2tgagu6lgb4g",
           "amount": 35000,
           "transfer_code": "TRF_tlvxomz43gjso2py",
@@ -22,7 +22,7 @@
           "status": "success"
         },
         {
-          "reference": "ACV_11bebfc3-18b3-40aa-a4df-c55068c93457",
+          "reference": "acv_11bebfc3-18b3-40aa-a4df-c55068c93457",
           "recipient": "RCP_dfznnod8rwxlwgn",
           "amount": 15000,
           "transfer_code": "TRF_yt2y2gcd3dmli8av",
@@ -36,7 +36,7 @@
 		"description": "404 Not Found",
 		"data": {
       "status": false,
-      "message": "Duplicate reference(s) found: ACV_11bebfc3-18b3-40aa-a4df-c55068c93457,ACV_1bd0c1f8-78c2-463b-8bd4-ed9eeb36be50,ACV_2627bbfe-1a2a-4a1a-8d0e-9d2ee6c31496",
+      "message": "Duplicate reference(s) found: acv_11bebfc3-18b3-40aa-a4df-c55068c93457,acv_1bd0c1f8-78c2-463b-8bd4-ed9eeb36be50,acv_2627bbfe-1a2a-4a1a-8d0e-9d2ee6c31496",
       "meta": {
         "nextStep": "Try again later"
       },
