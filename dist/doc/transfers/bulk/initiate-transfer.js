@@ -8,19 +8,19 @@ data='{
   "transfers": [
     {
       "amount": 20000,
-      "reference": "ACV_2627bbfe-1a2a-4a1a-8d0e-9d2ee6c31496",
+      "reference": "acv_2627bbfe-1a2a-4a1a-8d0e-9d2ee6c31496",
       "reason": "Bonus for the week",
       "recipient": "RCP_gd9vgag7n5lr5ix"
     },
     {
       "amount": 35000,
-      "reference": "ACV_1bd0c1f8-78c2-463b-8bd4-ed9eeb36be50",
+      "reference": "acv_1bd0c1f8-78c2-463b-8bd4-ed9eeb36be50",
       "reason": "Bonus for the week",
       "recipient": "RCP_zpk2tgagu6lgb4g"
     },
     {
       "amount": 15000,
-      "reference": "ACV_11bebfc3-18b3-40aa-a4df-c55068c93457",
+      "reference": "acv_11bebfc3-18b3-40aa-a4df-c55068c93457",
       "reason": "Bonus for the week",
       "recipient": "RCP_dfznnod8rwxlwgn"
     }
@@ -37,19 +37,19 @@ const params = JSON.stringify({
   "transfers": [
     {
       "amount": 20000,
-      "reference": "ACV_2627bbfe-1a2a-4a1a-8d0e-9d2ee6c31496",
+      "reference": "acv_2627bbfe-1a2a-4a1a-8d0e-9d2ee6c31496",
       "reason": "Bonus for the week",
       "recipient": "RCP_gd9vgag7n5lr5ix"
     },
     {
       "amount": 35000,
-      "reference": "ACV_1bd0c1f8-78c2-463b-8bd4-ed9eeb36be50",
+      "reference": "acv_1bd0c1f8-78c2-463b-8bd4-ed9eeb36be50",
       "reason": "Bonus for the week",
       "recipient": "RCP_zpk2tgagu6lgb4g"
     },
     {
       "amount": 15000,
-      "reference": "ACV_11bebfc3-18b3-40aa-a4df-c55068c93457",
+      "reference": "acv_11bebfc3-18b3-40aa-a4df-c55068c93457",
       "reason": "Bonus for the week",
       "recipient": "RCP_dfznnod8rwxlwgn"
     }
@@ -93,19 +93,19 @@ const php = `<?php
     'transfers' => [
       [
         "amount" => 20000,
-        "reference" => "ACV_2627bbfe-1a2a-4a1a-8d0e-9d2ee6c31496",
+        "reference" => "acv_2627bbfe-1a2a-4a1a-8d0e-9d2ee6c31496",
         "reason" => "Bonus for the week",
         "recipient" => "RCP_gd9vgag7n5lr5ix"
       ],
       [
         "amount" => 35000,
-        "reference" => "ACV_1bd0c1f8-78c2-463b-8bd4-ed9eeb36be50",
+        "reference" => "acv_1bd0c1f8-78c2-463b-8bd4-ed9eeb36be50",
         "reason" => "Bonus for the week",
         "recipient" => "RCP_zpk2tgagu6lgb4g"
       ],
       [
         "amount" => 15000,
-        "reference" => "ACV_11bebfc3-18b3-40aa-a4df-c55068c93457",
+        "reference" => "acv_11bebfc3-18b3-40aa-a4df-c55068c93457",
         "reason" => "Bonus for the week",
         "recipient" => "RCP_dfznnod8rwxlwgn"
       ]
@@ -139,7 +139,7 @@ const json = `{
   "message": "3 transfers queued.",
   "data": [
     {
-      "reference": "ACV_2627bbfe-1a2a-4a1a-8d0e-9d2ee6c31496",
+      "reference": "acv_2627bbfe-1a2a-4a1a-8d0e-9d2ee6c31496",
       "recipient": "RCP_gd9vgag7n5lr5ix",
       "amount": 20000,
       "transfer_code": "TRF_o0mv5dc2lv4t2wdb",
@@ -147,7 +147,7 @@ const json = `{
       "status": "success"
     },
     {
-      "reference": "ACV_1bd0c1f8-78c2-463b-8bd4-ed9eeb36be50",
+      "reference": "acv_1bd0c1f8-78c2-463b-8bd4-ed9eeb36be50",
       "recipient": "RCP_zpk2tgagu6lgb4g",
       "amount": 35000,
       "transfer_code": "TRF_tlvxomz43gjso2py",
@@ -155,7 +155,7 @@ const json = `{
       "status": "success"
     },
     {
-      "reference": "ACV_11bebfc3-18b3-40aa-a4df-c55068c93457",
+      "reference": "acv_11bebfc3-18b3-40aa-a4df-c55068c93457",
       "recipient": "RCP_dfznnod8rwxlwgn",
       "amount": 15000,
       "transfer_code": "TRF_yt2y2gcd3dmli8av",
