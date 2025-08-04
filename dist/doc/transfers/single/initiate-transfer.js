@@ -1,12 +1,13 @@
 const sh = `curl https://api.paystack.co/transfer
 -H "Authorization: Bearer YOUR_SECRET_KEY"
 -H "Content-Type: application/json"
--d '{ "source": "balance", 
-      "amount": "37800",
-      "reference": "your-unique-reference", 
-      "recipient": "RCP_t0ya41mp35flk40", 
-      "reason": "Holiday Flexing" 
-    }'
+-d '{ 
+  "source": "balance",
+	"reason": "Bonus for the week",
+	"amount": 100000,
+	"recipient": "RCP_gd9vgag7n5lr5ix",
+  "reference": "ACV_9ee55786-2323-4760-98e2-6380c9cb3f68"
+}'
 -X POST
 `
 
@@ -14,10 +15,10 @@ const js = `const https = require('https')
 
 const params = JSON.stringify({
   "source": "balance",
-  "amount": 37800,
-  "reference": "your-unique-reference",
-  "recipient": "RCP_t0ya41mp35flk40",
-  "reason": "Holiday Flexing"
+  "reason": "Bonus for the week",
+  "amount": 100000,
+  "recipient": "RCP_gd9vgag7n5lr5ix",
+  "reference": "ACV_9ee55786-2323-4760-98e2-6380c9cb3f68"
 })
 
 const options = {
@@ -49,56 +50,63 @@ req.write(params)
 req.end()`
 
 const php = `<?php
-  $url = "https://api.paystack.co/transfer";
+$url = "https://api.paystack.co/transfer";
 
-  $fields = [
-    'source' => "balance",
-    'amount' => 37800,
-    "reference" => "your-unique-reference",
-    'recipient' => "RCP_t0ya41mp35flk40",
-    'reason' => "Holiday Flexing"
-  ];
+$fields = [
+  "source" => "balance",
+  "reason" => "Bonus for the week",
+  "amount" => 100000,
+  "recipient" => "RCP_gd9vgag7n5lr5ix",
+  "reference" => "ACV_9ee55786-2323-4760-98e2-6380c9cb3f68"
+];
 
-  $fields_string = http_build_query($fields);
+$fields_string = http_build_query($fields);
 
-  //open connection
-  $ch = curl_init();
-  
-  //set the url, number of POST vars, POST data
-  curl_setopt($ch,CURLOPT_URL, $url);
-  curl_setopt($ch,CURLOPT_POST, true);
-  curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
-  curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-    "Authorization: Bearer SECRET_KEY",
-    "Cache-Control: no-cache",
-  ));
-  
-  //So that curl_exec returns the contents of the cURL; rather than echoing it
-  curl_setopt($ch,CURLOPT_RETURNTRANSFER, true); 
-  
-  //execute post
-  $result = curl_exec($ch);
-  echo $result;
-?>
-`
+//open connection
+$ch = curl_init();
+
+//set the url, number of POST vars, POST data
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_string);
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+  "Authorization: Bearer SECRET_KEY",
+  "Cache-Control: no-cache",
+));
+
+//So that curl_exec returns the contents of the cURL; rather than echoing it
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+//execute post
+$result = curl_exec($ch);
+echo $result;
+
+?>`
 
 const json = `{
   "status": true,
   "message": "Transfer has been queued",
   "data": {
-    "reference": "your-unique-reference",
-    "integration": 428626,
+    "transfersessionid": [],
+    "transfertrials": [],
     "domain": "test",
-    "amount": 37800,
+    "amount": 100000,
     "currency": "NGN",
+    "reference": "ACV_9ee55786-2323-4760-98e2-6380c9cb3f68",
     "source": "balance",
-    "reason": "Holiday Flexing",
-    "recipient": 6788170,
+    "source_details": null,
+    "reason": "Bonus for the week",
     "status": "success",
-    "transfer_code": "TRF_fiyxvgkh71e717b",
-    "id": 23070321,
-    "createdAt": "2020-05-13T14:22:49.687Z",
-    "updatedAt": "2020-05-13T14:22:49.687Z"
+    "failures": null,
+    "transfer_code": "TRF_v5tip3zx8nna9o78",
+    "titan_code": null,
+    "transferred_at": null,
+    "id": 860703114,
+    "integration": 463433,
+    "request": 1068439313,
+    "recipient": 56824902,
+    "createdAt": "2025-08-04T10:32:40.000Z",
+    "updatedAt": "2025-08-04T10:32:40.000Z"
   }
 }`
 

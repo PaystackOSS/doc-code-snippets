@@ -1,48 +1,55 @@
 {
   "event": "transfer.success",
   "data": {
-    "amount": 30000,
+    "amount": 100000,
+    "createdAt": "2025-08-04T10:32:40.000Z",
     "currency": "NGN",
     "domain": "test",
     "failures": null,
-    "id": 37272792,
+    "id": 860703114,
     "integration": {
       "id": 463433,
       "is_live": true,
-      "business_name": "Boom Boom Industries NG"
+      "business_name": "Paystack Demo",
+      "logo_path": "https://public-files-paystack-prod.s3.eu-west-1.amazonaws.com/integration-logos/hpyxo8n1c7du6gxup7h6.png"
     },
-    "reason": "Have fun...",
-    "reference": "1jhbs3ozmen0k7y5efmw",
+    "reason": "Bonus for the week",
+    "reference": "ACV_9ee55786-2323-4760-98e2-6380c9cb3f68",
     "source": "balance",
     "source_details": null,
     "status": "success",
     "titan_code": null,
-    "transfer_code": "TRF_wpl1dem4967avzm",
+    "transfer_code": "TRF_v5tip3zx8nna9o78",
     "transferred_at": null,
+    "updatedAt": "2025-08-04T10:32:40.000Z",
     "recipient": {
       "active": true,
+      "createdAt": "2023-07-11T15:42:27.000Z",
       "currency": "NGN",
       "description": "",
       "domain": "test",
       "email": null,
-      "id": 8690817,
+      "id": 56824902,
       "integration": 463433,
       "metadata": null,
-      "name": "Jack Sparrow",
-      "recipient_code": "RCP_a8wkxiychzdzfgs",
+      "name": "Jekanmo Padie",
+      "recipient_code": "RCP_gd9vgag7n5lr5ix",
       "type": "nuban",
+      "updatedAt": "2023-07-11T15:42:27.000Z",
       "is_deleted": false,
       "details": {
-        "account_number": "0000000000",
+        "authorization_code": null,
+        "account_number": "9876543210",
         "account_name": null,
-        "bank_code": "011",
-        "bank_name": "First Bank of Nigeria"
-      },
-      "created_at": "2020-09-03T12:11:25.000Z",
-      "updated_at": "2020-09-03T12:11:25.000Z"
+        "bank_code": "044",
+        "bank_name": "Access Bank"
+      }
     },
-    "session": { "provider": null, "id": null },
-    "created_at": "2020-10-26T12:28:57.000Z",
-    "updated_at": "2020-10-26T12:28:57.000Z"
+    "session": {
+      "provider": null,
+      "id": null
+    },
+    "fee_charged": 0,
+    "gateway_response": null
   }
 }

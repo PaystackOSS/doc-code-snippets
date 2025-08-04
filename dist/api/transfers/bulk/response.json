@@ -2,41 +2,46 @@
 	"200": {
 		"description": "200 Ok",
 		"data": {
-			"status": true,
-			"message": "3 transfers queued.",
-			"data": [
-				{
-					"reference": "588YtfftReF355894J",
-					"recipient": "RCP_2tn9clt23s7qr28",
-					"amount": 20000,
-					"transfer_code": "TRF_ful4rvpbiuaph4fo",
-					"currency": "NGN",
-					"status": "received"
-				},
-				{
-					"reference": "YunoTReF35e0r4J",
-					"recipient": "RCP_1a25w1h3n0xctjg",
-					"amount": 30000,
-					"transfer_code": "TRF_0lztrf3rox1rpbw1",
-					"currency": "NGN",
-					"status": "received"
-				},
-				{
-					"reference": "nm7kjk9gb-l5i4lr9wq3",
-					"recipient": "RCP_aps2aibr69caua7",
-					"amount": 40000,
-					"transfer_code": "TRF_hsk59k6loek7vlut",
-					"currency": "NGN",
-					"status": "received"
-				}
-			]
-		}
+      "status": true,
+      "message": "3 transfers queued.",
+      "data": [
+        {
+          "reference": "ACV_2627bbfe-1a2a-4a1a-8d0e-9d2ee6c31496",
+          "recipient": "RCP_gd9vgag7n5lr5ix",
+          "amount": 20000,
+          "transfer_code": "TRF_o0mv5dc2lv4t2wdb",
+          "currency": "NGN",
+          "status": "success"
+        },
+        {
+          "reference": "ACV_1bd0c1f8-78c2-463b-8bd4-ed9eeb36be50",
+          "recipient": "RCP_zpk2tgagu6lgb4g",
+          "amount": 35000,
+          "transfer_code": "TRF_tlvxomz43gjso2py",
+          "currency": "NGN",
+          "status": "success"
+        },
+        {
+          "reference": "ACV_11bebfc3-18b3-40aa-a4df-c55068c93457",
+          "recipient": "RCP_dfznnod8rwxlwgn",
+          "amount": 15000,
+          "transfer_code": "TRF_yt2y2gcd3dmli8av",
+          "currency": "NGN",
+          "status": "success"
+        }
+      ]
+    }
 	},
 	"404": {
 		"description": "404 Not Found",
 		"data": {
-			"status": false,
-			"message": "The customer specified has no saved authorizations"
-		}
+      "status": false,
+      "message": "Duplicate reference(s) found: ACV_11bebfc3-18b3-40aa-a4df-c55068c93457,ACV_1bd0c1f8-78c2-463b-8bd4-ed9eeb36be50,ACV_2627bbfe-1a2a-4a1a-8d0e-9d2ee6c31496",
+      "meta": {
+        "nextStep": "Try again later"
+      },
+      "type": "api_error",
+      "code": "unknown"
+    }
 	}
 }
