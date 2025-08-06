@@ -5,65 +5,52 @@
 			"status": true,
 			"message": "Transfer retrieved",
 			"data": {
-				"amount": 20000,
-				"createdAt": "2024-02-01T08:32:21.000Z",
+				"amount": 100000,
+				"createdAt": "2025-08-04T09:59:19.000Z",
 				"currency": "NGN",
 				"domain": "test",
 				"failures": null,
-				"id": 451930323,
+				"id": 860670817,
 				"integration": 463433,
-				"reason": "Life go better for you",
-				"reference": "ge-bzrf8u8k2pygxrnqf",
+				"reason": "Bonus for the week",
+				"reference": "acv_9ee55786-2323-4760-98e2-6380c9cb3f67",
 				"source": "balance",
 				"source_details": null,
 				"status": "success",
 				"titan_code": null,
-				"transfer_code": "TRF_fpmd0l8uta8upow7",
-				"request": 502643104,
+				"transfer_code": "TRF_8opchtrhtjlfz90n",
+				"request": 1068403325,
 				"transferred_at": null,
-				"updatedAt": "2024-02-01T08:34:07.000Z",
+				"updatedAt": "2025-08-04T09:59:19.000Z",
 				"recipient": {
 					"active": true,
-					"createdAt": "2021-10-21T11:08:04.000Z",
+					"createdAt": "2023-07-11T15:42:27.000Z",
 					"currency": "NGN",
-					"description": null,
+					"description": "",
 					"domain": "test",
-					"email": "jake@jill.com",
-					"id": 19643784,
+					"email": null,
+					"id": 56824902,
 					"integration": 463433,
-					"metadata": {
-						"custom_fields": [
-							{
-								"display_name": "Branch Name",
-								"variable_name": "branchName",
-								"value": "funny place, Alabama"
-							},
-							{
-								"display_name": "Branch ID",
-								"variable_name": "branchID",
-								"value": "123"
-							}
-						]
-					},
-					"name": "Abbey Baker",
-					"recipient_code": "RCP_rjs1szi4ax5hoeo",
+					"metadata": null,
+					"name": "Jekanmo Padie",
+					"recipient_code": "RCP_gd9vgag7n5lr5ix",
 					"type": "nuban",
-					"updatedAt": "2023-03-29T08:39:39.000Z",
+					"updatedAt": "2023-07-11T15:42:27.000Z",
 					"is_deleted": false,
 					"isDeleted": false,
 					"details": {
 						"authorization_code": null,
-						"account_number": "0123456789",
-						"account_name": "Abbey Baker",
-						"bank_code": "058",
-						"bank_name": "Guaranty Trust Bank"
+						"account_number": "9876543210",
+						"account_name": null,
+						"bank_code": "044",
+						"bank_name": "Access Bank"
 					}
 				},
 				"session": {
 					"provider": null,
 					"id": null
 				},
-				"fee_charged": 0,
+				"fee_charged": 1000,
 				"fees_breakdown": null,
 				"gateway_response": null
 			}
