@@ -1,0 +1,54 @@
+{
+  "status": true,
+  "message": "Transfer retrieved",
+  "data": {
+    "amount": 100000,
+    "createdAt": "2025-08-04T09:59:19.000Z",
+    "currency": "NGN",
+    "domain": "test",
+    "failures": null,
+    "id": 860670817,
+    "integration": 463433,
+    "reason": "Bonus for the week",
+    "reference": "acv_9ee55786-2323-4760-98e2-6380c9cb3f67",
+    "source": "balance",
+    "source_details": null,
+    "status": "success",
+    "titan_code": null,
+    "transfer_code": "TRF_8opchtrhtjlfz90n",
+    "request": 1068403325,
+    "transferred_at": null,
+    "updatedAt": "2025-08-04T09:59:19.000Z",
+    "recipient": {
+      "active": true,
+      "createdAt": "2023-07-11T15:42:27.000Z",
+      "currency": "NGN",
+      "description": "",
+      "domain": "test",
+      "email": null,
+      "id": 56824902,
+      "integration": 463433,
+      "metadata": null,
+      "name": "Jekanmo Padie",
+      "recipient_code": "RCP_gd9vgag7n5lr5ix",
+      "type": "nuban",
+      "updatedAt": "2023-07-11T15:42:27.000Z",
+      "is_deleted": false,
+      "isDeleted": false,
+      "details": {
+        "authorization_code": null,
+        "account_number": "9876543210",
+        "account_name": null,
+        "bank_code": "044",
+        "bank_name": "Access Bank"
+      }
+    },
+    "session": {
+      "provider": null,
+      "id": null
+    },
+    "fee_charged": 1000,
+    "fees_breakdown": null,
+    "gateway_response": null
+  }
+}
