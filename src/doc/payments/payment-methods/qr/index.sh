@@ -1,11 +1,11 @@
 curl https://api.paystack.co/charge
 -H "Authorization: Bearer YOUR_SECRET_KEY"
 -H "Content-Type: application/json"
--d '{ "amount": 100,
+-d '{ "amount": 1000,
       "email": "customer@email.com",
-      "currency": "NGN",
+      "currency": "ZAR",
       "qr": {
-        "provider" : "visa"
+        "provider" : "scan-to-pay"
       }
     }'
 -X POST

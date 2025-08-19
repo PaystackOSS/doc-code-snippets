@@ -1,11 +1,11 @@
 const https = require('https')
 
 const params = JSON.stringify({
-  "amount": 100,
+  "amount": 1000,
   "email": "customer@email.com",
-  "currency": "NGN",
+  "currency": "ZAR",
   "qr": {
-    "provider" : "visa"
+    "provider" : "scan-to-pay"
   }
 })
 
