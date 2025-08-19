@@ -1,11 +1,11 @@
 const sh = `curl https://api.paystack.co/charge
 -H "Authorization: Bearer YOUR_SECRET_KEY"
 -H "Content-Type: application/json"
--d '{ "amount": 100,
+-d '{ "amount": 1000,
       "email": "customer@email.com",
-      "currency": "NGN",
+      "currency": "ZAR",
       "qr": {
-        "provider" : "visa"
+        "provider" : "scan-to-pay"
       }
     }'
 -X POST`
@@ -13,11 +13,11 @@ const sh = `curl https://api.paystack.co/charge
 const js = `const https = require('https')
 
 const params = JSON.stringify({
-  "amount": 100,
+  "amount": 1000,
   "email": "customer@email.com",
-  "currency": "NGN",
+  "currency": "ZAR",
   "qr": {
-    "provider" : "visa"
+    "provider" : "scan-to-pay"
   }
 })
 
@@ -60,11 +60,11 @@ curl_setopt_array($curl, array(
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1, 
   CURLOPT_CUSTOMREQUEST => "POST", 
   CURLOPT_POSTFIELDS => [
-    "amount" => 100,
+    "amount" => 1000,
     "email" => "customer@email.com",
-    "currency" => "NGN",
+    "currency" => "ZAR",
     "qr" => [
-      "provider" => "visa"
+      "provider" => "scan-to-pay"
     ]
   ], 
   CURLOPT_HTTPHEADER => array( 
