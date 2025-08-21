@@ -9,11 +9,11 @@ curl_setopt_array($curl, array(
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1, 
   CURLOPT_CUSTOMREQUEST => "POST", 
   CURLOPT_POSTFIELDS => [
-    "amount" => 100,
+    "amount" => 1000,
     "email" => "customer@email.com",
-    "currency" => "NGN",
+    "currency" => "ZAR",
     "qr" => [
-      "provider" => "visa"
+      "provider" => "scan-to-pay"
     ]
   ], 
   CURLOPT_HTTPHEADER => array( 

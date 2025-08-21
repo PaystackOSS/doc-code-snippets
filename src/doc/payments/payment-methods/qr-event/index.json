@@ -5,36 +5,43 @@
 		"domain": "test",
 		"status": "success",
 		"reference": "48rx32f1womvcr4",
-		"amount": 10000,
+		"amount": 186677,
 		"message": "madePayment",
 		"gateway_response": "Payment successful",
-		"paid_at": "2018-12-05T15:58:45.000Z",
-		"created_at": "2018-12-05T15:58:02.000Z",
+		"paid_at": "2024-08-20T12:41:12.000Z",
+		"created_at": "2024-08-20T12:39:22.000Z",
 		"channel": "qr",
-		"currency": "NGN",
+		"currency": "ZAR",
 		"ip_address": "18.130.45.28, 141.101.107.157",
+		"fees_breakdown": {
+			"amount": "5514",
+			"formula": null,
+			"type": "paystack"
+    },
 		"metadata": "",
 		"log": null,
-		"fees": null,
+		"fees": 6342,
 		"fees_split": null,
 		"authorization": {
 			"authorization_code": "AUTH_2b4zs69fgy7qflh",
 			"bin": "483953",
 			"last4": "6208",
 			"exp_month": "12",
-			"exp_year": "2018",
+			"exp_year": "2025",
 			"channel": "qr",
-			"card_type": "DEBIT",
-			"bank": "Visa QR",
-			"country_code": "NG",
+			"card_type": "CREDIT",
+			"bank": "ABSA BANK LIMITED, SOUTH AFRICA",
+			"country_code": "ZA",
 			"brand": "VISA",
 			"reusable": false,
 			"signature": null,
-			"account_name": "BoJack Horseman"
+			"account_name": null,
+			"receiver_bank_account_number": null,
+      "receiver_bank": null
 		},
 		"customer": {
 			"id": 16787,
-			"first_name": "I",
+			"first_name": "Ian",
 			"last_name": "SURRENDER",
 			"email": "customer@email.com",
 			"customer_code": "CUS_ehg851zbxon0bvx",
@@ -45,6 +52,6 @@
 		"plan": {},
 		"subaccount": {},
 		"subaccount_group": {},
-		"paidAt": "2018-12-05T15:58:45.000Z"
+		"paidAt": "2024-08-20T12:41:12.000Z"
 	}
 }
