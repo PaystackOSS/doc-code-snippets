@@ -7,7 +7,7 @@ await paystackPop.paymentRequest({
   currency: 'NGN', // Use NGN for Naira or USD for US Dollars
   ref: 'YOUR_REFERENCE', // Replace with a reference you generated
   container: 'paystack-apple-pay', // ID of div to mount payment button elements
-  loadPaystackCheckButton: 'paystack-other-channels', // ID of button to trigger opening Paystack checkout (optional)
+  loadPaystackCheckoutButton: 'paystack-other-channels', // ID of button to trigger opening Paystack checkout (optional)
   style: { 
     theme: 'dark', // 'light' or 'dark'
     applePay: { 
@@ -31,6 +31,7 @@ await paystackPop.paymentRequest({
   onElementsMount(elements) { // { applePay: true } or null
     
   }
-});`
+});
+`
 
 export {js}
