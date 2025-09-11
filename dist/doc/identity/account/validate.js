@@ -90,6 +90,11 @@ const json = `{
   "status": true,
   "message": "Personal Account Verification attempted",
   "data": {
+    "accountAcceptsDebits":true,
+    "accountAcceptsCredits": true,
+    "accountHolderMatch": true,
+    "accountOpenForMoreThanThreeMonths": true,
+    "accountOpen": true,
     "verified": true,
     "verificationMessage": "Account is verified successfully"
   }
