@@ -1,0 +1,46 @@
+{
+  "200": {
+    "description": "200 Ok",
+    "data": {
+      "status": true,
+      "message": "Refund retried and has been queued for processing",
+      "data": {
+        "integration": 123456,
+        "transaction": 3298598423,
+        "dispute": null,
+        "settlement": null,
+        "id": 1234567,
+        "domain": "live",
+        "currency": "NGN",
+        "amount": 20000,
+        "status": "processing",
+        "refunded_at": null,
+        "expected_at": "2025-10-13T16:02:18.000Z",
+        "channel": "isw_3ds",
+        "refunded_by": "paystack@email.com",
+        "customer_note": "Refund for transaction T708775813895475",
+        "merchant_note": "Refund for transaction T708775813895475 by paystack@email.com",
+        "deducted_amount": 20000,
+        "fully_deducted": true,
+        "bank_reference": null,
+        "reason": "PROCESSING",
+        "customer": null,
+        "initiated_by": "paystack@email.com",
+        "reversed_at": null,
+        "session_id": null
+      }
+    }
+  },
+  "422": {
+    "description": "422",
+    "data": {
+      "status": false,
+      "message": "Invalid Refund state, refund status should be \"needs-attention\"",
+      "meta": {
+        "nextStep": "Ensure that the value(s) you're passing are valid."
+      },
+      "type": "validation_error",
+      "code": "invalid_params"
+    }
+  }
+}
