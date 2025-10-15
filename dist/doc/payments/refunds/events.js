@@ -17,6 +17,27 @@ const refund_failed = `{
   }
 }`
 
+const refund_needs_attention = `{
+  "event": "refund.needs-attention",
+  "data": {
+    "status": "needs-attention",
+    "transaction_reference": "88bfa94509eb96aa9785641c26cc57cc",
+    "refund_reference": "TRF_7jn17u9vkqm91efk",
+    "amount": 5306,
+    "currency": "NGN",
+    "customer": {
+      "first_name": null,
+      "last_name": null,
+      "email": "customer@email.com"
+    },
+    "integration": 123456,
+    "domain": "live",
+    "id": "123456",
+    "customer_note": "Refund for transaction 88bfa94509eb96aa9785641c26cc57cc",
+    "merchant_note": "Refund for transaction 88bfa94509eb96aa9785641c26cc57cc by paystack@email.com"
+  }
+}`
+
 const refund_pending = `{
   "event": "refund.pending",
   "data": {
@@ -74,4 +95,4 @@ const refund_processing = `{
   }
 }`
 
-export {refund_failed, refund_pending, refund_processed, refund_processing}
+export {refund_failed, refund_needs_attention, refund_pending, refund_processed, refund_processing}
