@@ -1,5 +1,5 @@
 #!/bin/sh
-url="https://api.paystack.co/refundretry_with_customer_details/{id}"
+url="https://api.paystack.co/refund/retry_with_customer_details/{id}"
 authorization="Authorization: Bearer YOUR_SECRET_KEY"
 content_type="Content-Type: application/json"
 data='{
