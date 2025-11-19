@@ -1,0 +1,11 @@
+const json = `{
+    "status": false,
+    "message": "Email Address is required",
+    "meta": {
+        "nextStep": "Provide all required params "
+    },
+    "type": "validation_error",
+    "code": "missing_params"
+}`
+
+export {json}
