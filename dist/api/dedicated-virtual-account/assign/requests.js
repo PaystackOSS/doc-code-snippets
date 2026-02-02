@@ -1,5 +1,5 @@
 const sh = `#!/bin/sh
-url="https://api.paystack.co/dedicated_account"
+url="https://api.paystack.co/dedicated_account/assign"
 authorization="Authorization: Bearer YOUR_SECRET_KEY"
 content_type="Content-Type: application/json"
 data='{ 
