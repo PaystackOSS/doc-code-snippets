@@ -1,0 +1,17 @@
+{
+  "200": {
+    "description": "200 Ok",
+    "data": {
+      "status": true,
+      "message": "Order is valid",
+      "data": {
+        "id": 12345,
+        "code": "ORD_abc123def456",
+        "amount": 20000,
+        "currency": "NGN",
+        "status": "pending",
+        "valid": true
+      }
+    }
+  }
+}

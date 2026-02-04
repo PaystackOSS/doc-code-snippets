@@ -1,0 +1,26 @@
+{
+  "200": {
+    "description": "200 Ok",
+    "data": {
+      "status": true,
+      "message": "Products retrieved",
+      "data": [
+        {
+          "id": 2196244,
+          "name": "Sample Product",
+          "description": "A sample product",
+          "price": 10000,
+          "currency": "NGN",
+          "active": true
+        }
+      ],
+      "meta": {
+        "total": 1,
+        "skipped": 0,
+        "perPage": 50,
+        "page": 1,
+        "pageCount": 1
+      }
+    }
+  }
+}

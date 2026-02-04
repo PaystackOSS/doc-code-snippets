@@ -1,0 +1,29 @@
+{
+  "200": {
+    "description": "200 Ok",
+    "data": {
+      "status": true,
+      "message": "Product orders retrieved",
+      "data": [
+        {
+          "id": 12345,
+          "code": "ORD_abc123def456",
+          "amount": 20000,
+          "currency": "NGN",
+          "status": "success",
+          "customer": {
+            "email": "customer@email.com"
+          },
+          "createdAt": "2024-11-01T12:00:00.000Z"
+        }
+      ],
+      "meta": {
+        "total": 1,
+        "skipped": 0,
+        "perPage": 50,
+        "page": 1,
+        "pageCount": 1
+      }
+    }
+  }
+}
