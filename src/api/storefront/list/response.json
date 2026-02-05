@@ -1,0 +1,28 @@
+{
+  "200": {
+    "description": "200 Ok",
+    "data": {
+      "status": true,
+      "message": "Storefronts retrieved",
+      "data": [
+        {
+          "id": 1559046,
+          "name": "My Storefront",
+          "slug": "my-storefront",
+          "description": "A description of my storefront",
+          "status": "active",
+          "currency": "NGN",
+          "createdAt": "2024-11-01T12:00:00.000Z",
+          "updatedAt": "2024-11-01T12:00:00.000Z"
+        }
+      ],
+      "meta": {
+        "total": 1,
+        "skipped": 0,
+        "perPage": 50,
+        "page": 1,
+        "pageCount": 1
+      }
+    }
+  }
+}

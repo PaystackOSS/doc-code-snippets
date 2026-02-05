@@ -1,0 +1,19 @@
+{
+  "200": {
+    "description": "200 Ok",
+    "data": {
+      "status": true,
+      "message": "Storefront created",
+      "data": {
+        "id": 1559046,
+        "name": "My Storefront",
+        "slug": "my-storefront",
+        "description": "A description of my storefront",
+        "status": "inactive",
+        "currency": "NGN",
+        "createdAt": "2024-11-01T12:00:00.000Z",
+        "updatedAt": "2024-11-01T12:00:00.000Z"
+      }
+    }
+  }
+}
