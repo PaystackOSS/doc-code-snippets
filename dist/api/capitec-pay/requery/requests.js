@@ -1,6 +1,6 @@
 const sh = `#!/bin/sh
 url="https://api.paystack.co/capitec-pay/requery/{ref}"
-authorization="Authorization: Bearer YOUR_SECRET_KEY"
+authorization="Authorization: Bearer pk_domain_xxxxx"
 
 curl "$url" -H "$authorization" -X GET`
 
@@ -12,7 +12,7 @@ const options = {
   path: '/capitec-pay/requery/{ref}',
   method: 'GET',
   headers: {
-    Authorization: 'Bearer SECRET_KEY'
+    Authorization: 'Bearer pk_domain_xxxxx'
   }
 }
 
@@ -42,7 +42,7 @@ const php = `<?php
     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
     CURLOPT_CUSTOMREQUEST => "GET",
     CURLOPT_HTTPHEADER => array(
-      "Authorization: Bearer SECRET_KEY",
+      "Authorization: Bearer pk_domain_xxxxx",
       "Cache-Control: no-cache",
     ),
   ));

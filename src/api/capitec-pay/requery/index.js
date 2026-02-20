@@ -6,7 +6,7 @@ const options = {
   path: '/capitec-pay/requery/{ref}',
   method: 'GET',
   headers: {
-    Authorization: 'Bearer SECRET_KEY'
+    Authorization: 'Bearer pk_domain_xxxxx'
   }
 }
 
