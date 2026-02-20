@@ -1,0 +1,30 @@
+{
+  "type": "success",
+  "code": "ok",
+  "data": {
+    "status": "success",
+    "timeToLive": 120,
+    "expiryDate": "2026-02-17T11:29:37.000Z",
+    "transaction": {
+      "id": 5805764100,
+      "reference": "nvh8o4pwtivwkx4",
+      "domain": "live",
+      "amount": 1000,
+      "currency": "ZAR",
+      "metadata": "",
+      "createdAt": "2026-02-17T11:27:36.000Z",
+      "customer": {
+        "id": 180101459,
+        "first_name": "Drew",
+        "last_name": "John",
+        "email": "drew.john@email.com",
+        "customer_code": "CUS_xy1ofyzvnhagniv",
+        "phone": "",
+        "metadata": null,
+        "risk_action": "default",
+        "international_format_phone": null
+      }
+    }
+  },
+  "message": "Charge pending"
+}
