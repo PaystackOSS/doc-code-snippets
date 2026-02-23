@@ -42,6 +42,8 @@
     "captured_at": null,
     "captured_amount": null,
     "expiry_date": "2023-11-19T23:28:52.000Z",
-    "expire_action": "release"
+    "expire_action": "release",
+    "split_code": null,
+    "split": null
   }
 }

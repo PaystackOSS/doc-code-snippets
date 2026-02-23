@@ -89,9 +89,25 @@ const preauthorization_capture_success = `{
     "metadata": null,
     "reference": "atyntuup5bec03e",
     "status": "captured",
+    "transaction": {
+      "currency": "ZAR",
+      "transaction_date": "2023-11-10T11:58:44.000Z",
+      "status": "success",
+      "reference": "atyntuup5bec03e",
+      "domain": "live",
+      "metadata": null,
+      "gateway_response": "Approved",
+      "message": null,
+      "channel": "preauth",
+      "fees": 26,
+      "id": "1504264401",
+      "split": {}
+    },
     "transaction_id": "1504264401",
     "expiry_date": null,
-    "expire_action": "capture"
+    "expire_action": "capture",
+    "split_code": null,
+    "split": null
   }
 }`
 
@@ -235,7 +251,9 @@ const preauthorization_reserve_success = `{
     "captured_at": null,
     "captured_amount": null,
     "expiry_date": "2023-11-19T23:28:52.000Z",
-    "expire_action": "release"
+    "expire_action": "release",
+    "split_code": null,
+    "split": null
   }
 }`
 
