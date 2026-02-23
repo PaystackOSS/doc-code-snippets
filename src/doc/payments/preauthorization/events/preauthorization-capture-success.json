@@ -1,0 +1,63 @@
+{
+  "event": "preauthorization.capture.success",
+  "data": {
+    "amount": 1000,
+    "authorization": {
+      "account_name": null,
+      "authorization_code": "AUTH_ove5p6reju",
+      "bank": "NEDBANK",
+      "bin": "492213",
+      "brand": "visa",
+      "card_type": "visa credit",
+      "channel": "card",
+      "country_code": "ZA",
+      "exp_month": "03",
+      "exp_year": "2025",
+      "last4": "6658",
+      "reusable": true,
+      "signature": "SIG_9bg7BgE0xiRxNVsil7Yo"
+    },
+    "captured_amount": "1000",
+    "captured_at": "2023-11-10T11:58:44.000Z",
+    "currency": "ZAR",
+    "customer": {
+      "id": 1,
+      "first_name": "John",
+      "last_name": "Doe",
+      "email": "john@test.com",
+      "customer_code": "CUS_yqcuukj44ype5u1",
+      "phone": "01142272921",
+      "metadata": null,
+      "risk_action": "default",
+      "international_format_phone": null
+    },
+    "domain": "live",
+    "fees": 0,
+    "message": "Approved",
+    "id": 3099,
+    "merchant_id": 412922,
+    "merchant_name": "Test Business",
+    "metadata": null,
+    "reference": "atyntuup5bec03e",
+    "status": "captured",
+    "transaction": {
+      "currency": "ZAR",
+      "transaction_date": "2023-11-10T11:58:44.000Z",
+      "status": "success",
+      "reference": "atyntuup5bec03e",
+      "domain": "live",
+      "metadata": null,
+      "gateway_response": "Approved",
+      "message": null,
+      "channel": "preauth",
+      "fees": 26,
+      "id": "1504264401",
+      "split": {}
+    },
+    "transaction_id": "1504264401",
+    "expiry_date": null,
+    "expire_action": "capture",
+    "split_code": null,
+    "split": null
+  }
+}
