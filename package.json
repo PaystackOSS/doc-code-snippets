@@ -21,6 +21,6 @@
   },
   "homepage": "https://github.com/PaystackOSS/doc-snippets#readme",
   "devDependencies": {
-    "js-yaml": "^4.1.0"
+    "js-yaml": "^4.1.1"
   }
 }
