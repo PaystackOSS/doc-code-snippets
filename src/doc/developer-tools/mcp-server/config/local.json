@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "paystack": {
+      "command": "node",
+      "args": ["/path/to/paystack-mcp-server/build/index.js"],
+      "env": {
+        "PAYSTACK_TEST_SECRET_KEY": "sk_test_..."
+      }
+    }
+  }
+}

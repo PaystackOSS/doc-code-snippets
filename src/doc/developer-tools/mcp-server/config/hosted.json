@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "paystack": {
+      "command": "npx",
+      "args": ["@paystack/mcp-server", "--api-key", "sk_test_..."]
+    }
+  }
+}
