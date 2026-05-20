@@ -13,7 +13,7 @@ curl_setopt_array($curl, array(
   CURLOPT_CUSTOMREQUEST => "POST",
   CURLOPT_POSTFIELDS => array(
     "customer" => 481193,
-    "preferred_bank" => "wema-bank",
+    "preferred_bank" => "titan-paystack",
     "split_code" => "SPL_e7jnRLtzla"
   ),
   CURLOPT_HTTPHEADER => array(

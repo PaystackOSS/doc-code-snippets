@@ -3,7 +3,7 @@
 
   $fields = [
     "customer" => 481193,
-    "preferred_bank" => "wema-bank"
+    "preferred_bank" => "titan-paystack"
   ];
 
   $fields_string = http_build_query($fields);

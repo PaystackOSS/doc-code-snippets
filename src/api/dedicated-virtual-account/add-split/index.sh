@@ -3,7 +3,7 @@ url="https://api.paystack.co/dedicated_account"
 authorization="Authorization: Bearer YOUR_SECRET_KEY"
 content_type="Content-Type: application/json"
 data='{ "customer": 481193, 
-        "preferred_bank":"wema-bank", 
+        "preferred_bank":"titan-paystack", 
         "split_code": "SPL_e7jnRLtzla" 
       }'
 

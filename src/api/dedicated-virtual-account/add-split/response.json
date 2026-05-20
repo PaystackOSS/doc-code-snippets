@@ -6,9 +6,9 @@
 			"message": "Assigned Managed Account Successfully Created",
 			"data": {
 				"bank": {
-					"name": "Wema Bank",
-					"id": 20,
-					"slug": "wema-bank"
+					"name": "Paystack-Titan",
+					"id": 629,
+					"slug": "titan-paystack"
 				},
 				"account_name": "KAROKART/YINKA ADE",
 				"account_number": "6731105168",

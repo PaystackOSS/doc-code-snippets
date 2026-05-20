@@ -30,7 +30,7 @@ let req = https.request(options, function (res) {
   });
 });
 
-let postData = JSON.stringify({"customer":481193,"preferred_bank":"wema-bank", "split_code": "SPL_e7jnRLtzla"});
+let postData = JSON.stringify({"customer":481193,"preferred_bank":"titan-paystack", "split_code": "SPL_e7jnRLtzla"});
 
 req.write(postData);
 

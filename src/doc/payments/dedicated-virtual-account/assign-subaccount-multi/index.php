@@ -11,7 +11,7 @@ curl_setopt_array($curl, array(
   CURLOPT_FOLLOWLOCATION => true,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "POST",
-  CURLOPT_POSTFIELDS =>"{\"customer\":481193,\"preferred_bank\":\"wema-bank\", \"split_code\": \"SPL_e7jnRLtzla\"}",
+  CURLOPT_POSTFIELDS =>"{\"customer\":481193,\"preferred_bank\":\"test-bank\", \"split_code\": \"SPL_e7jnRLtzla\"}",
   CURLOPT_HTTPHEADER => array(
     "authorization: Bearer SECRET_KEY",
     "content-type: application/json",

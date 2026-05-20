@@ -30,7 +30,7 @@ let req = https.request(options, function (res) {
 
 let postData = JSON.stringify({
   "customer": 481193,
-  "preferred_bank": "wema-bank",
+  "preferred_bank": "test-bank",
   "split_code": "SPL_e7jnRLtzla"
 });
 
