@@ -6,9 +6,9 @@
 			"message": "NUBAN successfully created",
 			"data": {
 				"bank": {
-					"name": "Wema Bank",
-					"id": 20,
-					"slug": "wema-bank"
+					"name": "Paystack-Titan",
+					"id": 629,
+					"slug": "titan-paystack"
 				},
 				"account_name": "KAROKART / RHODA CHURCH",
 				"account_number": "9930000737",

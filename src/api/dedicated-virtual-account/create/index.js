@@ -2,7 +2,7 @@ const https = require('https')
 
 const params = JSON.stringify({
   "customer": 481193, 
-  "preferred_bank": "wema-bank"
+  "preferred_bank": "titan-paystack"
 })
 
 const options = {

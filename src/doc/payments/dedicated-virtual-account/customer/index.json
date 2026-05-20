@@ -14,9 +14,9 @@
 
     "dedicated_account": {
       "bank": {
-        "name": "Wema Bank",
-        "id": 20,
-        "slug": "wema-bank"
+        "name": "Test Bank",
+        "id": 24,
+        "slug": "test-bank"
       },
       "id": 173,
       "account_name": "KAROKART/RHODA CHURCH",

@@ -19,9 +19,9 @@
 					"international_format_phone": null
 				},
 				"bank": {
-					"name": "Wema Bank",
-					"id": 20,
-					"slug": "wema-bank"
+					"name": "Paystack-Titan",
+					"id": 629,
+					"slug": "titan-paystack"
 				},
 				"id": 1234553,
 				"account_name": "BOOMBOOMINDUS/Sharon Rose",

@@ -2,7 +2,7 @@ const sh = `curl https://api.paystack.co/dedicated_account
 -H "Authorization: Bearer YOUR_SECRET_KEY"
 -H "Content-Type: application/json"
 -d '{ "customer": 481193, 
-      "preferred_bank":"wema-bank", 
+      "preferred_bank":"test-bank", 
       "split_code": "SPL_e7jnRLtzla" 
     }'
 -X POST`
@@ -39,7 +39,7 @@ let req = https.request(options, function (res) {
 
 let postData = JSON.stringify({
   "customer": 481193,
-  "preferred_bank": "wema-bank",
+  "preferred_bank": "test-bank",
   "split_code": "SPL_e7jnRLtzla"
 });
 
@@ -60,7 +60,7 @@ curl_setopt_array($curl, array(
   CURLOPT_FOLLOWLOCATION => true,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "POST",
-  CURLOPT_POSTFIELDS =>"{\"customer\":481193,\"preferred_bank\":\"wema-bank\", \"split_code\": \"SPL_e7jnRLtzla\"}",
+  CURLOPT_POSTFIELDS =>"{\"customer\":481193,\"preferred_bank\":\"test-bank\", \"split_code\": \"SPL_e7jnRLtzla\"}",
   CURLOPT_HTTPHEADER => array(
     "authorization: Bearer SECRET_KEY",
     "content-type: application/json",
@@ -78,9 +78,9 @@ const json = `{
 	"message": "Assigned Managed Account Successfully Created",
 	"data": {
 		"bank": {
-			"name": "Wema Bank",
-			"id": 20,
-			"slug": "wema-bank"
+			"name": "Test Bank",
+			"id": 24,
+			"slug": "test-bank"
 		},
 		"account_name": "KAROKART/YINKA ADE",
 		"account_number": "6731105168",
