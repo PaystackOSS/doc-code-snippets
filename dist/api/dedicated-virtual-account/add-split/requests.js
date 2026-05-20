@@ -3,7 +3,7 @@ url="https://api.paystack.co/dedicated_account"
 authorization="Authorization: Bearer YOUR_SECRET_KEY"
 content_type="Content-Type: application/json"
 data='{ "customer": 481193, 
-        "preferred_bank":"wema-bank", 
+        "preferred_bank":"titan-paystack", 
         "split_code": "SPL_e7jnRLtzla" 
       }'
 
@@ -41,7 +41,7 @@ let req = https.request(options, function (res) {
   });
 });
 
-let postData = JSON.stringify({"customer":481193,"preferred_bank":"wema-bank", "split_code": "SPL_e7jnRLtzla"});
+let postData = JSON.stringify({"customer":481193,"preferred_bank":"titan-paystack", "split_code": "SPL_e7jnRLtzla"});
 
 req.write(postData);
 
@@ -62,7 +62,7 @@ curl_setopt_array($curl, array(
   CURLOPT_CUSTOMREQUEST => "POST",
   CURLOPT_POSTFIELDS => array(
     "customer" => 481193,
-    "preferred_bank" => "wema-bank",
+    "preferred_bank" => "titan-paystack",
     "split_code" => "SPL_e7jnRLtzla"
   ),
   CURLOPT_HTTPHEADER => array(
