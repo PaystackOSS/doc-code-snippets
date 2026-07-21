@@ -1,6 +1,10 @@
-const js = `// Add for NPM, Yarn
-import Paystack from '@paystack/inline-js';
+const cdn = `
+const popup = new PaystackPop();
+`
 
-const popup = new Paystack()`
+const npm = `import Paystack from '@paystack/inline-js';
 
-export {js}
+const popup = new Paystack()
+`
+
+export {cdn, npm}
