@@ -1,0 +1,11 @@
+{
+	"status": true,
+	"message": "Charge attempted",
+	"data": {
+		"reference": "dd-charge-8f3a1c",
+		"status": "pending_bank_transfer",
+		"amount": 1000000,
+		"account_number": "1234567890",
+		"bank_name": "Test Bank"
+	}
+}
