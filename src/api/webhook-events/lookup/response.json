@@ -1,0 +1,64 @@
+{
+  "200": {
+    "description": "200 Ok",
+    "data": {
+      "status": true,
+      "message": "Webhook Retrieved",
+      "data": {
+        "_id": "6a759cc2289980000e46a716",
+        "domain": "test",
+        "category": "cardVerification",
+        "category_row_id": 5900551050,
+        "event_name": "zero_charge_authorization.failed",
+        "status": "Failed",
+        "status_detail": "failed",
+        "response_code": 404,
+        "trial_count": 10,
+        "createdAt": "2026-08-07T08:52:18.000Z",
+        "updatedAt": "2026-08-07T13:04:29.000Z",
+        "webhook_url": "https://example-merchant.com/hooks/paystack",
+        "webhook_url_code": null,
+        "event_payload": {
+          "event": "zero_charge_authorization.failed",
+          "data": {
+            "id": 5900551050,
+            "domain": "test",
+            "status": "failed",
+            "reference": "trx_rd227iwg",
+            "amount": 0,
+            "currency": "NGN",
+            "gateway_response": "No gateway was able to process the request"
+          }
+        },
+        "merchant_response_body": {
+          "success": false,
+          "error": {
+            "message": "Not found",
+            "id": ""
+          }
+        }
+      }
+    }
+  },
+  "400": {
+    "description": "400 Bad Request",
+    "data": {
+      "status": false,
+      "message": "reference is required"
+    }
+  },
+  "404": {
+    "description": "404 Not Found",
+    "data": {
+      "status": false,
+      "message": "Webhook event not found"
+    }
+  },
+  "500": {
+    "description": "500 Internal Server Error",
+    "data": {
+      "status": false,
+      "message": "Something went wrong"
+    }
+  }
+}

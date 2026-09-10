@@ -1,0 +1,38 @@
+{
+  "200": {
+    "description": "200 Ok (preview=true)",
+    "data": {
+      "status": true,
+      "message": "Preview",
+      "data": {
+        "count": 128
+      }
+    }
+  },
+  "202": {
+    "description": "202 Accepted",
+    "data": {
+      "status": true,
+      "message": "Resend accepted",
+      "data": {
+        "count": 128,
+        "skipped": 0,
+        "batch_id": "rbatch_77cd41"
+      }
+    }
+  },
+  "429": {
+    "description": "429 Too Many Requests",
+    "data": {
+      "status": false,
+      "message": "Resend rate limit exceeded, please try again later"
+    }
+  },
+  "500": {
+    "description": "500 Internal Server Error",
+    "data": {
+      "status": false,
+      "message": "Something went wrong"
+    }
+  }
+}

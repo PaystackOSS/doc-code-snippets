@@ -1,0 +1,40 @@
+{
+  "200": {
+    "description": "200 Ok",
+    "data": {
+      "status": true,
+      "message": "Webhook Retrieved",
+      "data": {
+        "_id": "665f1c2a9d1e4b0012a3c4d5",
+        "domain": "live",
+        "category": "transactions",
+        "event_name": "charge.success",
+        "category_row_id": 4045667488,
+        "status": "Failed",
+        "status_detail": "retrying",
+        "response_code": 500,
+        "trial_count": 3,
+        "webhook_url": "https://example-merchant.com/hooks/paystack",
+        "webhook_url_code": null,
+        "event_payload": { "event": "charge.success", "data": { "id": 4045667488, "amount": 15300 } },
+        "merchant_response_body": "{\"error\":\"internal server error\"}",
+        "createdAt": "2026-07-09T15:17:00.000Z",
+        "updatedAt": "2026-07-09T15:42:00.000Z"
+      }
+    }
+  },
+  "404": {
+    "description": "404 Not Found",
+    "data": {
+      "status": false,
+      "message": "Webhook event not found"
+    }
+  },
+  "500": {
+    "description": "500 Internal Server Error",
+    "data": {
+      "status": false,
+      "message": "Something went wrong"
+    }
+  }
+}
