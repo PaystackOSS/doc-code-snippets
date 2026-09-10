@@ -1,0 +1,28 @@
+{
+  "202": {
+    "description": "202 Accepted",
+    "data": {
+      "status": true,
+      "message": "Resend accepted",
+      "data": {
+        "count": 2,
+        "failed": 0,
+        "failed_ids": []
+      }
+    }
+  },
+  "400": {
+    "description": "400 Bad Request",
+    "data": {
+      "status": false,
+      "message": "ids must be a non-empty array"
+    }
+  },
+  "500": {
+    "description": "500 Internal Server Error",
+    "data": {
+      "status": false,
+      "message": "Something went wrong"
+    }
+  }
+}
