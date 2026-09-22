@@ -1,7 +1,7 @@
 const js = `const popup = new Paystack()
 
 const onElementsMount = (elements) => {
-  if (elements && elements.applePay) {
+  if (elements && (elements.applePay || elements.googlePay)) {
     document.querySelector("#pay-button").innerText = "More Payment Options";
   }
 }
@@ -16,12 +16,21 @@ try {
     loadPaystackCheckoutButton: 'pay-button',
     styles: {
       theme: 'dark',
+      orientation: 'horizontal',
       applePay: {
         width: '100%',
         height: '50px',
         borderRadius: '3px',
         type: 'plain',
         locale: 'en'
+      },
+      googlePay: {
+        width: '100%',
+        height: '50px',
+        borderRadius: '3px',
+        buttonType: 'plain',
+        buttonColor: 'black',
+        buttonSizeMode: 'fill'
       }
     },
     onElementsMount,
