@@ -1,4 +1,4 @@
-const js = `onElementsMount: (elements) =>{ // { applePay: true } or null
+const js = `onElementsMount: (elements) =>{ // { applePay: true, googlePay: true } or null
   if (elements) {
     console.log("Successfully mounted elements: ", JSON.stringify(elements));
   } else {
