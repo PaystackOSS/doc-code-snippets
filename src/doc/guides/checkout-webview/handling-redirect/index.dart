@@ -1,5 +1,8 @@
 @override
 Widget build(BuildContext context) {
+  // Deep-link/universal-link handoff for partner channels (e.g. Zap) isn't
+  // documented for Flutter yet. See the React Native, iOS, and Android tabs
+  // for the pattern this needs.
   return Scaffold(
     body: WebView(
       initialUrl: 'https://checkout.paystack.com/7zu1ot06d0qn9h6',

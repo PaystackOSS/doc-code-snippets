@@ -12,6 +12,7 @@ try {
     email: 'testuser@paystack.com',
     amount: 10000,
     currency: "NGN",
+    channels: ['card', 'google_pay'],
     container: 'payment-request-buttons',
     loadPaystackCheckoutButton: 'pay-button',
     styles: {
