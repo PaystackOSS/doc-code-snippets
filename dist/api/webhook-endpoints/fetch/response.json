@@ -1,0 +1,36 @@
+{
+  "200": {
+    "description": "200 Ok",
+    "data": {
+      "status": true,
+      "message": "Webhook endpoint retrieved",
+      "data": {
+        "webhook_url_code": "WHK_1a2b3c4d",
+        "name": "Order fulfillment",
+        "webhook_url": "https://example.com/webhooks/paystack",
+        "enabled": true,
+        "events": {
+          "transactions": [
+            "charge.failed",
+            "charge.success"
+          ]
+        },
+        "event_count": 2
+      }
+    }
+  },
+  "403": {
+    "description": "403 Forbidden",
+    "data": {
+      "status": false,
+      "message": "Webhook endpoint management is not available for this integration"
+    }
+  },
+  "404": {
+    "description": "404 Not Found",
+    "data": {
+      "status": false,
+      "message": "Webhook endpoint not found"
+    }
+  }
+}

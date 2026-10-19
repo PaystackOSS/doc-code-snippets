@@ -10,6 +10,7 @@
           "domain": "live",
           "category": "transactions",
           "event_name": "charge.success",
+          "webhook_url_code": "WHK_1a2b3c4d",
           "category_row_id": 4045667488,
           "status": "Failed",
           "status_detail": "retrying",

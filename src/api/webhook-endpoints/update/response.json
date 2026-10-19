@@ -1,0 +1,48 @@
+{
+  "200": {
+    "description": "200 Ok",
+    "data": {
+      "status": true,
+      "message": "Webhook endpoint updated",
+      "data": {
+        "webhook_url_code": "WHK_1a2b3c4d",
+        "name": "Order fulfillment",
+        "webhook_url": "https://example.com/webhooks/paystack",
+        "enabled": false,
+        "events": [
+          "charge.success",
+          "charge.failed"
+        ],
+        "event_count": 2
+      }
+    }
+  },
+  "400": {
+    "description": "400 Bad Request",
+    "data": {
+      "status": false,
+      "message": "Provide at least one field to update"
+    }
+  },
+  "403": {
+    "description": "403 Forbidden",
+    "data": {
+      "status": false,
+      "message": "Webhook endpoint management is not available for this integration"
+    }
+  },
+  "404": {
+    "description": "404 Not Found",
+    "data": {
+      "status": false,
+      "message": "Webhook endpoint not found"
+    }
+  },
+  "409": {
+    "description": "409 Conflict",
+    "data": {
+      "status": false,
+      "message": "A webhook endpoint with this URL already exists for this domain"
+    }
+  }
+}

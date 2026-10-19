@@ -1,0 +1,34 @@
+{
+  "200": {
+    "description": "200 Ok",
+    "data": {
+      "status": true,
+      "message": "Webhook events catalog retrieved",
+      "data": {
+        "refunds": [
+          {
+            "event_name": "refund.processed",
+            "description": "A processed refund"
+          }
+        ],
+        "transactions": [
+          {
+            "event_name": "charge.failed",
+            "description": "A failed charge"
+          },
+          {
+            "event_name": "charge.success",
+            "description": "A successful charge"
+          }
+        ]
+      }
+    }
+  },
+  "403": {
+    "description": "403 Forbidden",
+    "data": {
+      "status": false,
+      "message": "Webhook endpoint management is not available for this integration"
+    }
+  }
+}
