@@ -1,0 +1,35 @@
+{
+  "200": {
+    "description": "200 Ok",
+    "data": {
+      "status": true,
+      "message": "Ping sent",
+      "data": {
+        "ok": true,
+        "http_status": 200,
+        "latency_ms": 143
+      }
+    }
+  },
+  "403": {
+    "description": "403 Forbidden",
+    "data": {
+      "status": false,
+      "message": "Webhook endpoint management is not available for this integration"
+    }
+  },
+  "404": {
+    "description": "404 Not Found",
+    "data": {
+      "status": false,
+      "message": "Webhook endpoint not found"
+    }
+  },
+  "429": {
+    "description": "429 Too Many Requests",
+    "data": {
+      "status": false,
+      "message": "Too many webhook ping requests. Please wait a moment and try again."
+    }
+  }
+}
