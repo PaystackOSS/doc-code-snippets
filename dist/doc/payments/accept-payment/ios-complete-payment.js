@@ -10,9 +10,9 @@ struct PaymentView: View {
 
 	var body: some View {
 		VStack(spacing: 8) {
-			Text("Make Payemnt")
+			Text("Make Payment")
 
-			paystack?.chargeUIButton(accessCode: "0peioxfhpn", onComplete: paymentDone) {
+			paystack?.chargeUIButton(accessCode: "ACCESS_CODE", onComplete: paymentDone) {
 				Text("Initiate Payment")
 			}
 		}

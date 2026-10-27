@@ -1,11 +1,13 @@
-const kt = `Paystack.builder()
+const kt = `private val paystack = Paystack.builder()
     .setPublicKey("pk_domain_xxxxxxxx")
     .setLoggingEnabled(true)
-    .build()`
+    .build()
+`
 
-const java = `Paystack.builder()
+const java = `private final Paystack paystack = Paystack.builder()
         .setPublicKey("pk_domain_xxxxxxxx")
         .setLoggingEnabled(true)
-        .build();`
+        .build();
+`
 
 export {kt, java}

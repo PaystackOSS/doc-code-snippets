@@ -1,9 +1,11 @@
-const kt = `Paystack.builder
-    .setPublicKey("pk_your-public-key")  
-    .build()`
+const kt = `val paystack = Paystack.builder()
+    .setPublicKey("pk_your-public-key")
+    .build()
+`
 
-const java = `Paystack.builder()
+const java = `Paystack paystack = Paystack.builder()
         .setPublicKey("pk_your-public-key")
-        .build();`
+        .build();
+`
 
 export {kt, java}

@@ -5,6 +5,6 @@ func paymentDone(_ result: TransactionResult) {
     case .cancelled:
       print("Transaction was cancelled")
     case .error(error: let error, reference: let reference):
-      print("An error occured: \(error.message) with reference: \(String(describing: reference))")
+      print("An error occurred: \(error.message) with reference: \(String(describing: reference))")
   }
 }

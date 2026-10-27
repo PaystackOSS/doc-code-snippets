@@ -7,16 +7,15 @@ import com.paystack.android.ui.paymentsheet.PaymentSheetResult;
 public class MainActivity extends AppCompatActivity {
 
   private PaymentSheet paymentSheet;
+  private final Paystack paystack = Paystack.builder()
+      .setPublicKey("pk_test_xxxxx")
+      .setLoggingEnabled(true)
+      .build();
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     // other snippets
-
-    Paystack.builder()
-        .setPublicKey("pk_test_xxxxx")
-        .setLoggingEnabled(true)
-        .build();
 
     paymentSheet = new PaymentSheet(this, this::paymentComplete);
 
@@ -24,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
   private void makePayment() {
     // Pass access_code from transaction initialize call
-    paymentSheet.launch("br6cgmvflhn3qtd");
+    paymentSheet.launch(paystack, "ACCESS_CODE");
   }
 
   private void paymentComplete(PaymentSheetResult paymentSheetResult) {
