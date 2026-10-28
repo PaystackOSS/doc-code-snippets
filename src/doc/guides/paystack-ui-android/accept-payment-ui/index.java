@@ -1,13 +1,14 @@
-private lateinit var paymentSheet: PaymentSheet
+private PaymentSheet paymentSheet;
 
-override fun onCreate(savedInstanceState: Bundle?) {
-      super.onCreate(savedInstanceState)
-      // other code snippet
-			
-      paymentSheet = PaymentSheet(this, this::paymentComplete);
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    // other code snippet
+
+    paymentSheet = new PaymentSheet(this, this::paymentComplete);
 }
 
-private fun makePayment() {
-    // send payment details to your server, and return the access_code
-    paymentSheet.launch("{your-access-code}")
+private void makePayment() {
+    // Pass access_code from transaction initialize call
+    paymentSheet.launch(paystack, "ACCESS_CODE");
 }

@@ -1,0 +1,10 @@
+const xml = `<application>
+  <!-- other application elements -->
+
+  <meta-data
+    android:name="com.google.android.gms.wallet.api.enabled"
+    android:value="true" />
+</application>
+`
+
+export {xml}

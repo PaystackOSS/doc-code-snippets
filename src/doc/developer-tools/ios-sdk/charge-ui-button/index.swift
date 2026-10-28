@@ -1,3 +1,3 @@
-paystack?.chargeUIButton(accessCode: "0peioxfhpn", onComplete: paymentDone) {
+paystack?.chargeUIButton(accessCode: "ACCESS_CODE", onComplete: paymentDone) {
       Text("Initiate Payment")
 }

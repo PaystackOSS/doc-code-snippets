@@ -6,21 +6,21 @@ import com.paystack.android.ui.paymentsheet.PaymentSheetResult
 
 class MainActivity : AppCompatActivity() {
     private lateinit var paymentSheet: PaymentSheet
+    private val paystack = Paystack.builder()
+        .setPublicKey("pk_test_xxxx")
+        .build()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // Other code snippets
 
-        Paystack.builder()
-            .setPublicKey("pk_test_xxxx")
-            .build()
         paymentSheet = PaymentSheet(this, ::paymentComplete)
 
     }
 
     private fun makePayment() {
         // Pass access_code from transaction initialize call
-        paymentSheet.launch("br6cgmvflhn3qtd")
+        paymentSheet.launch(paystack, "ACCESS_CODE")
     }
 
 

@@ -9,5 +9,5 @@ override fun onCreate(savedInstanceState: Bundle?) {
 
 private fun makePayment() {
     // Pass access_code from transaction initialize call
-    paymentSheet.launch("access_code")
+    paymentSheet.launch(paystack, "ACCESS_CODE")
 }

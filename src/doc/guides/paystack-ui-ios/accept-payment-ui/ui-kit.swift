@@ -1,5 +1,5 @@
 @IBAction func payButtonTapped(_ sender: Any) {
   paystack?.presentChargeUI(on: self,
-                              accessCode: "0peioxfhpn",
+                              accessCode: "ACCESS_CODE",
                               onComplete: paymentDone)
 }
