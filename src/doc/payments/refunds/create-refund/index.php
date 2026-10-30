@@ -2,8 +2,9 @@
   $url = "https://api.paystack.co/refund";
 
   $fields = [
-    'transaction' => "qufywna9w9a5d8v",
-    'amount' => "10000",
+    'transaction' => "T123456789",
+    'amount' => 5000,
+    'reference' => "my-refund-001",
   ];
 
   $fields_string = http_build_query($fields);
@@ -21,7 +22,7 @@
   ));
   
   //So that curl_exec returns the contents of the cURL; rather than echoing it
-  curl_setopt($ch,CURLOPT_RETURNREFUND, true); 
+  curl_setopt($ch,CURLOPT_RETURNTRANSFER, true); 
   
   //execute post
   $result = curl_exec($ch);

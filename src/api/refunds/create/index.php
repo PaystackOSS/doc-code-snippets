@@ -2,7 +2,8 @@
   $url = "https://api.paystack.co/refund";
 
   $fields = [
-    'transaction' => 1641
+    'transaction' => 1641,
+    'reference' => "my-refund-001"
   ];
 
   $fields_string = http_build_query($fields);

@@ -1,7 +1,7 @@
-const sh = `curl https://api.paystack.co/refund 
--H 'authorization: Bearer YOUR_SECRET_KEY'
--H 'cache-control: no-cache'
--H 'content-type: application/json' 
+const sh = `curl https://api.paystack.co/refund \
+-H 'authorization: Bearer YOUR_SECRET_KEY' \
+-H 'cache-control: no-cache' \
+-H 'content-type: application/json' \
 -X GET`
 
 const js = `const https = require('https')
@@ -28,13 +28,13 @@ https.request(options, res => {
   })
 }).on('error', error => {
   console.error(error)
-})`
+}).end()`
 
 const php = `<?php
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://api.paystack.co/bank/refund",
+  CURLOPT_URL => "https://api.paystack.co/refund",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,

@@ -22,4 +22,4 @@ https.request(options, res => {
   })
 }).on('error', error => {
   console.error(error)
-})
+}).end()

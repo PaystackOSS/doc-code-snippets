@@ -2,14 +2,15 @@ const sh = `#!/bin/sh
 url="https://api.paystack.co/refund"
 authorization="Authorization: Bearer YOUR_SECRET_KEY"
 content_type="Content-Type: application/json"
-data='{ "transaction": 1641 }'
+data='{ "transaction": 1641, "reference": "my-refund-001" }'
 
 curl "$url" -H "$authorization" -H "$content_type" -d "$data" -X POST`
 
 const js = `const https = require('https')
 
 const params = JSON.stringify({
-  "transaction": 1641
+  "transaction": 1641,
+  "reference": "my-refund-001"
 })
 
 const options = {
@@ -44,7 +45,8 @@ const php = `<?php
   $url = "https://api.paystack.co/refund";
 
   $fields = [
-    'transaction' => 1641
+    'transaction' => 1641,
+    'reference' => "my-refund-001"
   ];
 
   $fields_string = http_build_query($fields);
