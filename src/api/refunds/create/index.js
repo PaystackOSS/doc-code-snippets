@@ -1,7 +1,8 @@
 const https = require('https')
 
 const params = JSON.stringify({
-  "transaction": 1641
+  "transaction": 1641,
+  "reference": "my-refund-001"
 })
 
 const options = {

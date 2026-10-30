@@ -1,15 +1,16 @@
-const sh = `curl https://api.paystack.co/refund
--H 'authorization: Bearer YOUR_SECRET_KEY'
--H 'cache-control: no-cache'
--H 'content-type: application/json'
--d '{ "transaction":"qufywna9w9a5d8v", "amount":"10000" }'
+const sh = `curl https://api.paystack.co/refund \
+-H 'authorization: Bearer YOUR_SECRET_KEY' \
+-H 'cache-control: no-cache' \
+-H 'content-type: application/json' \
+-d '{ "transaction":"T123456789", "amount":5000, "reference":"my-refund-001" }' \
 -X POST`
 
 const js = `const https = require('https')
 
 const params = JSON.stringify({
-  "transaction": "qufywna9w9a5d8v",
-  "amount": "10000"
+  "transaction": "T123456789",
+  "amount": 5000,
+  "reference": "my-refund-001"
 })
 
 const options = {
@@ -44,8 +45,9 @@ const php = `<?php
   $url = "https://api.paystack.co/refund";
 
   $fields = [
-    'transaction' => "qufywna9w9a5d8v",
-    'amount' => "10000",
+    'transaction' => "T123456789",
+    'amount' => 5000,
+    'reference' => "my-refund-001",
   ];
 
   $fields_string = http_build_query($fields);
@@ -63,7 +65,7 @@ const php = `<?php
   ));
   
   //So that curl_exec returns the contents of the cURL; rather than echoing it
-  curl_setopt($ch,CURLOPT_RETURNREFUND, true); 
+  curl_setopt($ch,CURLOPT_RETURNTRANSFER, true); 
   
   //execute post
   $result = curl_exec($ch);
@@ -77,7 +79,7 @@ const json = `{
     "transaction": {
       "id": 1004723697,
       "domain": "live",
-      "reference": "T685312322670591",
+      "reference": "T123456789",
       "amount": 10000,
       "paid_at": "2021-08-20T18:34:11.000Z",
       "channel": "apple_pay",
@@ -104,16 +106,17 @@ const json = `{
     "integration": 412829,
     "deducted_amount": 0,
     "channel": null,
-    "merchant_note": "Refund for transaction T685312322670591 by test@me.com",
-    "customer_note": "Refund for transaction T685312322670591",
+    "merchant_note": "Refund for transaction T123456789 by test@me.com",
+    "customer_note": "Refund for transaction T123456789",
     "status": "pending",
     "refunded_by": "test@me.com",
     "expected_at": "2021-12-16T09:21:17.016Z",
     "currency": "NGN",
     "domain": "live",
-    "amount": 10000,
+    "amount": 5000,
     "fully_deducted": false,
     "id": 3018284,
+    "reference": "my-refund-001",
     "createdAt": "2021-12-07T09:21:17.122Z",
     "updatedAt": "2021-12-07T09:21:17.122Z"
   }

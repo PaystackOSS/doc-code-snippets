@@ -45,8 +45,29 @@
 				"amount": 10000,
 				"fully_deducted": false,
 				"id": 3018284,
+				"reference": "my-refund-001",
 				"createdAt": "2021-12-07T09:21:17.122Z",
 				"updatedAt": "2021-12-07T09:21:17.122Z"
+			}
+		}
+	},
+	"400": {
+		"description": "400 Bad Request",
+		"data": {
+			"status": false,
+			"message": "Invalid refund reference",
+			"meta": {
+				"nextStep": "Use 8 to 64 characters made up of letters, digits, underscores and hyphens"
+			}
+		}
+	},
+	"409": {
+		"description": "409 Conflict",
+		"data": {
+			"status": false,
+			"message": "A refund with reference my-refund-001 already exists",
+			"meta": {
+				"nextStep": "Fetch the existing refund with GET /refund?reference=my-refund-001, or send a new reference to create a different refund"
 			}
 		}
 	}
