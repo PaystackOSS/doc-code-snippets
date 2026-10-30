@@ -3,12 +3,14 @@ const kt = `private fun paymentComplete(paymentSheetResult: PaymentSheetResult) 
     PaymentSheetResult.Cancelled -> "Cancelled"
     is PaymentSheetResult.Failed -> {
       Log.e("Something went wrong", paymentSheetResult.error.message.orEmpty(), paymentSheetResult.error)
+      // If there's a reference, verify the transaction on your server. The payment may still complete.
+      paymentSheetResult.reference?.let { Log.d("Payment reference", it) }
       paymentSheetResult.error.message ?: "Failed"
     }
 
     is PaymentSheetResult.Completed -> {
-      // Returns the transaction reference  PaymentCompletionDetails(reference={TransactionRef})
-      Log.d("Payment successful", paymentSheetResult.paymentCompletionDetails.toString())
+      // Verify the transaction on your server with this reference before giving value
+      Log.d("Payment successful", paymentSheetResult.paymentCompletionDetails.reference)
       "Successful"
     }
   }
@@ -26,10 +28,15 @@ const java = `private void paymentComplete(PaymentSheetResult paymentSheetResult
     Log.e("Payment failed",
         failedResult.getError().getMessage() != null ? failedResult.getError().getMessage() : "Failed",
         failedResult.getError());
+    // If there's a reference, verify the transaction on your server. The payment may still complete.
+    if (failedResult.getReference() != null) {
+      Log.d("Payment reference", failedResult.getReference());
+    }
     message = failedResult.getError().getMessage() != null ? failedResult.getError().getMessage() : "Failed";
   } else if (paymentSheetResult instanceof PaymentSheetResult.Completed) {
+    // Verify the transaction on your server with this reference before giving value
     Log.d("Payment successful",
-        ((PaymentSheetResult.Completed) paymentSheetResult).getPaymentCompletionDetails().toString());
+        ((PaymentSheetResult.Completed) paymentSheetResult).getPaymentCompletionDetails().getReference());
     message = "Successful";
   } else {
     message = "You shouldn't be here";
