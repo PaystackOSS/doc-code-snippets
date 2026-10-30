@@ -34,7 +34,7 @@ import PaystackUI
 class ViewController: UIViewController {
 	let paystack = try? PaystackBuilder
 			.newInstance
-			.setKey("PUBLIC_KEY")
+			.setKey("pk_domain_xxxxxxxx")
 			.build()
 
 	let paymentAccessCode = "ACCESS_CODE"
