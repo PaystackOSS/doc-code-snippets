@@ -2,6 +2,7 @@ package hmacexample;
 
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidKeyException;
+import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
@@ -29,7 +30,7 @@ public class HMacExample {
     byte [] mac_data = sha512_HMAC.
     doFinal(body.getBytes("UTF-8"));
     result = DatatypeConverter.printHexBinary(mac_data);
-    if(result.toLowerCase().equals(xpaystackSignature)) {
+    if(MessageDigest.isEqual(result.toLowerCase().getBytes("UTF-8"), xpaystackSignature.getBytes("UTF-8"))) {
       // you can trust the event, it came from paystack
       // respond with the http 200 response immediately before attempting to process the response
       //retrieve the request body, and deliver value to the customer

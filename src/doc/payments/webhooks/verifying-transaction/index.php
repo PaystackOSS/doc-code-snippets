@@ -8,7 +8,7 @@
   define('PAYSTACK_SECRET_KEY','SECRET_KEY');
 
   // validate event do all at once to avoid timing attack
-  if($_SERVER['HTTP_X_PAYSTACK_SIGNATURE'] !== hash_hmac('sha512', $input, PAYSTACK_SECRET_KEY))
+  if(!hash_equals(hash_hmac('sha512', $input, PAYSTACK_SECRET_KEY), $_SERVER['HTTP_X_PAYSTACK_SIGNATURE']))
       exit();
 
   http_response_code(200);

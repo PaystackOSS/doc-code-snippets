@@ -23,7 +23,7 @@ namespace HMacExample
 
       String xpaystackSignature = ""; //put in the request's header value for x-paystack-signature
   
-      if(result.ToLower().Equals(xpaystackSignature)) {
+      if(CryptographicOperations.FixedTimeEquals(Encoding.UTF8.GetBytes(result.ToLower()), Encoding.UTF8.GetBytes(xpaystackSignature))) {
           // you can trust the event, it came from paystack
           // respond with the http 200 response immediately before attempting to process the response
           //retrieve the request body, and deliver value to the customer
