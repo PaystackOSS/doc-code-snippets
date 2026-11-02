@@ -9,13 +9,15 @@ app.use(express.json({
 
 app.post("/my/webhook/url", function(req, res) {
     //validate event
-    const hash = crypto.createHmac('sha512', secret).update(req.rawBody).digest('hex');
-    if (hash == req.headers['x-paystack-signature']) {
+    const hash = crypto.createHmac('sha512', secret).update(req.rawBody).digest();
+    const signature = req.headers['x-paystack-signature'] || '';
+    if (!/^[0-9a-f]{128}$/.test(signature) || !crypto.timingSafeEqual(hash, Buffer.from(signature, 'hex'))) {
+        return res.sendStatus(401);
+    }
     // Retrieve the request's body
     const event = req.body;
-    // Do something with event  
-    }
-    res.send(200);
+    // Do something with event
+    res.sendStatus(200);
 });`
 
 const php = `<?php
@@ -28,7 +30,7 @@ const php = `<?php
   define('PAYSTACK_SECRET_KEY','SECRET_KEY');
 
   // validate event do all at once to avoid timing attack
-  if($_SERVER['HTTP_X_PAYSTACK_SIGNATURE'] !== hash_hmac('sha512', $input, PAYSTACK_SECRET_KEY))
+  if(!hash_equals(hash_hmac('sha512', $input, PAYSTACK_SECRET_KEY), $_SERVER['HTTP_X_PAYSTACK_SIGNATURE']))
       exit();
 
   http_response_code(200);
@@ -44,6 +46,7 @@ const java = `package hmacexample;
 
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidKeyException;
+import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
@@ -71,7 +74,7 @@ public class HMacExample {
     byte [] mac_data = sha512_HMAC.
     doFinal(body.getBytes("UTF-8"));
     result = DatatypeConverter.printHexBinary(mac_data);
-    if(result.toLowerCase().equals(xpaystackSignature)) {
+    if(MessageDigest.isEqual(result.toLowerCase().getBytes("UTF-8"), xpaystackSignature.getBytes("UTF-8"))) {
       // you can trust the event, it came from paystack
       // respond with the http 200 response immediately before attempting to process the response
       //retrieve the request body, and deliver value to the customer
@@ -106,7 +109,7 @@ namespace HMacExample
 
       String xpaystackSignature = ""; //put in the request's header value for x-paystack-signature
   
-      if(result.ToLower().Equals(xpaystackSignature)) {
+      if(CryptographicOperations.FixedTimeEquals(Encoding.UTF8.GetBytes(result.ToLower()), Encoding.UTF8.GetBytes(xpaystackSignature))) {
           // you can trust the event, it came from paystack
           // respond with the http 200 response immediately before attempting to process the response
           //retrieve the request body, and deliver value to the customer

@@ -9,11 +9,13 @@ app.use(express.json({
 
 app.post("/my/webhook/url", function(req, res) {
     //validate event
-    const hash = crypto.createHmac('sha512', secret).update(req.rawBody).digest('hex');
-    if (hash == req.headers['x-paystack-signature']) {
+    const hash = crypto.createHmac('sha512', secret).update(req.rawBody).digest();
+    const signature = req.headers['x-paystack-signature'] || '';
+    if (!/^[0-9a-f]{128}$/.test(signature) || !crypto.timingSafeEqual(hash, Buffer.from(signature, 'hex'))) {
+        return res.sendStatus(401);
+    }
     // Retrieve the request's body
     const event = req.body;
-    // Do something with event  
-    }
-    res.send(200);
+    // Do something with event
+    res.sendStatus(200);
 });
