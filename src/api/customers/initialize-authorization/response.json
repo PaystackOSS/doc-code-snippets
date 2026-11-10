@@ -10,5 +10,39 @@
 				"reference": "dfbzfotsrbv4n5s82t4mp5b5mfn51h"
 			}
 		}
+	},
+	"200_pending_bank_transfer": {
+		"description": "200 Bank Transfer",
+		"data": {
+			"status": true,
+			"message": "Authorization initialized",
+			"data": {
+				"reference": "54eyym8uf802ycx",
+				"mandate": {
+					"id": 3315722,
+					"status": "pending",
+					"isNew": true
+				},
+				"transferDetails": {
+					"amount": "50.00",
+					"account_number": "9880218357",
+					"account_name": "NIBSS DIRECT DEBIT",
+					"bank_name": "Paystack-Titan"
+				},
+				"status": "pending_bank_transfer"
+			}
+		}
+	},
+	"200_open_url": {
+		"description": "200 Open URL",
+		"data": {
+			"status": true,
+			"message": "Authorization initialized",
+			"data": {
+				"reference": "54eyym8uf802ycx",
+				"status": "open_url",
+				"redirect_url": "https://express.redirecturlcheckout.com"
+			}
+		}
 	}
 }
