@@ -4,8 +4,8 @@
   $fields = [
     'type' => "nuban",
     'name' => "John Doe",
-    'account_number' => "0001234567",
-    'bank_code' => "058",
+    'account_number' => "1000000001",
+    'bank_code' => "057",
     'currency' => "NGN"
   ];
 
