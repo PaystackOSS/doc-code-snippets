@@ -1,0 +1,9 @@
+{
+  "status": true,
+  "message": "Authorization initialized",
+  "data": {
+    "reference": "54eyym8uf802ycx",
+    "status": "open_url",
+    "redirect_url": "https://express.redirecturlcheckout.com"
+  }
+}

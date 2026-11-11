@@ -16,6 +16,28 @@
 			}
 		}
 	},
+	"200_pending": {
+		"description": "200 Pending",
+		"data": {
+			"status": true,
+			"message": "Direct debit authorization retrieved",
+			"data": {
+				"reference": "54eyym8uf802ycx",
+				"status": "pending"
+			}
+		}
+	},
+	"200_failed": {
+		"description": "200 Failed",
+		"data": {
+			"status": true,
+			"message": "Direct debit authorization retrieved",
+			"data": {
+				"reference": "54eyym8uf802ycx",
+				"status": "failed"
+			}
+		}
+	},
 	"404": {
 		"description": "404 Not Found",
 		"data": {

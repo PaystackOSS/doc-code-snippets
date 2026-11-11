@@ -204,5 +204,31 @@
 			"status": false,
 			"message": "Email address is required for association with card"
 		}
+	},
+	"200_pending_bank_transfer": {
+		"description": "200 Bank Transfer",
+		"data": {
+			"status": true,
+			"message": "Charge attempted",
+			"data": {
+				"reference": "dd-charge-8f3a1c",
+				"status": "pending_bank_transfer",
+				"amount": 1000000,
+				"account_number": "1234567890",
+				"bank_name": "Test Bank"
+			}
+		}
+	},
+	"200_open_url": {
+		"description": "200 Open URL",
+		"data": {
+			"status": true,
+			"message": "Charge attempted",
+			"data": {
+				"reference": "7PVGX8MEk85tgeEpVDtD",
+				"status": "open_url",
+				"redirect_url": "https://redirecturlsample.com"
+			}
+		}
 	}
 }

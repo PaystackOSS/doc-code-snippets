@@ -1,0 +1,11 @@
+const json = `{
+  "status": true,
+  "message": "Direct debit authorization retrieved",
+  "data": {
+    "reference": "54eyym8uf802ycx",
+    "status": "pending"
+  }
+}
+`
+
+export {json}
