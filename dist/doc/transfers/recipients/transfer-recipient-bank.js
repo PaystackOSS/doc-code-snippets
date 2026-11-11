@@ -1,12 +1,12 @@
-const sh = `curl https://api.paystack.co/transferrecipient
--H "Authorization: Bearer YOUR_SECRET_KEY"
--H "Content-Type: application/json"
--d '{ "type": "nuban", 
-      "name": "John Doe", 
-      "account_number": "0001234567", 
-      "bank_code": "058", 
+const sh = `curl https://api.paystack.co/transferrecipient \
+-H "Authorization: Bearer YOUR_SECRET_KEY" \
+-H "Content-Type: application/json" \
+-d '{ "type": "nuban",
+      "name": "John Doe",
+      "account_number": "1000000001",
+      "bank_code": "057",
       "currency": "NGN"
-    }'
+    }' \
 -X POST`
 
 const js = `const https = require('https')
@@ -14,8 +14,8 @@ const js = `const https = require('https')
 const params = JSON.stringify({
   "type":"nuban",
   "name" : "John Doe",
-  "account_number": "0001234567",
-  "bank_code": "058",
+  "account_number": "1000000001",
+  "bank_code": "057",
   "currency": "NGN"
 })
 
@@ -53,8 +53,8 @@ const php = `<?php
   $fields = [
     'type' => "nuban",
     'name' => "John Doe",
-    'account_number' => "0001234567",
-    'bank_code' => "058",
+    'account_number' => "1000000001",
+    'bank_code' => "057",
     'currency' => "NGN"
   ];
 
@@ -97,10 +97,10 @@ const json = `{
     "is_deleted": false,
     "details": {
       "authorization_code": null,
-      "account_number": "0001234567",
+      "account_number": "1000000001",
       "account_name": null,
-      "bank_code": "058",
-      "bank_name": "Guaranty Trust Bank"
+      "bank_code": "057",
+      "bank_name": "Zenith Bank"
     }
   }
 }`
